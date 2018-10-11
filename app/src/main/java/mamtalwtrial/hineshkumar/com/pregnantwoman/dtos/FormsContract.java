@@ -12,8 +12,11 @@ public class FormsContract {
     //private final String surveyType = "SN";
     private String _ID = "";
     private String _UID = "";
+    private String assessid = "";
     private String formDate = ""; // Date
-    private String user = ""; // Interviewer
+    private String user = "";
+    private String womannme = "";
+    private String husbandnme = "";
 
     private String istatus = ""; // Interview Status
     private String istatus88x = ""; // Interview Status
@@ -22,10 +25,16 @@ public class FormsContract {
 
     private String count = "";
 
-
     private String gpsLat = "";
     private String gpsLng = "";
     private String gpsDT = "";
+    private String gpsAcc = "";
+    private String gpsElev = "";
+    private String deviceID = "";
+    private String devicetagID = "";
+    private String synced = "";
+    private String synced_date = "";
+    private String appversion;
 
     public String getProjectName() {
         return projectName;
@@ -175,13 +184,30 @@ public class FormsContract {
         this.appversion = appversion;
     }
 
-    private String gpsAcc = "";
-    private String gpsElev = "";
-    private String deviceID = "";
-    private String devicetagID = "";
-    private String synced = "";
-    private String synced_date = "";
-    private String appversion;
+    public String getAssessid() {
+        return assessid;
+    }
+
+    public void setAssessid(String assessid) {
+        this.assessid = assessid;
+    }
+
+    public String getWomannme() {
+        return womannme;
+    }
+
+    public void setWomannme(String womannme) {
+        this.womannme = womannme;
+    }
+
+    public String getHusbandnme() {
+        return husbandnme;
+    }
+
+    public void setHusbandnme(String husbandnme) {
+        this.husbandnme = husbandnme;
+    }
+
 
     public FormsContract() {
     }
@@ -192,6 +218,10 @@ public class FormsContract {
 
         this.formDate = jsonObject.getString(FormsTable.COLUMN_FORMDATE);
         this.user = jsonObject.getString(FormsTable.COLUMN_USER);
+        this.assessid = jsonObject.getString(FormsTable.COLUMN_ASSESSID);
+        this.womannme = jsonObject.getString(FormsTable.COLUMN_WOMANNME);
+        this.husbandnme = jsonObject.getString(FormsTable.COLUMN_HUSBANDNME);
+
         this.istatus = jsonObject.getString(FormsTable.COLUMN_ISTATUS);
         this.istatus88x = jsonObject.getString(FormsTable.COLUMN_ISTATUS);
         this.gpsElev = jsonObject.getString(FormsTable.COLUMN_GPSELEV);
@@ -217,6 +247,11 @@ public class FormsContract {
         this._UID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_UID));
         this.formDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_FORMDATE));
         this.user = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_USER));
+
+        this.assessid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ASSESSID));
+        this.womannme = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_WOMANNME));
+        this.husbandnme = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_HUSBANDNME));
+
         this.istatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
         this.istatus88x = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
         this.gpsElev = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSELEV));
@@ -248,6 +283,11 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
         json.put(FormsTable.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
         json.put(FormsTable.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
+
+        json.put(FormsTable.COLUMN_ASSESSID, this.assessid == null ? JSONObject.NULL : this.assessid);
+        json.put(FormsTable.COLUMN_WOMANNME, this.womannme == null ? JSONObject.NULL : this.womannme);
+        json.put(FormsTable.COLUMN_HUSBANDNME, this.husbandnme == null ? JSONObject.NULL : this.husbandnme);
+
         json.put(FormsTable.COLUMN_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
         json.put(FormsTable.COLUMN_ISTATUS88x, this.istatus88x == null ? JSONObject.NULL : this.istatus88x);
         json.put(FormsTable.COLUMN_GPSELEV, this.gpsElev == null ? JSONObject.NULL : this.gpsElev);
@@ -287,7 +327,6 @@ public class FormsContract {
     }
 
 
-
     public static abstract class FormsTable implements BaseColumns {
 
         public static final String TABLE_NAME = "forms";
@@ -298,6 +337,10 @@ public class FormsContract {
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_FORMDATE = "formdate";
         public static final String COLUMN_USER = "user";
+        public static final String COLUMN_ASSESSID = "assessid";
+        public static final String COLUMN_WOMANNME = "womannme";
+        public static final String COLUMN_HUSBANDNME = "husbandnme";
+
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS88x = "istatus88x";
 
