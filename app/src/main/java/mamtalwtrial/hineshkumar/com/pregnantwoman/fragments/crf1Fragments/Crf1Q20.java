@@ -62,7 +62,7 @@ public class Crf1Q20 extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                rb_q20 = (RadioButton) view.findViewById(rg_q20.getCheckedRadioButtonId());
+                rb_q20 = view.findViewById(rg_q20.getCheckedRadioButtonId());
 
             }
         });
@@ -71,7 +71,7 @@ public class Crf1Q20 extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                rb_q21 = (RadioButton) view.findViewById(rg_q21.getCheckedRadioButtonId());
+                rb_q21 = view.findViewById(rg_q21.getCheckedRadioButtonId());
 
             }
         });
@@ -80,7 +80,7 @@ public class Crf1Q20 extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                rb_q22 = (RadioButton) view.findViewById(rg_q22.getCheckedRadioButtonId());
+                rb_q22 = view.findViewById(rg_q22.getCheckedRadioButtonId());
 
             }
         });
@@ -89,7 +89,7 @@ public class Crf1Q20 extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                rb_q23 = (RadioButton) view.findViewById(rg_q23.getCheckedRadioButtonId());
+                rb_q23 = view.findViewById(rg_q23.getCheckedRadioButtonId());
 
             }
         });
@@ -98,7 +98,7 @@ public class Crf1Q20 extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                rb_q33 = (RadioButton) view.findViewById(rg_q33.getCheckedRadioButtonId());
+                rb_q33 = view.findViewById(rg_q33.getCheckedRadioButtonId());
 
             }
         });
@@ -107,7 +107,7 @@ public class Crf1Q20 extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                rb_q34 = (RadioButton) view.findViewById(rg_q34.getCheckedRadioButtonId());
+                rb_q34 = view.findViewById(rg_q34.getCheckedRadioButtonId());
 
             }
         });
@@ -159,151 +159,121 @@ public class Crf1Q20 extends Fragment {
 
 
        /* if (getEditText(rg_q18, rb_q18, et_q18, tv_q18, "10", "", "", "").equals("")) {
-            validation = false;
+            return false;
         } else {
             CRF1Activity.formCrf1DTO.setQ18(getEditText(rg_q18, rb_q18, et_q18, tv_q18, "10", "", "", ""));
         }
 
         if (isRBCheckedThree(rg_q19, rb_q19, tv_q19).equals("")) {
-            validation = false;
+            return false;
         } else {
             CRF1Activity.formCrf1DTO.setQ19(isRBCheckedThree(rg_q19, rb_q19, tv_q19));
         }*/
 
         if (isRBCheckedThree(rg_q20, rb_q20, tv_q20).equals("")) {
-            validation = false;
-        } else {
-            ultrasoundExaminationDTO.setQ20(isRBCheckedThree(rg_q20, rb_q20, tv_q20));
+            return false;
         }
 
         if (isRBCheckedThree(rg_q21, rb_q21, tv_q21).equals("")) {
-            validation = false;
-        } else {
-            ultrasoundExaminationDTO.setQ21(isRBCheckedThree(rg_q21, rb_q21, tv_q21));
+            return false;
         }
 
         if (isRBCheckedThree(rg_q22, rb_q22, tv_q22).equals("")) {
-            validation = false;
-        } else {
-            ultrasoundExaminationDTO.setQ22(isRBCheckedThree(rg_q22, rb_q22, tv_q22));
+            return false;
         }
 
         if (isRBCheckedThree(rg_q23, rb_q23, tv_q23).equals("")) {
-            validation = false;
-        } else {
-            ultrasoundExaminationDTO.setQ23(isRBCheckedThree(rg_q23, rb_q23, tv_q23));
+            return false;
         }
 
         if (!checkEditTextField(et_q24).equals(""))
-            ultrasoundExaminationDTO.setQ24(checkEditTextField(et_q24));
-        else
-            validation = false;
+            return false;
+
+
         if (!checkEditTextField(et_q25).equals(""))
-            ultrasoundExaminationDTO.setQ25(checkEditTextField(et_q25));
-        else
-            validation = false;
+            return false;
+
+
         if (!checkEditTextField(et_q26).equals(""))
-            ultrasoundExaminationDTO.setQ26(checkEditTextField(et_q26));
-        else
-            validation = false;
+            return false;
+
+
         if (!checkEditTextField(et_q27).equals(""))
-            ultrasoundExaminationDTO.setQ27(checkEditTextField(et_q27));
-        else
-            validation = false;
+            return false;
+
+
         if (!checkEditTextField(et_q28).equals(""))
-            ultrasoundExaminationDTO.setQ28(checkEditTextField(et_q28));
-        else
-            validation = false;
+            return false;
+
 
         if (!checkEditTextField(et_q29).equals(""))
-            ultrasoundExaminationDTO.setQ29(checkEditTextField(et_q29));
-        else
-            validation = false;
+            return false;
 
         if (!checkEditTextField(et_q30).equals(""))
-            ultrasoundExaminationDTO.setQ30(checkEditTextField(et_q30));
-        else
-            validation = false;
-
+            return false;
 
         if (!checkEditTextField(et_q31).equals(""))
-            ultrasoundExaminationDTO.setQ31(checkEditTextField(et_q31));
-        else
-            validation = false;
+            return false;
 
         if (!checkEditTextField(et_q32).equals(""))
-            ultrasoundExaminationDTO.setQ32(checkEditTextField(et_q32));
-        else
-            validation = false;
+            return false;
 
         if (!checkEditTextField(et_q36).equals(""))
-            ultrasoundExaminationDTO.setQ36(checkEditTextField(et_q36));
-        else
-            validation = false;
+            return false;
 
         if (!checkEditTextField(et_q37).equals(""))
-            ultrasoundExaminationDTO.setQ37(checkEditTextField(et_q37));
-        else
-            validation = false;
+            return false;
 
         if (rg_q33.getCheckedRadioButtonId() == -1)
-            validation = false;
-        else
-            ultrasoundExaminationDTO.setQ33(rb_q33.getText().toString());
+            return false;
 
 
-        if (rg_q34.getCheckedRadioButtonId() == -1)
-            validation = false;
-        else
-            ultrasoundExaminationDTO.setQ34(rb_q34.getText().toString());
-
-
-        return validation;
+        return rg_q34.getCheckedRadioButtonId() != -1;
     }
 
 
     public void initializeViews(View view, Context context) {
 
         //initialiling  RADIO GROUPS
-        rg_q18 = (RadioGroup) view.findViewById(R.id.rg_q18);
-        rg_q19 = (RadioGroup) view.findViewById(R.id.rg_q19);
-        rg_q20 = (RadioGroup) view.findViewById(R.id.rg_q20);
-        rg_q21 = (RadioGroup) view.findViewById(R.id.rg_q21);
-        rg_q22 = (RadioGroup) view.findViewById(R.id.rg_q22);
-        rg_q23 = (RadioGroup) view.findViewById(R.id.rg_q23);
-        rg_q33 = (RadioGroup) view.findViewById(R.id.rg_q33);
-        rg_q34 = (RadioGroup) view.findViewById(R.id.rg_q34);
+        rg_q18 = view.findViewById(R.id.rg_q18);
+        rg_q19 = view.findViewById(R.id.rg_q19);
+        rg_q20 = view.findViewById(R.id.rg_q20);
+        rg_q21 = view.findViewById(R.id.rg_q21);
+        rg_q22 = view.findViewById(R.id.rg_q22);
+        rg_q23 = view.findViewById(R.id.rg_q23);
+        rg_q33 = view.findViewById(R.id.rg_q33);
+        rg_q34 = view.findViewById(R.id.rg_q34);
 
 
         //initialiling TEXT VIEW
-        tv_q18 = (TextView) view.findViewById(R.id.tv_q18);
-        tv_q19 = (TextView) view.findViewById(R.id.tv_q19);
-        tv_q20 = (TextView) view.findViewById(R.id.tv_q20);
-        tv_q21 = (TextView) view.findViewById(R.id.tv_q21);
-        tv_q22 = (TextView) view.findViewById(R.id.tv_q22);
-        tv_q23 = (TextView) view.findViewById(R.id.tv_q23);
+        tv_q18 = view.findViewById(R.id.tv_q18);
+        tv_q19 = view.findViewById(R.id.tv_q19);
+        tv_q20 = view.findViewById(R.id.tv_q20);
+        tv_q21 = view.findViewById(R.id.tv_q21);
+        tv_q22 = view.findViewById(R.id.tv_q22);
+        tv_q23 = view.findViewById(R.id.tv_q23);
 
         //initialiling EDIT TEXT
-        et_q18 = (EditText) view.findViewById(R.id.et_q18);
-        et_q24 = (EditText) view.findViewById(R.id.et_q24);
-        et_q25 = (EditText) view.findViewById(R.id.et_q25);
-        et_q26 = (EditText) view.findViewById(R.id.et_q26);
-        et_q27 = (EditText) view.findViewById(R.id.et_q27);
-        et_q28 = (EditText) view.findViewById(R.id.et_q28);
-        et_q29 = (EditText) view.findViewById(R.id.et_q29);
-        et_q30 = (EditText) view.findViewById(R.id.et_q30);
-        et_q31 = (EditText) view.findViewById(R.id.et_q31);
-        et_q32 = (EditText) view.findViewById(R.id.et_q32);
-        et_q36 = (EditText) view.findViewById(R.id.et_q36);
-        et_q37 = (EditText) view.findViewById(R.id.et_q37);
+        et_q18 = view.findViewById(R.id.et_q18);
+        et_q24 = view.findViewById(R.id.et_q24);
+        et_q25 = view.findViewById(R.id.et_q25);
+        et_q26 = view.findViewById(R.id.et_q26);
+        et_q27 = view.findViewById(R.id.et_q27);
+        et_q28 = view.findViewById(R.id.et_q28);
+        et_q29 = view.findViewById(R.id.et_q29);
+        et_q30 = view.findViewById(R.id.et_q30);
+        et_q31 = view.findViewById(R.id.et_q31);
+        et_q32 = view.findViewById(R.id.et_q32);
+        et_q36 = view.findViewById(R.id.et_q36);
+        et_q37 = view.findViewById(R.id.et_q37);
 
 
         //initialiling SCROLL VIEW
-        scrollView = (ScrollView) view.findViewById(R.id.scrollView);
+        scrollView = view.findViewById(R.id.scrollView);
 
 
         //initialiling BUTTON
-        btn_next = (Button) view.findViewById(R.id.btn_next);
+        btn_next = view.findViewById(R.id.btn_next);
 
 
         //initialiling RELATIVE LAYOUT

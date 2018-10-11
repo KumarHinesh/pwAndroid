@@ -1,7 +1,5 @@
 package mamtalwtrial.hineshkumar.com.pregnantwoman.fragments.crf1Fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.QuickContactBadge;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
@@ -45,7 +42,7 @@ public class CrfQ18 extends Fragment {
         rg_q18.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                rb_q18 = (RadioButton) view.findViewById(rg_q18.getCheckedRadioButtonId());
+                rb_q18 = view.findViewById(rg_q18.getCheckedRadioButtonId());
 
                 if (rb_q18.getTag().toString().equals("10"))
                     et_q18.setVisibility(View.VISIBLE);
@@ -59,7 +56,7 @@ public class CrfQ18 extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                rb_q19 = (RadioButton) view.findViewById(rg_q19.getCheckedRadioButtonId());
+                rb_q19 = view.findViewById(rg_q19.getCheckedRadioButtonId());
 
             }
         });
@@ -87,40 +84,39 @@ public class CrfQ18 extends Fragment {
     public void initializationViews(View view){
 
         //RADIO GROUP INITIALIZATION
-        rg_q18 = (RadioGroup) view.findViewById(R.id.rg_q18);
-        rg_q19 = (RadioGroup) view.findViewById(R.id.rg_q19);
+        rg_q18 = view.findViewById(R.id.rg_q18);
+        rg_q19 = view.findViewById(R.id.rg_q19);
 
         //BUTTON INITIALIZATION
-        btn_next = (Button) view.findViewById(R.id.btn_next);
+        btn_next = view.findViewById(R.id.btn_next);
 
         //SCROLL VIEW INITIALIZATION
-        scrollView = (ScrollView) view.findViewById(R.id.scrollView);
+        scrollView = view.findViewById(R.id.scrollView);
 
         //TEXTVIEW INITIALIZATION
-        tv_q18 = (TextView) view.findViewById(R.id.tv_q18);
-        tv_q19 = (TextView) view.findViewById(R.id.tv_q19);
+        tv_q18 = view.findViewById(R.id.tv_q18);
+        tv_q19 = view.findViewById(R.id.tv_q19);
 
         //EDIT TEXT INITIALIZATION
-        et_q18 = (EditText) view.findViewById(R.id.et_q18);
+        et_q18 = view.findViewById(R.id.et_q18);
     }
 
     public boolean validation() {
 
-        boolean validation = true;
 
         if (getEditText(rg_q18, rb_q18, et_q18, tv_q18, "10", "", "", "").equals("")) {
-            validation = false;
+            return false;
         } else {
-            CRF1Activity.formCrf1DTO.setQ18(getEditText(rg_q18, rb_q18, et_q18, tv_q18, "10", "", "", ""));
+            et_q18.setError(null);
         }
 
         if (isRBCheckedThree(rg_q19, rb_q19, tv_q19).equals("")) {
-            validation = false;
+            return false;
         } else {
-            CRF1Activity.formCrf1DTO.setQ19(isRBCheckedThree(rg_q19, rb_q19, tv_q19));
+            et_q18.setError(null);
         }
 
-        return validation;
+        return true;
     }
 
     int x, y;
@@ -172,5 +168,6 @@ public class CrfQ18 extends Fragment {
 
         }
     }
+
 
 }

@@ -2,7 +2,6 @@ package mamtalwtrial.hineshkumar.com.pregnantwoman.fragments.crf1Fragments;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -46,7 +45,7 @@ public class PwInformation extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                rb_q17 = (RadioButton) view.findViewById(rg17.getCheckedRadioButtonId());
+                rb_q17 = view.findViewById(rg17.getCheckedRadioButtonId());
 
             }
         });
@@ -135,58 +134,49 @@ public class PwInformation extends Fragment {
         boolean validation = true;
 
         if (!checkEditTextField(et_pw_name).equals(""))
-            pregnantWomanDTO.setName(checkEditTextField(et_pw_name));
+            return false;
         else
-            validation = false;
+            et_pw_name.setError(null);
 
         if (!checkEditTextField(et_husband_name).equals(""))
-            pregnantWomanDTO.setHusbandName(checkEditTextField(et_husband_name));
+            return false;
         else
-            validation = false;
+            et_husband_name.setError(null);
 
         if (!checkEditTextField(et_site).equals(""))
-            pregnantWomanDTO.setSite(checkEditTextField(et_site));
+            return false;
         else
-            validation = false;
+            et_site.setError(null);
 
         if (!checkEditTextField(et_para).equals(""))
-            pregnantWomanDTO.setPara(checkEditTextField(et_para));
+            return false;
         else
-            validation = false;
+            et_para.setError(null);
 
         if (!checkEditTextField(et_block).equals(""))
-            pregnantWomanDTO.setBlock(checkEditTextField(et_block));
+            return false;
         else
-            validation = false;
+            et_block.setError(null);
 
         if (!checkEditTextField(et_structure).equals(""))
-            pregnantWomanDTO.setStructure(checkEditTextField(et_structure));
+            return false;
         else
-            validation = false;
+            et_structure.setError(null);
 
         if (!checkEditTextField(et_household).equals(""))
-            pregnantWomanDTO.setHouseholdOrFamily(checkEditTextField(et_household));
+            return false;
         else
-            validation = false;
+            et_household.setError(null);
 
         if (!checkEditTextField(et_woman_no).equals(""))
-            pregnantWomanDTO.setWomanNumber(Integer.parseInt(checkEditTextField(et_woman_no)));
+            return false;
         else
-            validation = false;
+            et_woman_no.setError(null);
 
-        if (validation)
+        /*if (validation)
             CRF1Activity.formCrf1DTO.setPregnantWomanDTO(pregnantWomanDTO);
-
-        if (rg17.getCheckedRadioButtonId() == -1)
-        {
-            validation = false;
-        }
-        else
-        {
-            CRF1Activity.formCrf1DTO.setQ17(rb_q17.getText().toString());
-        }
-
-        return validation;
+*/
+        return rg17.getCheckedRadioButtonId() != -1;
     }
 
     public String checkEditTextField(EditText editText){
@@ -201,21 +191,21 @@ public class PwInformation extends Fragment {
 
     public void initializeViews(View view){
 
-        btn_next_pw_info = (Button) view.findViewById(R.id.btn_next_pw_info);
+        btn_next_pw_info = view.findViewById(R.id.btn_next_pw_info);
 
         //initialiling EDIT TEXT
-        et_pw_name = (EditText) view.findViewById(R.id.et_pw_name);
-        et_husband_name = (EditText) view.findViewById(R.id.et_husband_name);
-        et_site = (EditText) view.findViewById(R.id.et_site);
-        et_para = (EditText) view.findViewById(R.id.et_para);
-        et_block = (EditText) view.findViewById(R.id.et_block);
-        et_structure = (EditText) view.findViewById(R.id.et_structure);
-        et_household = (EditText) view.findViewById(R.id.et_household);
-        et_woman_no = (EditText) view.findViewById(R.id.et_woman_no);
-        et_q17_reason = (EditText) view.findViewById(R.id.et_q17_reason);
+        et_pw_name = view.findViewById(R.id.et_pw_name);
+        et_husband_name = view.findViewById(R.id.et_husband_name);
+        et_site = view.findViewById(R.id.et_site);
+        et_para = view.findViewById(R.id.et_para);
+        et_block = view.findViewById(R.id.et_block);
+        et_structure = view.findViewById(R.id.et_structure);
+        et_household = view.findViewById(R.id.et_household);
+        et_woman_no = view.findViewById(R.id.et_woman_no);
+        et_q17_reason = view.findViewById(R.id.et_q17_reason);
 
         //initialiling  RADIO GROUPS
-        rg17=(RadioGroup) view.findViewById(R.id.rg_q17);
+        rg17 = view.findViewById(R.id.rg_q17);
 
 
         pregnantWomanDTO = new PregnantWomanDTO();

@@ -39,7 +39,6 @@ public class FormCrf1DTO {
         this.id = id;
     }
 
-
     public String getQ02() {
         return q02;
     }
