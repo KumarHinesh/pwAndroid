@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +14,13 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 import java.net.URL;
 
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.activities.CRF1Activity;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.DatabaseHelper;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormsContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.PregnantWomanDTO;
 
 
@@ -61,6 +65,27 @@ public class PwInformation extends Fragment {
 
                 if (validation()){
 
+
+                    DatabaseHelper db = new DatabaseHelper(getContext());
+
+                    FormsContract formsContract = new FormsContract();
+
+                    String data = saveData();
+
+                    formsContract.setsA1(data);
+
+                    long id = db.addForm(formsContract);
+
+
+                    if (id != -1) {
+                        Log.d("saved succesfully", id + "");
+                    } else {
+                        Log.d("not saved ", id + "");
+                    }
+
+
+
+/*
                     switch(1){
 
                         case 1:
@@ -92,6 +117,7 @@ public class PwInformation extends Fragment {
                             break;
 
                     }
+*/
 
 
 
@@ -133,42 +159,42 @@ public class PwInformation extends Fragment {
     public boolean validation(){
         boolean validation = true;
 
-        if (!checkEditTextField(et_pw_name).equals(""))
+        if (checkEditTextField(et_pw_name).equals(""))
             return false;
         else
             et_pw_name.setError(null);
 
-        if (!checkEditTextField(et_husband_name).equals(""))
+        if (checkEditTextField(et_husband_name).equals(""))
             return false;
         else
             et_husband_name.setError(null);
 
-        if (!checkEditTextField(et_site).equals(""))
+        if (checkEditTextField(et_site).equals(""))
             return false;
         else
             et_site.setError(null);
 
-        if (!checkEditTextField(et_para).equals(""))
+        if (checkEditTextField(et_para).equals(""))
             return false;
         else
             et_para.setError(null);
 
-        if (!checkEditTextField(et_block).equals(""))
+        if (checkEditTextField(et_block).equals(""))
             return false;
         else
             et_block.setError(null);
 
-        if (!checkEditTextField(et_structure).equals(""))
+        if (checkEditTextField(et_structure).equals(""))
             return false;
         else
             et_structure.setError(null);
 
-        if (!checkEditTextField(et_household).equals(""))
+        if (checkEditTextField(et_household).equals(""))
             return false;
         else
             et_household.setError(null);
 
-        if (!checkEditTextField(et_woman_no).equals(""))
+        if (checkEditTextField(et_woman_no).equals(""))
             return false;
         else
             et_woman_no.setError(null);
@@ -247,6 +273,23 @@ public class PwInformation extends Fragment {
     }*/
 
 
+    public String saveData() {
+        String str = "";
+        PregnantWomanDTO pregnantWomanDTO = new PregnantWomanDTO();
+
+        pregnantWomanDTO.setBlock(et_block.getText().toString());
+        pregnantWomanDTO.setName(et_pw_name.getText().toString());
+        pregnantWomanDTO.setHouseholdOrFamily(et_household.getText().toString());
+        pregnantWomanDTO.setHusbandName(et_husband_name.getText().toString());
+        pregnantWomanDTO.setSite(et_site.getText().toString());
+        pregnantWomanDTO.setPara(et_para.getText().toString());
+        pregnantWomanDTO.setWomanNumber(Integer.parseInt(et_woman_no.getText().toString()));
+        pregnantWomanDTO.setStructure(et_structure.getText().toString());
+
+        str = new Gson().toJson(pregnantWomanDTO, PregnantWomanDTO.class);
+
+        return str;
+    }
 
 
 }

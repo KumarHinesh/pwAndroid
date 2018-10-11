@@ -16,13 +16,9 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.activities.CRF1Activity;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.activities.LoginActivity;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.constants.ContantsValues;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UltrasoundExaminationDTO;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.retrofit.APIService;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.retrofit.ApiUtils;
@@ -56,7 +52,6 @@ public class Crf1Q20 extends Fragment {
         initializeViews(view, getContext());
 
         /* rg_q18.check(rg_q18.getChildAt(4).getId());*/
-
 
         rg_q20.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -118,7 +113,9 @@ public class Crf1Q20 extends Fragment {
 
                 if (validation()) {
 
-                    if ((Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19()) == 2 || Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19()) == 3) && CRF1Activity.babyNo < Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19())) {
+
+
+                   /* if ((Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19()) == 2 || Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19()) == 3) && CRF1Activity.babyNo < Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19())) {
                         CRF1Activity.babyNo++;
                         CRF1Activity.ultrasoundExaminationDTOList.add(ultrasoundExaminationDTO);
                         CRF1Activity.fragmentManager.beginTransaction().replace(R.id.crf1_frame, new Crf1Q20(), null).addToBackStack(null).commit();
@@ -128,7 +125,7 @@ public class Crf1Q20 extends Fragment {
                         CRF1Activity.formCrf1DTO.setQ38(new SimpleDateFormat(ContantsValues.TIMEFORMAT).format(Calendar.getInstance().getTime()) + "");
                         sendDataToServer();
                     }
-
+*/
 
                 } else {
 

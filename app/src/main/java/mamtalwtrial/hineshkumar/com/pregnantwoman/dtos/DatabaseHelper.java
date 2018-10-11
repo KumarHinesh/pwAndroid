@@ -5,16 +5,16 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormsContract.FormsTable;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormsContract.FormsTable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String SQL_CREATE_USERS = "CREATE TABLE " + UserContract.UserTable.TABLE_NAME + "("
-            + UserContract.UserTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + UserContract.UserTable.COLUMN_SRANAME + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + UserContract.UserTable.COLUMN__ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + UserContract.UserTable.COLUMN_SRANAME + " TEXT,"
             + UserContract.UserTable.COLUMN_USERNAME + " TEXT,"
             + UserContract.UserTable.COLUMN_PASSWORD + " TEXT,"
             + UserContract.UserTable.COLUMN_SITE + " TEXT,"
@@ -99,7 +99,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SYNCED, fc.getSynced());
         values.put(FormsTable.COLUMN_SYNCED_DATE, fc.getSynced_date());
         values.put(FormsTable.COLUMN_APP_VERSION, fc.getAppversion());
-
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;

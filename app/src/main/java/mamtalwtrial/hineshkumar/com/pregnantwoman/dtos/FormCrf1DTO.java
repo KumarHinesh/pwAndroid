@@ -14,6 +14,7 @@ public class FormCrf1DTO {
     private String q18;
     private String q19;
     private String q38;
+    private String crf1;
 
     public PregnantWomanDTO getPregnantWomanDTO() {
         return pregnantWomanDTO;
