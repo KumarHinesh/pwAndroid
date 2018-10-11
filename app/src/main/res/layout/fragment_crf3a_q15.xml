@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="30dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="20dp"
+    tools:context=".fragments.crf3Fragments.crf3Fragments.crf3aFragments.Crf3aQ15Fragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <!--Q15 -->
+        <RelativeLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/img1"
+                android:src="@mipmap/notebook"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <RelativeLayout
+                android:layout_marginLeft="20dp"
+                android:layout_toEndOf="@+id/img1"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_name1"
+                    android:layout_width="match_parent"
+                    android:textSize="12sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_q15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:hint="Date Of Randomization  (Auto)"
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:textSize="14sp"
+                    android:layout_below="@+id/input_layout_name1"
+                    android:text="Date of randomization (DD / mm / YYYY)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+        <!--Q16 -->
+        <RelativeLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/img2"
+                android:src="@mipmap/notebook"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <RelativeLayout
+                android:layout_marginLeft="20dp"
+                android:layout_toEndOf="@+id/img2"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_name2"
+                    android:layout_width="match_parent"
+                    android:textSize="12sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_q16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:hint="Time Of Randomization  (Auto)"
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:textSize="14sp"
+                    android:layout_below="@+id/input_layout_name2"
+                    android:text="Time of randomization (HH / MM 24 hour clock)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+        <!--Q17 -->
+        <RelativeLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/img3"
+                android:src="@mipmap/notebook"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <RelativeLayout
+                android:layout_marginLeft="20dp"
+                android:layout_toEndOf="@+id/img3"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_name3"
+                    android:layout_width="match_parent"
+                    android:textSize="12sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_q17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:hint="Enter Serial number "
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:textSize="14sp"
+                    android:layout_below="@+id/input_layout_name3"
+                    android:text="Serial number mentioned on the envelope"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+        <!--Q18 -->
+        <RelativeLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/img4"
+                android:src="@mipmap/notebook"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <RelativeLayout
+                android:layout_marginLeft="20dp"
+                android:layout_toEndOf="@+id/img4"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_name4"
+                    android:layout_width="match_parent"
+                    android:textSize="12sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_q18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:hint="Enter Randomization ID"
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:textSize="14sp"
+                    android:layout_below="@+id/input_layout_name4"
+                    android:text="Qura andazi k ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+        <!--Q19 -->
+        <RelativeLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/img5"
+                android:src="@mipmap/notebook"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <RelativeLayout
+                android:layout_marginLeft="20dp"
+                android:layout_toEndOf="@+id/img5"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_name5"
+                    android:layout_width="match_parent"
+                    android:textSize="12sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_q19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:hint="Enter Randomization Arm"
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:textSize="14sp"
+                    android:layout_below="@+id/input_layout_name5"
+                    android:text="Qura andazi wala Arm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+        <!--Q20 -->
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_weight="1.1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_q18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/crf3a_q20_english"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/crf3a_q20_urdu"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_weight="0.1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+
+            <RadioGroup
+                android:layout_gravity="center"
+                android:id="@+id/rg_q20"
+                android:orientation="vertical"
+                android:layout_weight="0.8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:tag="1"
+                    android:textColor="@color/black"
+                    android:text="@string/yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:tag="2"
+                    android:textColor="@color/black"
+                    android:text="@string/no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!--Q21 -->
+        <RelativeLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/img6"
+                android:src="@mipmap/notebook"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <RelativeLayout
+                android:layout_marginLeft="20dp"
+                android:layout_toEndOf="@+id/img6"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_name6"
+                    android:layout_width="match_parent"
+                    android:textSize="12sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_q21"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:hint="@string/crf3a_q21_english"
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:textSize="14sp"
+                    android:layout_below="@+id/input_layout_name6"
+                    android:text="@string/crf3a_q21_urdu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+        <!--Q22 -->
+        <RelativeLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/img7"
+                android:src="@mipmap/notebook"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <RelativeLayout
+                android:layout_marginLeft="20dp"
+                android:layout_toEndOf="@+id/img7"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_name7"
+                    android:layout_width="match_parent"
+                    android:textSize="12sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_q22"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:hint="@string/reason"
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:textSize="14sp"
+                    android:layout_below="@+id/input_layout_name7"
+                    android:text="@string/crf3a_q22_english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+        <Button
+
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:id="@+id/btn_submit"
+            android:text="Submit"
+            android:textSize="18sp"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_shape_color"
+            android:layout_marginBottom="30dp"
+
+
+            />
+
+
+    </LinearLayout>
+
+
+</ScrollView>

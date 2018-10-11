@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<include layout="@layout/toolbar_for_all"
+        android:id="@+id/toolbarLayout"/>
+-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvDummy2"
+                android:layout_marginTop="15dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="40sp"
+                android:text="PW Weight"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@+id/tvDummy2"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_marginTop="20dp"
+                    android:weightSum="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="Assessment ID"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                    <TextView
+                        android:id="@+id/tv_ass_id"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:text="#xxxx"
+                        android:layout_weight="2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+
+                <EditText
+                    android:textColor="@color/black"
+                    android:inputType="textCapCharacters"
+                    android:id="@+id/et_readerId_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:hint="Code of Reader 1"
+                    android:maxLength="3" />
+
+                <EditText
+                    android:textColor="@color/black"
+                    android:inputType="textCapCharacters"
+                    android:id="@+id/et_readerId_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:hint="Code of Reader 2"
+                    android:maxLength="3" />
+
+                <ImageView
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:src="@mipmap/weightlw"
+                    />
+
+                <LinearLayout
+                    android:weightSum="2"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:weightSum="2"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:textStyle="bold"
+                            android:textSize="22sp"
+                            android:layout_height="wrap_content"
+                            android:text="Reader 1"/>
+
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:textStyle="bold"
+                            android:textSize="22sp"
+                            android:layout_height="wrap_content"
+                            android:text="Reader 2"/>
+
+
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_muac1"
+                        android:weightSum="2"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <EditText
+                            android:maxLength="5"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/et_r1_mauc1"
+                            android:layout_weight="0.8"
+                            android:layout_width="0dp"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:layout_height="wrap_content"
+                            android:hint="In KG(080.4)"/>
+
+
+                        <EditText
+                            android:maxLength="5"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/et_r2_mauc1"
+                            android:layout_weight="0.8"
+                            android:layout_width="0dp"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:layout_height="wrap_content"
+                            android:hint="In KG(080.4)"/>
+
+                        <TextView
+                            android:id="@+id/tv_muac_difference1"
+                            android:text="Difference"
+                            android:layout_weight="0.4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="invisible"
+                        android:id="@+id/ll_muac2"
+                        android:weightSum="2"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <EditText
+                            android:maxLength="5"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/et_r1_mauc2"
+                            android:layout_weight="0.8"
+                            android:layout_width="0dp"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:layout_height="wrap_content"
+                            android:hint="In KG(080.4)"/>
+
+
+                        <EditText
+                            android:maxLength="5"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/et_r2_mauc2"
+                            android:layout_weight="0.8"
+                            android:layout_width="0dp"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:layout_height="wrap_content"
+                            android:hint="In KG(080.4)"/>
+
+
+                        <TextView
+                            android:id="@+id/tv_muac_difference2"
+                            android:text="Difference"
+                            android:layout_weight="0.4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_muac3"
+                        android:visibility="invisible"
+                        android:weightSum="2"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <EditText
+                            android:maxLength="5"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/et_r1_mauc3"
+                            android:layout_weight="0.8"
+                            android:layout_width="0dp"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:layout_height="wrap_content"
+                            android:hint="In KG(080.4)"/>
+
+
+                        <EditText
+                            android:maxLength="5"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/et_r2_mauc3"
+                            android:layout_weight="0.8"
+                            android:layout_width="0dp"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:layout_height="wrap_content"
+                            android:hint="In KG(080.4)"/>
+
+
+                        <TextView
+                            android:id="@+id/tv_muac_difference3"
+                            android:text="Difference"
+                            android:layout_weight="0.4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_muac4"
+                        android:weightSum="2"
+                        android:visibility="invisible"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <EditText
+                            android:maxLength="5"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/et_r1_mauc4"
+                            android:layout_weight="0.8"
+                            android:layout_width="0dp"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:layout_height="wrap_content"
+                            android:hint="In KG(080.4)"/>
+
+
+                        <EditText
+                            android:maxLength="5"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/et_r2_mauc4"
+                            android:layout_weight="0.8"
+                            android:layout_width="0dp"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:layout_height="wrap_content"
+                            android:hint="080.4"/>
+
+
+                        <TextView
+                            android:id="@+id/tv_muac_difference4"
+                            android:text="Difference"
+                            android:layout_weight="0.4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+
+                    <Button
+                        android:id="@+id/btn_checkReading"
+                        android:textColor="@color/black"
+                        android:text="Check Values"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:weightSum="3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:text="Correct Average Weight Lw "
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/tv_averageMAUC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/btn_maucSubmit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/button_shape_color"
+                    android:text="Next"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

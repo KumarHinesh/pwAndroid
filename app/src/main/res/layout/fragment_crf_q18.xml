@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.crf1Fragments.CrfQ18">
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--q18-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_weight="1.1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_q18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/crf1_q18_english"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/crf1_q18_urdu"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_weight="0.1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+
+            <RadioGroup
+                android:id="@+id/rg_q18"
+                android:orientation="vertical"
+                android:layout_weight="0.8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+
+                <RadioButton
+                    android:tag="1"
+                    android:textColor="@color/black"
+                    android:text="@string/crf1_q18_opt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:tag="2"
+                    android:textColor="@color/black"
+                    android:text="@string/crf1_q18_opt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:tag="3"
+                    android:textColor="@color/black"
+                    android:text="@string/crf1_q18_opt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:tag="4"
+                    android:id="@+id/rb_q45_4"
+                    android:textColor="@color/black"
+                    android:text="@string/crf1_q18_opt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <RadioButton
+                    android:tag="5"
+                    android:textColor="@color/black"
+                    android:text="@string/crf1_q18_opt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+
+
+                <RadioButton
+                    android:tag="6"
+                    android:textColor="@color/black"
+                    android:text="@string/crf1_q18_opt6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:tag="7"
+                    android:textColor="@color/black"
+                    android:text="@string/crf1_q18_opt7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:tag="8"
+                    android:textColor="@color/black"
+                    android:text="@string/crf1_q18_opt8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:tag="9"
+                    android:textColor="@color/black"
+                    android:text="@string/crf1_q18_opt9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <RadioButton
+                    android:tag="10"
+                    android:id="@+id/rb_q45_9"
+                    android:textColor="@color/black"
+                    android:text="@string/crf1_q18_opt10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <EditText
+
+                    android:id="@+id/et_q18"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Here"                        />
+
+            </RadioGroup>
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
+
+        <!--q19-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_weight="1.1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_q19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/crf1_q19_englisg"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="0.1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/rg_q19"
+                android:orientation="vertical"
+                android:layout_weight="0.8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+
+                <RadioButton
+                    android:tag="1"
+                    android:textColor="@color/black"
+                    android:text="@string/one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:tag="2"
+                    android:textColor="@color/black"
+                    android:text="@string/two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:tag="3"
+                    android:textColor="@color/black"
+                    android:text="@string/three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:tag="4"
+                    android:textColor="@color/black"
+                    android:text="@string/crf1_q19_opt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
+
+        <Button
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:id="@+id/btn_next"
+            android:text="@string/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_shape_color"
+            android:layout_marginBottom="30dp"/>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

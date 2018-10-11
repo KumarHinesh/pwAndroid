@@ -1,0 +1,1359 @@
+<resources>
+    <string name="app_name">Pregnant Woman</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="submit">SUBMIT</string>
+    <string name="next">NEXT</string>
+    <string name="dk">DONT KNOW</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="reason">enter reason</string>
+    <string name="disease">Enter Disease</string>
+    <string name="unnecessary">Unnecessary</string>
+
+    <string name="one">one</string>
+    <string name="two">two</string>
+    <string name="three">three</string>
+    <string name="four">four</string>
+    <string name="others">Other</string>
+
+
+    <!--array for year-->
+    <array name="years">
+
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+
+
+    </array>
+
+
+
+    <!--crf1 -->
+    <string name="crf1_q18_english">Reason for exam</string>
+    <string name="crf1_q18_urdu">Imthan ki wajha</string>
+    <string name="crf1_q18_opt1">Gestational age</string>
+    <string name="crf1_q18_opt2">Multiple pregnancy</string>
+    <string name="crf1_q18_opt3">Thr./missed abortion</string>
+    <string name="crf1_q18_opt4">Fetal death</string>
+    <string name="crf1_q18_opt5">Presentation</string>
+    <string name="crf1_q18_opt6">Placental localization</string>
+    <string name="crf1_q18_opt7">Hydatidiform mole</string>
+    <string name="crf1_q18_opt8">Fetal growth retardation</string>
+    <string name="crf1_q18_opt9">Fetal abnormality</string>
+    <string name="crf1_q18_opt10">Other</string>
+
+    <string name="crf1_q19_englisg">Number of fetuses</string>
+    <string name="crf1_q19_opt4">Not recorded</string>
+
+    <string name="crf1_q20_englisg">Lie</string>
+    <string name="crf1_q20_opt1">Longitudinal</string>
+    <string name="crf1_q20_opt2">Transverse</string>
+    <string name="crf1_q20_opt3">Oblique</string>
+    <string name="crf1_q20_opt4">Not determined yet</string>
+    <string name="crf1_q20_opt5">Not recorded</string>
+
+
+    <string name="crf1_q21_englisg">Presentation</string>
+    <string name="crf1_q21_opt1">Cephalic</string>
+    <string name="crf1_q21_opt2">Breech</string>
+    <string name="crf1_q21_opt3">Shoulder</string>
+    <string name="crf1_q21_opt4">Not determined yet</string>
+    <string name="crf1_q21_opt5">Not recorded</string>
+
+    <string name="crf1_q22_englisg">Fetal Heartbeat</string>
+    <string name="crf1_q22_opt1">Present</string>
+    <string name="crf1_q22_opt2">Absent</string>
+    <string name="crf1_q22_opt3">Not recorded</string>
+
+    <string name="crf1_q23_englisg">Fetal Movement</string>
+    <string name="crf1_q23_opt1">Present</string>
+    <string name="crf1_q23_opt2">Absent</string>
+    <string name="crf1_q23_opt3">Not recorded</string>
+
+    <string name="crf1_q24_englisg">Size of gestational sac</string>
+    <string name="crf1_q25_englisg">Crown-rump length (CRL)</string>
+    <string name="crf1_q26_englisg">Biparietal diameter (BPD)</string>
+    <string name="crf1_q27_englisg">Head circumference (HC)</string>
+    <string name="crf1_q28_englisg">Abdominal circumference (AC)</string>
+    <string name="crf1_q29_englisg">Femur length (FL)</string>
+    <string name="crf1_q30_englisg">Gestational age</string>
+
+    <string name="crf1_q31_englisg">Estimated fetal weight</string>
+    <string name="crf1_q32_englisg">Amount of liquor</string>
+    <string name="crf1_q33_englisg">Amount of liquor</string>
+    <string name="crf1_q34_englisg">Fetal spine</string>
+    <string name="crf1_q35_englisg">Placental localization \nMultiple option can be selected</string>
+    <string name="crf1_q35_opt_1">Fundus</string>
+    <string name="crf1_q35_opt_2">Anterior wall</string>
+    <string name="crf1_q35_opt_3">Posterior wall</string>
+    <string name="crf1_q35_opt_4">Right wall</string>
+    <string name="crf1_q35_opt_5">Left wall</string>
+    <string name="crf1_q35_opt_6">On lower segment</string>
+    <string name="crf1_q35_opt_7">Uterine wall not encroaching</string>
+    <string name="crf1_q35_opt_8">Placenta low lying, covering int. Os</string>
+    <string name="crf1_q35_opt_9">Placenta low lying, not covering int. Os</string>
+    <string name="crf1_q35_opt_10">Not low lying</string>
+    <string name="crf1_q35_opt_11">Placenta previa</string>
+    <string name="crf1_q36_englisg">Placental location (remarks)</string>
+    <string name="crf1_q37_englisg">Main remarks</string>
+
+
+    <!--CRF2 Councling and other questions-->
+
+    <string name="crf2_q17_englisg">Outcome of the interview</string>
+    <string name="crf2_q17_urdu">visit ka natija</string>
+    <string name="crf2_q17_opt_1">Agree for this visit (Razamand ha visit k liya)</string>
+    <string name="crf2_q17_opt_2">Not at home (Ghar par moujoud nahi)</string>
+    <string name="crf2_q17_opt_3">Refused (Inkaar kar diya)</string>
+    <string name="crf2_q17_opt_4">False pregnancy (Ghalt khabar th hamaal k)</string>
+    <string name="crf2_q17_opt_5">Shifted out of DSS (DSS sa bahir shift ho gaya)</string>
+
+    <string name="crf2_q18_englisg">Is PW alive</string>
+    <string name="crf2_q18_urdu">Kya PW zinda hain?</string>
+
+    <string name="crf2_q19_englisg">Date of death</string>
+    <string name="crf2_q19_urdu">null</string>
+
+    <string name="crf2_q20_englisg">Time of death</string>
+    <string name="crf2_q20_urdu">null</string>
+
+    <string name="crf2_q21_englisg">Is GA of the woman is ≥8 week and &gt;19</string>
+    <string name="crf2_q21_urdu">null</string>
+
+    <string name="crf2_q22_englisg">Fetus alive, according to the ultrasound</string>
+    <string name="crf2_q22_urdu">null</string>
+
+    <string name="crf2_q23_englisg">Singleton pregnancy</string>
+    <string name="crf2_q23_urdu">null</string>
+
+
+    <string name="crf2_q32_englisg">Conversion of Q31 in meters</string>
+    <string name="crf2_q32_urdu">null</string>
+
+    <string name="crf2_q33_englisg">Square of Q32</string>
+    <string name="crf2_q33_urdu">v</string>
+
+    <string name="crf2_q34_englisg">Body mass index of PW</string>
+    <string name="crf2_q34_urdu">null</string>
+
+    <string name="crf2_q35_englisg">PW is a permanent resident of DSS</string>
+    <string name="crf2_q35_urdu">Kya PW Hamesha k lia Isi DSS m rahay ge?</string>
+
+    <string name="crf2_q36_englisg">PW willing to stay within DSS until delivery?</string>
+    <string name="crf2_q36_urdu">Kya PW isi DSS main rahay ge jab tak delivery ho nahi jati?</string>
+
+    <string name="crf2_q37_englisg">PW is working outside the home due to which she is unable to attend ANC visits?</string>
+    <string name="crf2_q37_urdu">null</string>
+
+    <string name="crf2_q38_englisg">Was PW enrolled in Maamta PW trial in the past</string>
+    <string name="crf2_q38_urdu">null</string>
+
+    <string name="crf2_q39_englisg">Was PW enrolled in Maamta LW trial in the past</string>
+    <string name="crf2_q39_urdu">null</string>
+
+    <string name="crf2_q40_englisg">PW has any known allergy to food items like peanut, milk, lentils</string>
+    <string name="crf2_q40_urdu">null</string>
+
+    <string name="crf2_q41_opt_1">GA of the woman is ≥8 week and &gt;19 (Q21≥8 week and &gt;19)</string>
+    <string name="crf2_q41_opt_2">Alive fetus (Q22=1)</string>
+    <string name="crf2_q41_opt_3">Singleton pregnancy (Q23=1)</string>
+    <string name="crf2_q41_opt_4">BMI of PW is &gt; 30.0 Kg/m2 (Q34 is &gt;30.0)</string>
+    <string name="crf2_q41_opt_5">PW is a permanent resident of DSS (Q35=1)</string>
+    <string name="crf2_q41_opt_6">PW continues to stay within DSS until birth outcome (Q36=1)</string>
+    <string name="crf2_q41_opt_7">PW is not working outside the home due to which she is unable to attend ANC visits (Q37=2)</string>
+    <string name="crf2_q41_opt_8">PW was not enrolled in Maamta PW trial in the past (Q38=2)</string>
+    <string name="crf2_q41_opt_9">PW was not enrolled in Maamta LW trial in the pas (Q39=2)</string>
+    <string name="crf2_q41_opt_10">PW has no known allergy to food items like peanut, milk, lentils (Q40=2)</string>
+
+    <string name="crf2_q42_englisg">Explain all trial procedures </string>
+    <string name="crf2_q42_urdu">Trial ka tareeqa samjha diya gaya ha</string>
+
+    <string name="crf2_q43_englisg">Informed consent has administered and explained in local language</string>
+    <string name="crf2_q43_urdu">Ijazat nama lay liya gaya ha LW sa us k apni zeban ma</string>
+
+    <string name="crf2_q44_englisg">PW has given her consent to participate in the study?</string>
+    <string name="crf2_q44_urdu">PW razamand ha k wo trial ma hissa lay gee</string>
+
+    <string name="crf2_q45_englisg">PW has agreed to give specimens?</string>
+    <string name="crf2_q45_urdu">PW razamand ha k wo apna and apnay bachay ka namoonay bh day gee</string>
+
+    <string name="crf2_q46_englisg">PW has signed/given the thumb impression</string>
+    <string name="crf2_q46_urdu">PW na ijazat namay par dastakhat ya anghootay ka nishan bh day diya ha</string>
+
+    <string name="crf2_q47_englisg">Reconfirm from the PW that she understands all the procedures</string>
+    <string name="crf2_q47_urdu">PW sa aik dafa phir pochain k kya us ko trial ka tareeqaqar achi tarhan samaj a gaya ha</string>
+
+    <!--CRF3A Councling and other questions-->
+    <string name="crf3a_q14_english">If the PW is eligible for enrollment, was she successfully randomized? </string>
+    <string name="crf3a_q14_urdu">Agar LW trial ma shamil k ja sakti ha tu kya us k randomization kar li gya?</string>
+    <string name="crf3a_q14_opt_1">Yes (G han)</string>
+    <string name="crf3a_q14_opt_2">Withdraw consent</string>
+    <string name="crf3a_q14_opt_3">Postponed by PW (Skip to Q24) (PW k taraf sa takheer hoi)</string>
+    <string name="crf3a_q14_opt_4">Interrupted by Family (Ghar waloun k madakhalat)</string>
+    <string name="crf3a_q14_opt_5">Baby is  sick – unable to avoid the situation (Bacha beemar tha jis k waja sa rukna para)</string>
+    <string name="crf3a_q14_opt_6">PW is sick, unable to avoid the situation (PW beemar ha jis k waja sa rukhan para)</string>
+
+    <string name="crf3a_q15_english">Date of randomization</string>
+    <string name="crf3a_q15_urdu">null</string>
+
+    <string name="crf3a_q16_english">Time of randomization (hh: mm, 24 hour clock)</string>
+    <string name="crf3a_q16_urdu">null</string>
+
+    <string name="crf3a_q17_english">Serial number mentioned on the envelope</string>
+    <string name="crf3a_q17_urdu">Janay ka muqsad</string>
+
+    <string name="crf3a_q18_english">Randomization ID</string>
+    <string name="crf3a_q18_urdu">Qura andazi k ID</string>
+
+    <string name="crf3a_q19_english">Randomization arm</string>
+    <string name="crf3a_q19_urdu">Qura andazi wala arm</string>
+    <string name="crf3a_q19_opt_1">Arm A – Control</string>
+    <string name="crf3a_q19_opt_2">Arm B – Maamta only</string>
+    <string name="crf3a_q19_opt_3">Arm C – Maamta + Azithromycin</string>
+
+
+    <string name="crf3a_q20_english">If there was a delay of more than 1 hour between completing inclusion/exclusion criteria and randomization, please give reason(s) </string>
+    <string name="crf3a_q20_urdu">Agar takheer ka durania 1 ghantay sa zayda ha inlcuion/exclusion or randomization k beech ma tu us k waja likhain</string>
+
+    <string name="crf3a_q21_english">If there was a delay of more than 1 hour between completing inclusion/exclusion criteria and randomization, please give reason(s) </string>
+    <string name="crf3a_q21_urdu">Agar takheer ka durania 1 ghantay sa zayda ha inlcuion/exclusion or randomization k beech ma tu us k waja likhain</string>
+
+    <string name="crf3a_q22_english">Reason of withdrawing consent or postponed by PW or interrupted by Family or a detail of the baby or PW sickness due to which randomization was not performed on the designated day</string>
+    <string name="crf3a_q22_urdu">null</string>
+
+
+    <!--CRF3B Councling and other questions-->
+
+    <string name="crf3b_q13_heading_english">Medical Conditions Prior to this Pregnancy</string>
+    <string name="crf3b_q13_heading_urdu">null</string>
+
+    <string name="crf3b_q13_english">Medical Conditions Prior to this Pregnancy</string>
+    <string name="crf3b_q13_urdu">null</string>
+
+    <string name="crf3b_q13_opt_1_english">Diabetes</string>
+    <string name="crf3b_q13_opt_1_urdu">Sugar</string>
+
+    <string name="crf3b_q13_opt_2_english">Thyroid disease</string>
+    <string name="crf3b_q13_opt_2_urdu">Thyroid disease</string>
+
+    <string name="crf3b_q13_opt_3_english">Any type of malignancy/ cancer</string>
+    <string name="crf3b_q13_opt_3_urdu">Any type of malignancy/ cancer</string>
+
+    <string name="crf3b_q13_opt_4_english">Cardiac disease</string>
+    <string name="crf3b_q13_opt_4_urdu">Cardiac disease</string>
+
+    <string name="crf3b_q13_opt_5_english">Epilepsy</string>
+    <string name="crf3b_q13_opt_5_urdu">Epilepsy</string>
+
+    <string name="crf3b_q13_opt_6_english">Mental Illness</string>
+    <string name="crf3b_q13_opt_6_urdu">Mental Illness</string>
+
+    <string name="crf3b_q13_opt_7_english">Hypertension</string>
+    <string name="crf3b_q13_opt_7_urdu">Hypertension</string>
+
+    <string name="crf3b_q13_opt_8_english">HIV/ AIDS</string>
+    <string name="crf3b_q13_opt_8_urdu">HIV/ AIDS</string>
+
+    <string name="crf3b_q13_opt_9_english">Malaria</string>
+    <string name="crf3b_q13_opt_9_urdu">Malaria</string>
+
+    <string name="crf3b_q13_opt_10_english">Tuberculosis</string>
+    <string name="crf3b_q13_opt_10_urdu">Tuberculosis</string>
+
+    <string name="crf3b_q13_opt_11_english">Hepatitis B</string>
+    <string name="crf3b_q13_opt_11_urdu">Hepatitis B</string>
+
+    <string name="crf3b_q13_opt_12_english">Hepatitis C</string>
+    <string name="crf3b_q13_opt_12_urdu">Hepatitis C</string>
+
+    <string name="crf3b_q13_opt_13_english">Thalessemia</string>
+    <string name="crf3b_q13_opt_13_urdu">Thalessemia</string>
+
+    <string name="crf3b_q13_opt_14_english">Kidney Disease</string>
+    <string name="crf3b_q13_opt_14_urdu">Kidney Disease</string>
+
+    <string name="crf3b_q13_opt_15_english">Any other disease</string>
+    <string name="crf3b_q13_opt_15_urdu">Any other disease</string>
+
+    <string name="crf3b_q14_english">Is this her first pregnancy?</string>
+    <string name="crf3b_q14_urdu">Kya yah pehli pregnancy h is khatoon ki?</string>
+
+    <string name="crf3b_q15_english">During past any pregnancy, does the woman have any of the following complications in the last 3 months of pregnancy (before labor or during labor of at the time of delivery)?</string>
+    <string name="crf3b_q15_urdu">null</string>
+
+    <string name="crf3b_q15_opt_1_english">Convulsion</string>
+    <string name="crf3b_q15_opt_1_urdu">Convulsion</string>
+
+    <string name="crf3b_q15_opt_2_english">High blood pressure</string>
+    <string name="crf3b_q15_opt_2_urdu">High blood pressure</string>
+
+    <string name="crf3b_q15_opt_3_english">Anemia</string>
+    <string name="crf3b_q15_opt_3_urdu">Anemia</string>
+
+    <string name="crf3b_q15_opt_4_english">Blurred vision</string>
+    <string name="crf3b_q15_opt_4_urdu">Blurred vision</string>
+
+    <string name="crf3b_q15_opt_5_english">Too weak to come out of bed</string>
+    <string name="crf3b_q15_opt_5_urdu">Too weak to come out of bed</string>
+
+    <string name="crf3b_q15_opt_6_english">Severe abdominal pain before labor</string>
+    <string name="crf3b_q15_opt_6_urdu">Severe abdominal pain before labor</string>
+
+    <string name="crf3b_q15_opt_7_english">Fast or difficult breathing</string>
+    <string name="crf3b_q15_opt_7_urdu">Fast or difficult breathing</string>
+
+    <string name="crf3b_q15_opt_8_english">Puffy face</string>
+    <string name="crf3b_q15_opt_8_urdu">Puffy face</string>
+
+    <string name="crf3b_q15_opt_9_english">Vaginal bleeding before labor</string>
+    <string name="crf3b_q15_opt_9_urdu">Vaginal bleeding before labor</string>
+
+    <string name="crf3b_q15_opt_10_english">Oligohydrominios</string>
+    <string name="crf3b_q15_opt_10_urdu">Oligohydrominios</string>
+
+    <string name="crf3b_q15_opt_11_english">Polyhydrominios</string>
+    <string name="crf3b_q15_opt_11_urdu">Polyhydrominios</string>
+
+    <string name="crf3b_q15_opt_12_english">Fever </string>
+    <string name="crf3b_q15_opt_12_urdu">Bhukar</string>
+
+    <string name="crf3b_q15_opt_13_english">Smelly vaginal discharge</string>
+    <string name="crf3b_q15_opt_13_urdu">Smelly vaginal discharge</string>
+
+    <string name="crf3b_q15_opt_14_english">Water broke 6 hours or more before labor</string>
+    <string name="crf3b_q15_opt_14_urdu">Water broke 6 hours or more before labor</string>
+
+    <string name="crf3b_q15_opt_15_english">Labor 12 hours or more</string>
+    <string name="crf3b_q15_opt_15_urdu">Labor 12 hours or more</string>
+
+    <string name="crf3b_q15_opt_16_english">Excessive bleeding during labor or delivery</string>
+    <string name="crf3b_q15_opt_16_urdu">Excessive bleeding during labor or delivery</string>
+
+    <string name="crf3b_q15_opt_17_english">Cord around the neck</string>
+    <string name="crf3b_q15_opt_17_urdu">Cord around the neck</string>
+
+    <string name="crf3b_q15_opt_18_english">Obstructed labor</string>
+    <string name="crf3b_q15_opt_18_urdu">Obstructed labor</string>
+
+    <string name="crf3b_q15_opt_19_english">Other, specify</string>
+    <string name="crf3b_q15_opt_19_urdu">koi or</string>
+
+    <string name="crf3b_q16_english">Before this pregnancy, how many times did she get pregnant (Gravida)?</string>
+    <string name="crf3b_q16_urdu">null</string>
+
+    <string name="crf3b_q17_english">How many time woman had twin pregnancy in the past</string>
+    <string name="crf3b_q17_urdu">Janay ka muqsad</string>
+
+    <string name="crf3b_q19_english">Ask and write the date of the first day of her last menstrual period (LMP)</string>
+    <string name="crf3b_q19_urdu">(Make sure to clearly inquire the date using the LMP Guide. Even if she is not currently pregnant, do ask her about the date of her first day of the LMP before pregnancy)</string>
+
+    <string name="crf3b_q20_english">Write EDD according to the card</string>
+    <string name="crf3b_q20_urdu">Write EDD according to the card</string>
+
+    <string name="crf3b_q21_english">Has she received any TT vaccine for protection from tetanus? (since the age of 13 years till present)</string>
+    <string name="crf3b_q21_urdu">null</string>
+
+    <string name="crf3b_q22_english">How many times,has she received TT vaccine so far (since the age of 13 years)?</string>
+    <string name="crf3b_q22_urdu">null</string>
+
+    <string name="crf3b_q23_english">How long do you stand during routine work(daily household work)?</string>
+    <string name="crf3b_q23_urdu">null</string>
+    <string name="crf3b_q23_opt_1">One to two hours</string>
+    <string name="crf3b_q23_opt_2">Three to four hours</string>
+    <string name="crf3b_q23_opt_3">Five to six hours</string>
+    <string name="crf3b_q23_opt_4">More than six hours</string>
+    <string name="crf3b_q23_opt_5">Do not have to stand</string>
+
+    <string name="crf3b_q24_english">how many hours do you spend out or inside home to do physically stressfull work?</string>
+    <string name="crf3b_q24_urdu">null</string>
+    <string name="crf3b_q24_opt_1">One to two hours</string>
+    <string name="crf3b_q24_opt_2">Three to four hours</string>
+    <string name="crf3b_q24_opt_3">Five to six hours</string>
+    <string name="crf3b_q24_opt_4">More than six hours</string>
+    <string name="crf3b_q24_opt_5">No physically stressful work</string>
+
+    <string name="crf3b_q25_english">Do you lift heavy weight like water can, wood or any other heavy thing ? </string>
+    <string name="crf3b_q25_urdu">null</string>
+
+    <string name="crf3b_q26_english">Do you involve in physical activity which involve toxic camecal or substances like paint, tanning? </string>
+    <string name="crf3b_q26_urdu">null</string>
+
+    <string name="crf3b_q27_english">Do you involved in any Physically stressful which has heavy extreme temprature excessive noice or heavy vibration from machine ?</string>
+    <string name="crf3b_q27_urdu">null</string>
+
+    <string name="crf3b_q28_english">Are you involve in any dangerous sports and exercise</string>
+    <string name="crf3b_q28_urdu">null</string>
+
+    <string name="crf3b_q29_english">Do you ever cunsume Gutka</string>
+    <string name="crf3b_q29_urdu">null</string>
+    <string name="crf3b_q29_opt_1">Never</string>
+    <string name="crf3b_q29_opt_2">Quit before pregnancy </string>
+    <string name="crf3b_q29_opt_3">Quit during pregnancy</string>
+    <string name="crf3b_q29_opt_4">Still eat</string>
+
+
+    <string name="crf3b_q30_english">If you eat Gutka, how many times in a week have you used it?</string>
+    <string name="crf3b_q30_urdu">null</string>
+
+
+    <string name="crf3b_q31_english">If you used to or still eat gutka, then how much do you eat in a week?</string>
+    <string name="crf3b_q31_urdu">null</string>
+
+    <string name="crf3b_q32_english">Have you ever had a cigarette biri and huqa?</string>
+    <string name="crf3b_q32_urdu">null</string>
+    <string name="crf3b_q32_opt_1">Never</string>
+    <string name="crf3b_q32_opt_2">Quit before pregnancy</string>
+    <string name="crf3b_q32_opt_3">Quit during pregnancy</string>
+    <string name="crf3b_q32_opt_4"> Still smoke</string>
+
+    <string name="crf3b_q33_english">If you still smoke cigarette (biri or hookah), how many times do you smoke in a day?</string>
+    <string name="crf3b_q33_urdu">null</string>
+
+    <string name="crf3b_q34_english">If you used to or still smoke, then how many do you smoke in a week?</string>
+    <string name="crf3b_q34_urdu">null</string>
+
+    <string name="crf3b_q35_english">Have you lived in a closed house or compound with people who smoke cigarette/ biri/ hookah in your presence?</string>
+    <string name="crf3b_q35_urdu">null</string>
+    <string name="crf3b_q35_opt_1">Yes, smokers live in the same room</string>
+    <string name="crf3b_q35_opt_2">Yes, smokers live in the same compound/ house</string>
+    <string name="crf3b_q35_opt_3">No, smokers neither live in the same room nor compound</string>
+
+    <string name="crf3b_q36_english">Have you ever inhaled smelled  or chewed any kind of tobacco?</string>
+    <string name="crf3b_q36_urdu">null</string>
+    <string name="crf3b_q36_opt_1">Never</string>
+    <string name="crf3b_q36_opt_2">Quit before pregnancy</string>
+    <string name="crf3b_q36_opt_3">Quit during pregnancy</string>
+    <string name="crf3b_q36_opt_4"> Still chew</string>
+
+    <string name="crf3b_q37_english">If you have used tobacco, how many times in a week do you use?</string>
+    <string name="crf3b_q37_urdu">null</string>
+
+    <string name="crf3b_q38_english">Do you ever chew betel nut (chhalia)</string>
+    <string name="crf3b_q38_urdu">null</string>
+    <string name="crf3b_q38_opt_1">Never</string>
+    <string name="crf3b_q38_opt_2">Quit before pregnancy</string>
+    <string name="crf3b_q38_opt_3">Quit during pregnancy</string>
+    <string name="crf3b_q38_opt_4"> Still chew</string>
+
+    <string name="crf3b_q39_english">If you have used betel nut (chhalia), how many times in a week have you used it?</string>
+    <string name="crf3b_q39_urdu">null</string>
+
+    <string name="crf3b_q40_english">Have you ever had alcohol?</string>
+    <string name="crf3b_q40_urdu">null</string>
+    <string name="crf3b_q40_opt_1">Never</string>
+    <string name="crf3b_q40_opt_2">Quit before pregnancy</string>
+    <string name="crf3b_q40_opt_3">Quit during pregnancy</string>
+    <string name="crf3b_q40_opt_4"> Still using</string>
+
+    <string name="crf3b_q41_english">Do you use any other addictive drugs?</string>
+    <string name="crf3b_q41_urdu">null</string>
+
+    <string name="crf3b_q42_english">If yes, then when did you use addictive drugs?</string>
+    <string name="crf3b_q42_urdu">null</string>
+    <string name="crf3b_q42_opt_1">Before pregnancy</string>
+    <string name="crf3b_q42_opt_2">During this pregnancy</string>
+    <string name="crf3b_q42_opt_3">Both before and during pregnancy</string>
+    <string name="crf3b_q42_opt_4">Unnecessary</string>
+
+
+    <string name="crf3b_q43_english">If yes, then which of the addictive drugs do you use?</string>
+    <string name="crf3b_q43_urdu"></string>
+    <string name="crf3b_q43_durg_1">Heroin</string>
+    <string name="crf3b_q43_durg_2">Cocaine</string>
+    <string name="crf3b_q43_durg_3">Cannabis</string>
+    <string name="crf3b_q43_durg_4">Sedative (Diazepam/ Valium etc.)</string>
+    <string name="crf3b_q43_durg_5">Any other</string>
+
+    <string name="crf3b_q44_english">Which language is commonly used in her family?</string>
+    <string name="crf3b_q44_urdu">Ghar ma kon c zeban ma zayda baat cheet k jati ha</string>
+    <string name="crf3b_q44_opt_1">Sindhi</string>
+    <string name="crf3b_q44_opt_2">Punjabi</string>
+    <string name="crf3b_q44_opt_3">Pashto</string>
+    <string name="crf3b_q44_opt_4">Balochi</string>
+    <string name="crf3b_q44_opt_5">Urdu</string>
+    <string name="crf3b_q44_opt_6">Bengali</string>
+    <string name="crf3b_q44_opt_7">Hindku</string>
+    <string name="crf3b_q44_opt_8">Saraiki</string>
+    <string name="crf3b_q44_opt_9">Kutchi</string>
+    <string name="crf3b_q44_opt_10">Kashmiri</string>
+    <string name="crf3b_q44_opt_11">Sheena</string>
+    <string name="crf3b_q44_opt_12">Burmi</string>
+    <string name="crf3b_q44_opt_13">Gujrati</string>
+    <string name="crf3b_q44_opt_14">Other (Specify)</string>
+
+    <string name="crf3b_q45_english">To which religion does her family belong?</string>
+    <string name="crf3b_q45_urdu">App ka mazhab kya ha</string>
+    <string name="crf3b_q45_opt_1">Muslim</string>
+    <string name="crf3b_q45_opt_2">Hindu</string>
+    <string name="crf3b_q45_opt_3">Christian</string>
+    <string name="crf3b_q45_opt_4">Sikh</string>
+    <string name="crf3b_q45_opt_5">Buddhist</string>
+    <string name="crf3b_q45_opt_6">Parsi</string>
+    <string name="crf3b_q45_opt_7">No religion</string>
+    <string name="crf3b_q45_opt_8">Other (Specify)</string>
+
+    <string name="crf3b_q46_english">How many people live in household?</string>
+    <string name="crf3b_q46_urdu">App k ghar ma kitnay afraad rehtay han</string>
+
+    <string name="crf3b_q47_english">How many rooms are in the household for sleeping?</string>
+    <string name="crf3b_q47_urdu">Ghar ma kitnay kamray han jo sonay k liya istimaal hotay han</string>
+
+    <string name="crf3b_q48_english">Does your household have a separate room/space for cooking?</string>
+    <string name="crf3b_q48_urdu">Ghar ma khana pakanay k liya kya koi makhsoos kamra ya jaga ha</string>
+
+    <string name="crf3b_q49_english">What is the main kind of energy is used for cooking in this house?</string>
+    <string name="crf3b_q49_urdu">Ghar ma khana pakanay k liya kis cheez ka istimaal hota ha</string>
+    <string name="crf3b_q49_opt_1">Charcoal (Koila)</string>
+    <string name="crf3b_q49_opt_2">Firewood (Lakri)</string>
+    <string name="crf3b_q49_opt_3">Kerosene (Maati ka tail)</string>
+    <string name="crf3b_q49_opt_4">Electricity (Bijli)</string>
+    <string name="crf3b_q49_opt_5">Gas (sui gas)</string>
+    <string name="crf3b_q49_opt_6">Cow dung (Gai ka gobar)</string>
+    <string name="crf3b_q49_opt_7">Other (specify) (Koi aur cheez us ka naam likhain)</string>
+    <string name="crf3b_q49_opt_8">Don’t know (pata nahi)</string>
+
+    <string name="crf3b_q50_english">What material is used for the floor of the house?</string>
+    <string name="crf3b_q50_urdu">Ghar ka farash banay k liya kis cheez ka istimaal kiya gaya ha</string>
+    <string name="crf3b_q50_opt_1">Natural/mud (Maati)</string>
+    <string name="crf3b_q50_opt_2">Cement (Plastur)</string>
+    <string name="crf3b_q50_opt_3">Wood (Lakri)</string>
+    <string name="crf3b_q50_opt_4">Tiles (tiles)</string>
+    <string name="crf3b_q50_opt_5">Other (specify) (Koi aur cheez us ka naam likhain)</string>
+    <string name="crf3b_q50_opt_6">Don’t know (Pata nahi)</string>
+
+    <string name="crf3b_q51_english">What material is used for the wall of the house?</string>
+    <string name="crf3b_q51_urdu">Ghar k deewarain banay k liya kis cheez ka istimaal kiya gaya ha</string>
+    <string name="crf3b_q51_opt_1">Natural/mud (Maati)</string>
+    <string name="crf3b_q51_opt_2">Cement (Plastur)</string>
+    <string name="crf3b_q51_opt_3">Wood (Lakri)</string>
+    <string name="crf3b_q51_opt_4">Tiles (tiles)</string>
+    <string name="crf3b_q51_opt_5">Other (specify) (Koi aur cheez us ka naam likhain)</string>
+    <string name="crf3b_q51_opt_6">Don’t know (Pata nahi)</string>
+
+
+    <string name="crf3b_q52_english">What is the basic source of drinking water for the household members?</string>
+    <string name="crf3b_q52_urdu">Ghar ma kis zaqai sa peenay ka pani istimal kiya jata ha</string>
+    <string name="crf3b_q52_opt_1">Piped (Pipe ka pani)</string>
+    <string name="crf3b_q52_opt_2">Tube well (tube well ka pani)</string>
+    <string name="crf3b_q52_opt_3">Hand pump (Hand punmp sa pani)</string>
+    <string name="crf3b_q52_opt_4">Community tap water (mohalay ma sa naal ka pani)</string>
+    <string name="crf3b_q52_opt_5">Water tanker (pani ka tanker</string>
+    <string name="crf3b_q52_opt_6">Bottle (botel wala pani)</string>
+    <string name="crf3b_q52_opt_7">Boring (kuwain k pani)</string>
+    <string name="crf3b_q52_opt_8">Any other (Specify) (koi aur tu us ka naam likhain)</string>
+
+
+    <string name="crf3b_q53_english">Does the woman treat water to make it suitable for drinking?</string>
+    <string name="crf3b_q53_urdu">Kya peenay sa pehlay pani ko peenay ka qabil banaya jata ha</string>
+    <string name="crf3b_q53_opt_1">Yes, regularly (G han, hamesha)</string>
+    <string name="crf3b_q53_opt_2">Yes, but occasionally (G han, laikin kabhi kabhi)</string>
+    <string name="crf3b_q53_opt_3">No (Nahi) </string>
+    <string name="crf3b_q53_opt_4">Do not know (Pata nahi)</string>
+
+    <string name="crf3b_q54_english">What technique does the woman use to make water suitable for drinking?</string>
+    <string name="crf3b_q54_urdu">Is ma sa kon sa tareeqa istimaal kiya jata jis sa pani peenay k qabil ho jay</string>
+    <string name="crf3b_q54_opt_1">Boil (Ubala jata ha)</string>
+    <string name="crf3b_q54_opt_2">Use of chlorine or bleach (Cholrine ya bleach dala jata ja)</string>
+    <string name="crf3b_q54_opt_3">Strain through a cloth (Kapray sa chaan k)</string>
+    <string name="crf3b_q54_opt_4">Pass the water through soil, sand etc. (Pani ka gara ya matti ma sa guzara jata ha)</string>
+    <string name="crf3b_q54_opt_5">Solar disinfection (soraj k shuwaoun k zareeya jaraseem maray jatay han)</string>
+    <string name="crf3b_q54_opt_6">Pour in a utensil and let it stand in an open air (kisi baray bartan ma daal k rakh daitay han khuli hawa ma)</string>
+    <string name="crf3b_q54_opt_7">Filter is available in the house (ghar ma pani saaf karnay wala filter ha)</string>
+    <string name="crf3b_q54_opt_8">Buy filtered water from the market (bazar sa filter howa pani use hota ha)</string>
+    <string name="crf3b_q54_opt_9">Do not know (pata nahi)</string>
+
+    <string name="crf3b_q55_english">What is the source of water for cooking and hand washing etc?</string>
+    <string name="crf3b_q55_urdu">Kis cheez sa pani lay kar khana pakanay/peenay and dhonay k liya istimaal hota ha?</string>
+    <string name="crf3b_q55_opt_1">Piped (Pipe ka pani)</string>
+    <string name="crf3b_q55_opt_2">Tube well (tube well ka pani)</string>
+    <string name="crf3b_q55_opt_3">Hand pump (Hand punmp sa pani)</string>
+    <string name="crf3b_q55_opt_4">Community tap water (mohalay ma sa naal ka pani)</string>
+    <string name="crf3b_q55_opt_5">Water tanker (pani ka tanker</string>
+    <string name="crf3b_q55_opt_6">Bottle (botel wala pani)</string>
+    <string name="crf3b_q55_opt_7">Boring (kuwain k pani)</string>
+    <string name="crf3b_q55_opt_8">Any other (Specify) (koi aur tu us ka naam likhain)</string>
+
+    <string name="crf3b_q56_english">Age of the woman in years</string>
+    <string name="crf3b_q56_urdu">Aurat k umer saloun ma</string>
+
+    <string name="crf3b_q57_english">Did she attend school or madrassa, for education?</string>
+    <string name="crf3b_q57_urdu">Auart taleem k liya kahan gay school ya madrasa?</string>
+    <string name="crf3b_q57_opt_1">Yes, school (G han, school sa)</string>
+    <string name="crf3b_q57_opt_2">Yes, only madrassa (Skip to Q58) (G han, madrasay sa)</string>
+    <string name="crf3b_q57_opt_3">Yes, both (G han, doun jaga sa)</string>
+    <string name="crf3b_q57_opt_4">No (Nahi)</string>
+
+    <string name="crf3b_q58_english">What level of education did the woman receive? Primary, secondary, College or more?</string>
+    <string name="crf3b_q58_urdu">Aurat na taleem kahan tak hasil k</string>
+    <string name="crf3b_q58_opt_1">Primary (1 sa 5 jamat tak)</string>
+    <string name="crf3b_q58_opt_2">Secondary (Matric tak)</string>
+    <string name="crf3b_q58_opt_3">College (college gay 11 aur 12 parhanay) </string>
+    <string name="crf3b_q58_opt_4">University (college k baad university bh gay)</string>
+
+    <string name="crf3b_q59_english">Total years of education completed?</string>
+    <string name="crf3b_q59_urdu">Kitnay saal k taleem hasil k</string>
+
+
+    <!--CRF3C Councling and other questions-->
+    <string name="crf3c_q25_a_english">Which arm, did the PW enrolled in?</string>
+    <string name="crf3c_q25_a_urdu">LW ka indiraj kis arm ma howa</string>
+
+    <string name="crf3c_q26_a_english">Number of days for which supply was given</string>
+    <string name="crf3c_q26_a_urdu">Kitnay dinoun k sacchay diya LW ko</string>
+
+    <string name="crf3c_q27_a_english">Number of sachet given</string>
+    <string name="crf3c_q27_a_urdu">Kitnay sachet diya LW ko</string>
+
+    <string name="crf3c_q28_a_english">Maamta product is balance protein and energy supplement for lactating women. </string>
+    <string name="crf3c_q28_a_urdu">Maamta sachet aik protein based balanced energy supplement ha jo khaas tor pay dhood pilanay wali maoun k liya ha</string>
+
+    <string name="crf3c_q28_b_english">Before use, try to press sealed sachet slowly with your fingers to soften this paste</string>
+    <string name="crf3c_q28_b_urdu">Istimaal sa pehaly sachet ko haath sa achi tarhan daba k andar mojoud paste ko naram kar lain</string>
+
+    <string name="crf3c_q28_c_english">Taste of product is sweet in nature, but consider it as a special product only design for lactating women.</string>
+    <string name="crf3c_q28_c_urdu">Andar mojoud paste ka zaiqa thora sa meetha ha, jo k sirf aur sirf dhoodh pilanay wali maoun k liya banaya gaya ha</string>
+
+    <string name="crf3c_q28_d_english">After eating this product, you may have improved breast milk to feed your child.</string>
+    <string name="crf3c_q28_d_urdu">Is ko khanay k baad, Maa k dhood ma izafa ho ga takay app apnay bachay ko acha dhood pila sakain</string>
+
+    <string name="crf3c_q28_e_english">It will only benefit, when you consume 2 complete sachets in a day for next 6 months and exclusively breastfeed your child.</string>
+    <string name="crf3c_q28_e_urdu">Is ka zayda faida tab ho ga jab app 2 sacchets 1 din ma musalsal 6 mahinay tak istimaal karain and saath ma bachay ko sirf aur sirf ma aka dhood pilain</string>
+
+    <string name="crf3c_q28_f_english">Our team will provide you 14 days supply, which you have to consume according to instructions</string>
+    <string name="crf3c_q28_f_urdu">Hamari team app ko 14 din k sachet faraham karay gee jo k app na di gay hidayaat k mutabiq istimal karna ha</string>
+
+    <string name="crf3c_q28_g_english">Maamta product is designed only for lactating women, it may cause side effects if children and other adult member will use it.</string>
+    <string name="crf3c_q28_g_urdu">Yeh product sirf aur sirf dhood pilanay wali maoun k liya banai gay ha, bachay ya kisi aur ko khilanay k surat ma koi bh muzir asraat ho saktay han</string>
+
+    <string name="crf3c_q28_h_english">Do not share Maamta with anyone in the family, even in a small quantity</string>
+    <string name="crf3c_q28_h_urdu">App ko jo sachet diya gaya ha us ko ghar ma kisi ko aur istimaal na karnay dain</string>
+
+    <string name="crf3c_q28_i_english">You can eat Maamta directly from the sachet and save the remaining amount in a covered utensil or you may completely pour the sachet in a plate and eat it with spoon. Do not forget to cover the plate if amount is left over.</string>
+    <string name="crf3c_q28_i_urdu">App Maamta sachet rookha bh kha sakti han, ya plate ma nikal k chamchay sa bh. Agar istimal k baad thori miqdar sacchay ma bach jay tu sachet ko bund kar k rakh lain ya phir plate ko dhak k rakhain</string>
+
+    <string name="crf3c_q28_j_english">If you develop any type of rash, diarrhea, vomiting or any other unusual sign and symptoms, please immediately contact us</string>
+    <string name="crf3c_q28_j_urdu">Agar maamta khanay k baad app ko kisi bh kisam ka masla ho maslan pait kharab, ulti, jisam pay laal nishan ana, tu foran hum sa rabta karain</string>
+
+    <string name="crf3c_q28_k_english">Unused portion of Maamta sachet should be consumed within a day</string>
+    <string name="crf3c_q28_k_urdu">Maamta sachay kholnay k baad aik din k andar istimaal kar laina chahiya,  istimal k baad khali sachet ko sambhal k rakahin appnay pass</string>
+
+    <string name="crf3c_q28_l_english">Save the empt y sachet in a bag provided to you AND remember that empty sachet will be collected by the team later</string>
+    <string name="crf3c_q28_l_urdu">istimal k baad khali sachet ko sambhal k rakahin appnay pass aur Yaad rahay k khali sachet hamari team app sa jama karay gee tu un ko hifazat sa rakahin.</string>
+
+    <string name="crf3c_q29_english">Key ANC messages for household and woman</string>
+    <string name="crf3c_q29_urdu">Antenatal care k zarori messages</string>
+
+    <string name="crf3c_q29_a_english">Provide Iron and folic acid to pregnant woman</string>
+    <string name="crf3c_q29_a_urdu">PW ko iron k kali and folic acid k peeli golian day di</string>
+
+    <string name="crf3c_q29_b_english">Counsel on Tetanus Toxoid Vaccination</string>
+    <string name="crf3c_q29_b_urdu">Tetanus k injection k maloomat day deen</string>
+
+    <string name="crf3c_q29_c_english">Recommended schedule of TT vaccination</string>
+    <string name="crf3c_q29_c_urdu">Tetanus k injection k tarteeb bata di</string>
+
+    <string name="crf3c_q29_d_english">Explain Proper Nutrition of Pregnant woman</string>
+    <string name="crf3c_q29_d_urdu">PW ko hamaal k doran khurak k maloomat</string>
+
+    <string name="crf3c_q29_e_english">Counsel on proper rest and workload</string>
+    <string name="crf3c_q29_e_urdu">Maloomat hamaal k foran araam n kaam k noiyat</string>
+
+    <string name="crf3c_q29_f_english">Promoting recognition of danger signs during pregnancy</string>
+    <string name="crf3c_q29_f_urdu">Hamaal k doran khatray k aalmat k pehchaan</string>
+
+    <string name="crf3c_q29_g_english">Counsel on safe and clean delivery place</string>
+    <string name="crf3c_q29_g_urdu">Saaf suthri jaga par delivery karwain</string>
+
+    <string name="crf3c_q29_h_english">Choosing a birth Attendant</string>
+    <string name="crf3c_q29_h_urdu">Birth attendant ka sahi intikhaab</string>
+
+    <string name="crf3c_q29_i_english">Protecting the neonate from infection</string>
+    <string name="crf3c_q29_i_urdu">Paida honay walay bachay ho infection sa bachana</string>
+
+    <string name="crf3c_q29_j_english">Promoting clean birth/delivery kit</string>
+    <string name="crf3c_q29_j_urdu">Delivery k liya saath delivery kit ka intikhaab</string>
+
+    <string name="crf3c_q29_k_english">Promoting bathing care</string>
+    <string name="crf3c_q29_k_urdu">Nahanay ka tareeqa</string>
+
+    <string name="crf3c_q29_l_english">Promoting cord care</string>
+    <string name="crf3c_q29_l_urdu">Naaf k saif n care</string>
+
+    <string name="crf3c_q29_m_english">Birth notification to the our health worker within 72 hours of birth</string>
+    <string name="crf3c_q29_m_urdu">Pidaish k 72 hours k andar hamari team member ko aagah karna</string>
+
+    <string name="crf3c_q29_n_english">Exclusive breastfeeding</string>
+    <string name="crf3c_q29_n_urdu">Pidaish k baad bachay ko sirf aur sirf maa k dhoodh pilana</string>
+
+    <string name="crf3c_q29_o_english">Childhood immunization </string>
+    <string name="crf3c_q29_o_urdu">Pidaish k baad bachay ko hifazati injection lagana</string>
+
+    <string name="crf3c_q29_p_english">Location of vaccination center</string>
+    <string name="crf3c_q29_p_urdu">Hifazatai teekoun k markaz k jaga</string>
+
+    <string name="crf3c_q29_q_english">Hygiene of mother and newborn</string>
+    <string name="crf3c_q29_q_urdu">Maa aur bachay k safai and suthra</string>
+
+    <string name="crf3c_q30_english">Key Exclusive Breastfeeding messages</string>
+    <string name="crf3c_q30_urdu">Bachay ko sirf aur sirf Maa ka dhood pilanay k zarori maloomat</string>
+
+    <string name="crf3c_q30_a_english">Hold your newborn skin-to-skin immediately after birth. This will keep your baby warm and breathing well, help him or her reach the breast easily, and help you and your baby feel close</string>
+    <string name="crf3c_q30_a_urdu">Apnay bacha ko apnay app sa jooray rakhain paidaish k foran baad. Takay app ka bacha garam rahay and asani sa sans lay sakay, aur us ko jald sa jald ma ka dhood dain</string>
+
+    <string name="crf3c_q30_b_english">Begin breastfeeding within the first hour of birth. Early breastfeeding helps the baby learn to breastfeed while the breast is still soft, and helps reduce your bleeding.</string>
+    <string name="crf3c_q30_b_urdu">Maa ko chahiya k bachay ko apna dhood pidaish k aik ghantay k andar andar shuru karwa day takay bacha jaldi sa jaldi dhood peena seek lay, jab tak breat naram ha, and is sa maa k bleeding ma bh kami ho gee</string>
+
+    <string name="crf3c_q30_c_english">Colostrum, the thick yellowish milk, is good for your baby</string>
+    <string name="crf3c_q30_c_urdu">Ma ka pehla doodh jo k peelay rung ka hota ha, bachay k liya bay hud mufeed ha</string>
+
+    <string name="crf3c_q30_d_english">Colostrum helps protect your baby from illness and helps remove the first dark stool</string>
+    <string name="crf3c_q30_d_urdu">Ma ka pehla dodh bachay ko har tarhan k beemarioun sa mehfooz rekhta ha, and us ko pehlay pakhana jaldi a jata ha</string>
+
+    <string name="crf3c_q30_e_english">Breastfeed frequently to help your breast milk ‘come in’ and to ensure plenty of breast milk.</string>
+    <string name="crf3c_q30_e_urdu">Maa bachay ko jitna zayda dhood peelai gee us sa dhood k miqdar ma izafa ho ga</string>
+
+    <string name="crf3c_q30_f_english">Do not give water or other liquids/fluids to your baby during the first days after birth. They arenot necessary and are dangerous for your newborn.</string>
+    <string name="crf3c_q30_f_urdu">Bachay ko maa k dhood k ilawa koi bh dosri cheez masla pani, shaihad, juice nahi daina khuch din tak. Dhood k ilawa har cheez bachay k liya nuqsanday ha</string>
+
+    <string name="crf3c_q30_g_english">Do not give anything else, not even water, during your baby’s first 6 months</string>
+    <string name="crf3c_q30_g_urdu">Paidaish k baad 6 mahinay tak bachay ko sirf maa ka dhood daina ha, yahan tak k pani bh nahi</string>
+
+    <string name="crf3c_q30_h_english">Breast milk provides all the food and water that your baby needs during the first 6 months.</string>
+    <string name="crf3c_q30_h_urdu">Ma ka dhood bachay ko har tarhan k gazaiat day daita ha, har tarhan k khorak and pani jo bachay ko 6 mahinay tak chahiya</string>
+
+    <string name="crf3c_q30_i_english">Even during very hot weather, breast milk will satisfy your baby’s thirst.</string>
+    <string name="crf3c_q30_i_urdu">Sakht garmi ma bh maa ka dhood bachy k peeas bh khatam karnay k liya kafi ha</string>
+
+    <string name="crf3c_q30_j_english">Giving your baby anything else will cause him/her to suckle less and will reduce the amount of breast milk that you produce.</string>
+    <string name="crf3c_q30_j_urdu">Agar maa baachay ko khuch aur day gee tu us sa bacha ma aka doodh kaam peeya ga and us sa dhood bh ana kaam ho jay ga</string>
+
+    <string name="crf3c_q30_k_english">Water, other liquids and foods can make the baby sick</string>
+    <string name="crf3c_q30_k_urdu">Pani, dosray mashroob and upper sa di hoi khorak app k bachay ko beemar kar day gee</string>
+
+    <string name="crf3c_q30_l_english">You can give medicines if they are recommended by your health provider</string>
+    <string name="crf3c_q30_l_urdu">Bachay ko agar doctor k mashwaray k baad koi deewai dainay k zarorat paray tu wo di ja sakti ha</string>
+
+    <string name="crf3c_q30_m_english">Breastfeed on demand, both day and night(8 to 12 times) to build up your breast milk supply</string>
+    <string name="crf3c_q30_m_urdu">Bachay ko maa ka dhood din ma 8 to 12 dafa daina lazmi ha, us sa maa ko dhood bh wafer miqdar ma ai ga</string>
+
+    <string name="crf3c_q31_english">PW enrolled in Maamta + Azithromycin  Arm (Arm C)</string>
+    <string name="crf3c_q31_urdu">PW ka indiraj Arm C ma howa ha jis ma Maamta sachet aur Azithromycin doun di jain gee</string>
+
+    <string name="crf3c_q32_english">PW enrolled in Maamta + Azithromycin  Arm (Arm C)</string>
+    <string name="crf3c_q32_urdu">PW ka indiraj Arm C ma howa ha jis ma Maamta sachet aur Azithromycin doun di jain gee</string>
+
+
+    <!--CRF4A Councling and other questions-->
+
+    <string name="crf4a_q18_english">Visit outcome</string>
+    <string name="crf4a_q18_urdu">Janay ka natija</string>
+
+    <string name="crf4a_q19_english">Is PW alive?</string>
+    <string name="crf4a_q19_urdu">PW zinda ha</string>
+
+    <string name="crf4a_q20_english">Date of death</string>
+    <string name="crf4a_q20_urdu">Agar faut ho gay tu us k tareekh</string>
+
+    <string name="crf4a_q21_english">Time of death</string>
+    <string name="crf4a_q21_urdu">Kis waqt us k maut waqay hoi</string>
+
+    <string name="crf4a_q22_english">Is PW enrolled in Arm A</string>
+    <string name="crf4a_q22_urdu">kya PW arm A m enrolled h</string>
+
+    <string name="crf4a_q23_english">How often are you using this supplement since last visit?</string>
+    <string name="crf4a_q23_urdu">AAP kitni dafa yeh sacchet use karti ha tab sa aj tak jab hum pichli dafa ai thay</string>
+
+    <string name="crf4a_q24_english">System to copy date of last completely filled CRF4</string>
+    <string name="crf4a_q24_urdu">null</string>
+
+    <string name="crf4a_q25_english">Q25: Number of days since last visit To be calculated from Q23 and today’s date</string>
+    <string name="crf4a_q25_urdu">Q25: null</string>
+
+    <string name="crf4a_q26_english">Q26: Total number of sachet supposed to be used by woman. System to calculate from Q24 multiply by 2</string>
+    <string name="crf4a_q26_urdu">Q29: null</string>
+
+    <string name="crf4a_q27_english">Q27: Numbers of empty sachets returned by PW</string>
+    <string name="crf4a_q27_urdu">Q27: Khali sacchat k tadaad jo PW na wapis kiya</string>
+
+    <string name="crf4a_q28_english">Q28: Total amount of sachet used by PW since last visit? Probe well</string>
+    <string name="crf4a_q28_urdu">Q28: Aik dafa phir PW sa pochain k kitnay saahet use kiya pichli dafa sa lay k ab tak</string>
+
+    <string name="crf4a_q29_english">Q29: Amount of sachet which were used by someone else at home or outside the home since? Probe well</string>
+    <string name="crf4a_q29_urdu">Q29:Sacchat k taadad jo kisi aur na istimaal kiya ghar ma ya ghar ma sa bahir kisi na</string>
+
+    <string name="crf4a_q30_english">Q30: Compliance in % - System to calculate as, Value in Q27 divided by value in Q25 multiply by 100</string>
+    <string name="crf4a_q30_urdu">Q30: Compliance k % Yeh system khudi calculate kar k likh day ga Q29 and Q31 ma dali gay entries k hisab sa</string>
+
+    <string name="crf4a_q31_english">Q31: Based on Q32, was Maamta shared by any anyone else?</string>
+    <string name="crf4a_q31_urdu">Q31: Kya Maamta sachet kisi aur nab h istimaal kiya </string>
+
+    <string name="crf4a_q32_english">Q32: Whom did the woman share the Maamta sachet with?</string>
+    <string name="crf4a_q32_urdu">Q32: PW na diya gay sachet kis k saath mil k istimaal kiya</string>
+
+    <string name="crf4a_q32_a_english">Q32_1: Children at home </string>
+    <string name="crf4a_q32_a_urdu">Q32_1: Bachay k dosray behan bhai</string>
+
+    <string name="crf4a_q32_b_english">Q32_2: Other lactating woman at home</string>
+    <string name="crf4a_q32_b_urdu">Q32_2: koi aur dhood pilanay wali maa</string>
+
+    <string name="crf4a_q32_c_english">Q32_3: Other pregnant woman at home</string>
+    <string name="crf4a_q32_c_urdu">Q32_3: koi aur haamla aurat ghar ma</string>
+
+    <string name="crf4a_q32_d_english">Q32_4: Male family member</string>
+    <string name="crf4a_q32_d_urdu">Q32_4: ghar ka koi mard</string>
+
+    <string name="crf4a_q32_e_english">Q32_5: Neighbours</string>
+    <string name="crf4a_q32_e_urdu">Q32_5: mohalaydar</string>
+
+    <string name="crf4a_q32_f_english">Q32_6: Other</string>
+    <string name="crf4a_q32_f_urdu">Q32_6: koi aur tu us k baray ma likhain</string>
+
+
+    <string name="crf4a_q33_english">Q33: Did you notice any side effects of Maamta since last visit?</string>
+    <string name="crf4a_q33_urdu">Q33:</string>
+
+    <string name="crf4a_q34_english">Q34: If yes, what was/were the side effects?</string>
+    <string name="crf4a_q34_urdu">Q34: Agar howa tu wo kya tha</string>
+
+    <string name="crf4a_q34_a_english">Q34_1: Diarrhea</string>
+    <string name="crf4a_q34_a_urdu">Q34_1: Dast</string>
+
+    <string name="crf4a_q34_b_english">Q34_2: Vomiting </string>
+    <string name="crf4a_q34_b_urdu">Q34_2: ultian</string>
+
+    <string name="crf4a_q34_c_english">Q34_3: Abdominal pain</string>
+    <string name="crf4a_q34_c_urdu">Q34_3: pait ma dard</string>
+
+    <string name="crf4a_q34_d_english">Q34_4: Rashes</string>
+    <string name="crf4a_q34_d_urdu">Q34_4: jisam pay laal nishan</string>
+
+    <string name="crf4a_q34_e_english">Q34_5: Other (Specify)</string>
+    <string name="crf4a_q34_e_urdu">Q34_5: koi aur</string>
+
+
+    <string name="crf4a_q35_english">What was/were the reasons of not using the supplement?</string>
+    <string name="crf4a_q35_urdu">Agar PW na supplement use nahi kiya tu us ka reason kya tha</string>
+
+    <string name="crf4a_q35_a_english">Q35_1: Taste is not good/bad taste</string>
+    <string name="crf4a_q35_a_urdu">Q35_1: zaiqa acha nahi ha</string>
+
+    <string name="crf4a_q35_b_english">Q35_2: It causes diarrhoea</string>
+    <string name="crf4a_q35_b_urdu">Q35_2: khana k baad motion hota ha</string>
+
+    <string name="crf4a_q35_c_english">Q35_3: It causes vomiting</string>
+    <string name="crf4a_q35_c_urdu">Q35_3: khanay k baad ulti ati ha</string>
+
+    <string name="crf4a_q35_d_english">Q35_4: It causes abdominal pain</string>
+    <string name="crf4a_q35_d_urdu">Q35_4: khanay k baad pait ma dard hoti ha</string>
+
+    <string name="crf4a_q35_e_english">Q35_5: It causes rashes</string>
+    <string name="crf4a_q35_e_urdu">Q35_5: jisam pay laal nishan ho jatay han</string>
+
+    <string name="crf4a_q35_f_english">Q35_6: Other illness</string>
+    <string name="crf4a_q35_f_urdu">Q35_6: koi aur masla</string>
+
+    <string name="crf4a_q35_g_english">Q35_7: Forget to take it</string>
+    <string name="crf4a_q35_g_urdu">Q35_7: bhool jati ha</string>
+
+    <string name="crf4a_q35_h_english">Q35_8: Finished before time</string>
+    <string name="crf4a_q35_h_urdu">Q35_8: time sa pehlay sachet khatam ho gay thay</string>
+
+    <string name="crf4a_q35_i_english">Q35_9: Went somewhere</string>
+    <string name="crf4a_q35_i_urdu">Q35_9: kahin chali gay th and sachet pas nahi thay</string>
+
+    <string name="crf4a_q35_j_english">Q35_10: Not applicable, PW is consuming Maamta. </string>
+    <string name="crf4a_q35_j_urdu">Q35_10: Not applicable, PW is consuming Maamta.</string>
+
+    <string name="crf4a_q35_k_english">Q35_11: Other (Specify)</string>
+    <string name="crf4a_q35_k_urdu">Q35_11: koi aur</string>
+
+
+    <string name="crf4a_q36_english">null</string>
+    <string name="crf4a_q36_urdu">null</string>
+
+
+    <!--CRF4 A Counsling-->
+    <string name="crf4a_q37_a_english">Maamta product is balance protein and energy supplement for lactating women. </string>
+    <string name="crf4a_q37_a_urdu">Maamta sachet aik protein based balanced energy supplement ha jo khaas tor pay dhood pilanay wali maoun k liya ha</string>
+
+    <string name="crf4a_q37_b_english">Before use, try to press sealed sachet slowly with your fingers to soften this paste</string>
+    <string name="crf4a_q37_b_urdu">Istimaal sa pehaly sachet ko haath sa achi tarhan daba k andar mojoud paste ko naram kar lain</string>
+
+    <string name="crf4a_q37_c_english">Taste of product is sweet in nature, but consider it as a special product only design for lactating women.</string>
+    <string name="crf4a_q37_c_urdu">Andar mojoud paste ka zaiqa thora sa meetha ha, jo k sirf aur sirf dhoodh pilanay wali maoun k liya banaya gaya ha</string>
+
+    <string name="crf4a_q37_d_english">After eating this product, you may have improved breast milk to feed your child.</string>
+    <string name="crf4a_q37_d_urdu">Is ko khanay k baad, Maa k dhood ma izafa ho ga takay app apnay bachay ko acha dhood pila sakain</string>
+
+    <string name="crf4a_q37_e_english">It will only benefit, when you consume 2 complete sachets in a day for next 6 months and exclusively breastfeed your child.</string>
+    <string name="crf4a_q37_e_urdu">Is ka zayda faida tab ho ga jab app 2 sacchets 1 din ma musalsal 6 mahinay tak istimaal karain and saath ma bachay ko sirf aur sirf ma aka dhood pilain</string>
+
+    <string name="crf4a_q37_f_english">Maamta product is designed only for lactating women, it may cause side effects if children and other adult member will use it.</string>
+    <string name="crf4a_q37_f_urdu">Yeh product sirf aur sirf dhood pilanay wali maoun k liya banai gay ha, bachay ya kisi aur ko khilanay k surat ma koi bh muzir asraat ho saktay han</string>
+
+    <string name="crf4a_q37_g_english">Do not share Maamta with anyone in the family, even in a small quantity</string>
+    <string name="crf4a_q37_g_urdu">App ko jo sachet diya gaya ha us ko ghar ma kisi ko aur istimaal na karnay dain</string>
+
+    <string name="crf4a_q37_h_english">You can eat Maamta directly from the sachet and save the remaining amount in a covered utensil or you may completely pour the sachet in a plate and eat it with spoon. Do not forget to cover the plate if amount is left over.</string>
+    <string name="crf4a_q37_h_urdu">App Maamta sachet rookha bh kha sakti han, ya plate ma nikal k chamchay sa bh. Agar istimal k baad thori miqdar sacchay ma bach jay tu sachet ko bund kar k rakh lain ya phir plate ko dhak k rakhain</string>
+
+    <string name="crf4a_q37_i_english">If you develop any type of rash, diarrhea, vomiting or any other unusual sign and symptoms, please immediately contact us</string>
+    <string name="crf4a_q37_i_urdu">Agar maamta khanay k baad app ko kisi bh kisam ka masla ho maslan pait kharab, ulti, jisam pay laal nishan ana, tu foran hum sa rabta karain</string>
+
+    <string name="crf4a_q37_j_english">Unused portion of Maamta sachet should be consumed within a day and save the empty sachet in a bag provided to you</string>
+    <string name="crf4a_q37_j_urdu">Maamta sachay kholnay k baad aik din k andar istimaal kar laina chahiya, and istimal k baad khali sachet ko sambhal k rakahin appnay pass</string>
+
+    <string name="crf4a_q37_k_english">Our team will provide you 14 days supply, which you have to consume according to instructions</string>
+    <string name="crf4a_q37_k_urdu">Hamari team app ko 14 din k sachet faraham karay gee jo k app na di gay hidayaat k mutabiq istimal karna ha</string>
+
+    <string name="crf4a_q37_l_english">null</string>
+    <string name="crf4a_q37_l_urdu">Isko rozmarra ke khoaraak k sath istemaal karna hai aur zaiqa acha karnay k liye aap is ko kisi bhe cheez k sath jaisay k roti, paratha, salad, bread, rus, ya jo cheez apko acha lagay, us k sath istemaal kar saktay hain</string>
+
+    <string name="crf4a_q37_m_english">Empty sachet will be collected by the team</string>
+    <string name="crf4a_q37_m_urdu">Yaad rahay k khali sachet hamari team app sa jama karay gee tu un ko hifazat sa rakahin</string>
+
+    <string name="crf4a_q38_a_english"></string>
+    <string name="crf4a_q38_a_urdu">Haamla khatoon ko sehat mand rehnay k liye aur zachgi k waqt taqat paida karnay k liye izaafi Khoaraak ke zaroorat hoti hai.</string>
+
+    <string name="crf4a_q38_b_english"></string>
+    <string name="crf4a_q38_b_urdu">Haamla ko aam dino se ziyada khana khanay ke zaroorat hoti hai, taakay usski sehat acha rahe aur uss ka anay wala bacha bhe achi sehat k sath paida ho.</string>
+
+    <string name="crf4a_q38_c_english"></string>
+    <string name="crf4a_q38_c_urdu">Din mai 3 baar khana zaroor khayen aur har khanay main roti aur salan ke miqdaar to dugna karden.</string>
+
+    <string name="crf4a_q38_d_english"></string>
+    <string name="crf4a_q38_d_urdu">Zabziyan, doodh, anda, lassi, Ghee wali roti, Halwa, tamatar, kheera, palak, saagh, hara dhaniya, gajar, aur mosami phal wagaira ka istemaal ziyda se ziyadakaren.</string>
+
+    <string name="crf4a_q38_e_english"></string>
+    <string name="crf4a_q38_e_urdu">Hamal k doraan har khoraak ka isemaal ziyda se ziyada karen</string>
+
+    <string name="crf4a_q38_f_english"></string>
+    <string name="crf4a_q38_f_urdu">Gosht, kaleji, mugri, aur mashli ka istemal barha den.</string>
+
+    <string name="crf4a_q38_g_english"></string>
+    <string name="crf4a_q38_g_urdu">Hamal k doran aur baad main bhi, Gutka, paan, chaliya, tambakoo noshi se mukammal parhaiz Karen, ye sab apkay liye aur apkay gharanay k liye jaan lewa cheezain hain</string>
+
+
+    <!--crf5b Councling and other questions-->
+
+    <string name="crf5b_q18_english">Visit outcome </string>
+    <string name="crf5b_q18_urdu">Janay ka muqsad</string>
+    <string name="crf5b_q18_opt_1">Complete (Muqamaal)</string>
+    <string name="crf5b_q18_opt_2">Woman not present (Maa/bacha moujood nahi)</string>
+    <string name="crf5b_q18_opt_3">Refused (inkar kar diya)</string>
+    <string name="crf5b_q18_opt_4">Household locked (ghar bund ha)</string>
+    <string name="crf5b_q18_opt_5">Permanent migration (mustaqil chali gay)</string>
+
+    <string name="crf5b_q19_english">Is PW alive?</string>
+    <string name="crf5b_q19_urdu">Kya PW zinda ha?</string>
+
+    <string name="crf5b_q20_english">Date of death</string>
+    <string name="crf5b_q20_urdu">Agar maut ho gay tu us k tareekh</string>
+
+    <string name="crf5b_q21_english">Time of death</string>
+    <string name="crf5b_q21_urdu">Maut ka waqt</string>
+
+    <string name="crf5b_q22_english">Is woman still pregnant?</string>
+    <string name="crf5b_q22_urdu">khatoon abhi b pregnant hai?</string>
+
+    <string name="crf5b_q23_english">Has PW eaten anything between this specific hours </string>
+    <string name="crf5b_q23_urdu">Kya PW ma pichaly 24 ghantoun ma khuch khaya ha?</string>
+
+    <string name="crf5b_q24_english">Did Woman consume any cooked food or recipe during this hour? (For example Roti, Chawal, Daal k Salan. There is a great possibility that PW used two different recipes together, like route with some Salan, Rich with Daal, you need to mention both separately i.e. separate entry for both. </string>
+    <string name="crf5b_q24_urdu">Kya PW na koi paki hoi cheez ya paka howa khana khaya ha?</string>
+
+    <string name="crf5b_q25_english">Where this was made?</string>
+    <string name="crf5b_q25_urdu">Jo PW na khaya ha wo kahan tayyar howa tha?</string>
+    <string name="crf5b_q25_opt_1">Own home (apnay ghar ma)</string>
+    <string name="crf5b_q25_opt_2">Somewhere else (Kahin aur paka tha)</string>
+
+    <string name="crf5b_q26_english">Recipe description which was consumed to a PW during this specific hour?</string>
+    <string name="crf5b_q26_urdu">Jo PW na khaya ha us k pakanay k tarqeeb apna pass likhain</string>
+
+    <string name="crf5b_q27_english">Code of the recipe used</string>
+    <string name="crf5b_q27_urdu">Us receipe ka code manual ma sa dhek k likhain</string>
+
+    <string name="crf5b_q28_english">Portion size description If same item was consumed within same our, count it as one item</string>
+    <string name="crf5b_q28_urdu">Jo PW na khaya ha us ka size kya tha Agar aik he cheez iss ghantay main aik se ziyada baar khaye hai to aik he ginti mai shamil Karen</string>
+
+    <string name="crf5b_q29_english">Amount used in gram If same item was consumed within same hour, count it as one item</string>
+    <string name="crf5b_q29_urdu">Agar aik he cheez iss ghantay main aik se ziyada baar khaye hai to aik he ginti mai shamil karen Miqdar ko grams ma likhain</string>
+
+    <string name="crf5b_q30_english">Did Woman consume any other cooked food or recipe during this hour? (For example Roti, Chawal, Daal k Salan. There is a great possibility that PW used two different recipes together, like route with some Salan, Rich with Daal, you need to mention both separately i.e. separate entry for both.</string>
+    <string name="crf5b_q30_urdu">Kya PW na koi paki hoi cheez ya paka howa khana khaya ha?</string>
+
+    <string name="crf5b_q31_english">Where this was made?</string>
+    <string name="crf5b_q31_urdu">Jo PW na khaya ha wo kahan tayyar howa tha?</string>
+    <string name="crf5b_q31_opt_1">Own home (apnay ghar ma)</string>
+    <string name="crf5b_q31_opt_2">Somewhere else (Kahin aur paka tha)</string>
+
+    <string name="crf5b_q32_english">Recipe description which was consumed to a PW during this specific hour?</string>
+    <string name="crf5b_q32_urdu">Jo PW na khaya ha us k pakanay k tarqeeb apna pass likhain</string>
+
+
+    <string name="crf5b_q33_english">Code of the recipe used</string>
+    <string name="crf5b_q33_urdu">Us receipe ka code manual ma sa dhek k likhain</string>
+
+    <string name="crf5b_q34_english">Portion size description If same item was consumed within same our, count it as one item</string>
+    <string name="crf5b_q34_urdu">Jo PW na khaya ha us ka size kya tha Agar aik he cheez iss ghantay main aik se ziyada baar khaye hai to aik he ginti mai shamil Karen</string>
+
+    <string name="crf5b_q35_english">Amount used in gram If same item was consumed within same our, count it as one item</string>
+    <string name="crf5b_q35_urdu">Agar aik he cheez iss ghantay main aik se ziyada baar khaye hai to aik he ginti mai shamil karen Miqdar ko grams ma likhain</string>
+
+    <string name="crf5b_q36_english">Is there any food item which was consumed by the PW during this specific hour? Like Banana, Apple, Juice, Milk, Salad, Biscuit There may be chance PW used salad, which contains multiple items mix with each other, you need to enter all the things separately</string>
+    <string name="crf5b_q36_urdu">Koi aur khanay k cheez jo PW na khai ha pichay 24 ghantoun ma Ho sakta ha PW na koi salad ya aisi cheez jis ma bhoot sari cheezain mix houn, wo sari cheezain jo us na khai han sab k alag alag entry karain</string>
+
+    <string name="crf5b_q37_english">Name of food item</string>
+    <string name="crf5b_q37_urdu">Jo cheez PW na khai ha us k naam likhain</string>
+
+    <string name="crf5b_q38_english">Code of food item used</string>
+    <string name="crf5b_q38_urdu">Us khanay k cheez ka code likhain</string>
+
+    <string name="crf5b_q39_english">Portion size description</string>
+    <string name="crf5b_q39_urdu">Jo PW na khaya ha us ka size kya tha </string>
+
+    <string name="crf5b_q40_english">Amount used in gram</string>
+    <string name="crf5b_q40_urdu">Miqdar likhain grams ma</string>
+
+    <string name="crf5b_q41_english">Is there any other food item which was consumed? Like Banana, Apple, Juice, Milk, Salad, Biscuit There may be chance PW used salad, which contains multiple items mix with each other, you need to enter all the things separately</string>
+    <string name="crf5b_q41_urdu">Koi aur khanay k cheez jo PW na khai ha pichay 24 ghantoun ma</string>
+
+    <string name="crf5b_q42_english">Name of food item</string>
+    <string name="crf5b_q42_urdu">Jo cheez PW na khai ha us k naam likhain</string>
+
+    <string name="crf5b_q43_english">Code of food item used</string>
+    <string name="crf5b_q43_urdu">Us khanay k cheez ka code likhain</string>
+
+    <string name="crf5b_q44_english">Portion size description</string>
+    <string name="crf5b_q44_urdu">Jo PW na khaya ha us ka size kya tha</string>
+
+    <string name="crf5b_q45_english">Amount used in gram</string>
+    <string name="crf5b_q45_urdu">Midair likhain grams MA</string>
+
+    <string name="crf5b_q46_english">Does woman consume Gutka usually?</string>
+    <string name="crf5b_q46_urdu">Kiya khatoon Gutka khati hain?</string>
+
+    <string name="crf5b_q47_english">Does woman consume Pan usually?</string>
+    <string name="crf5b_q47_urdu">Kiya Khatoon Pan khati hain?</string>
+
+    <string name="crf5b_q48_english">Does woman consume cigarette usually?</string>
+    <string name="crf5b_q48_urdu">Kiya khatoon cigarette peeti hain?</string>
+
+    <string name="crf5b_q49_english">Does woman consume chewed tobacco usually?</string>
+    <string name="crf5b_q49_urdu">Kiya khatoon Tambakoo khati hain?</string>
+
+    <string name="crf5b_q50_english">Does woman consume cannabis usually?</string>
+    <string name="crf5b_q50_urdu">Kiya Khatoon Bhang peeti hain?</string>
+
+    <string name="crf5b_q51_english">Does woman consume Hashish or Charas?</string>
+    <string name="crf5b_q51_urdu">kya khatoon charas peeti hain?</string>
+
+    <string name="crf5b_q52_english">Does woman consume Hashish or Charas?</string>
+    <string name="crf5b_q52_urdu">kya khatoon charas peeti hain?</string>
+
+    <string name="crf5b_q53_english">Does woman consume heroin?</string>
+    <string name="crf5b_q53_urdu">kya khatoon heroin peeti hain?</string>
+
+    <string name="crf5b_q54_english">Does woman consume Huqqa?</string>
+    <string name="crf5b_q54_urdu">kya khatoon huqqa peeti hain?</string>
+
+    <string name="crf5b_q55_english">Any other substance abuse?</string>
+    <string name="crf5b_q55_urdu">kuch or nasha karti h to likhe</string>
+
+
+    <!--crf5a Councling and other questions-->
+
+    <string name="crf5a_q18_english">Visit outcome </string>
+    <string name="crf5a_q18_urdu">Janay ka muqsad</string>
+    <string name="crf5a_q18_opt_1">Complete (Muqamaal)</string>
+    <string name="crf5a_q18_opt_2">Woman not present (Maa/bacha moujood nahi)</string>
+    <string name="crf5a_q18_opt_3">Refused (inkar kar diya)</string>
+    <string name="crf5a_q18_opt_4">Household locked (ghar bund ha)</string>
+    <string name="crf5a_q18_opt_5">Permanent migration (mustaqil chali gay)</string>
+
+    <string name="crf5a_q19_english">Is PW alive?</string>
+    <string name="crf5a_q19_urdu">Kya PW zinda ha?</string>
+
+    <string name="crf5a_q20_english">Date of death</string>
+    <string name="crf5a_q20_urdu">Agar maut ho gay tu us k tareekh</string>
+
+    <string name="crf5a_q21_english">Time of death</string>
+    <string name="crf5a_q21_urdu">Maut ka waqt</string>
+
+    <string name="crf5a_q22_english">Is woman still pregnant?</string>
+    <string name="crf5a_q22_urdu">khatoon abhi b pregnant hai?</string>
+
+    <string name="crf5a_q23_english">Is this 140 or 196 day visit?</string>
+    <string name="crf5a_q23_urdu"></string>
+
+    <string name="crf5a_q24_english">Is PW enrolled in Maamta + Azithromycin Arm C</string>
+    <string name="crf5a_q24_urdu"></string>
+
+    <string name="crf5a_q25_english">Ask the PW, if she has received any antibiotic in the last 7 days</string>
+    <string name="crf5a_q25_urdu">Check if ANC card is available and any medicine were prescribed</string>
+
+    <string name="crf5a_q26_english">Any prescription or wrapper of medicines which is available</string>
+    <string name="crf5a_q26_urdu">Check if ANC card is available and any medicine were prescribed</string>
+
+    <string name="crf5a_q27_english">Name of medicines</string>
+    <string name="crf5a_q27_urdu">Di gay deewaiyoun k naam likhain aik aik kar k</string>
+
+    <string name="crf5a_q28_english">Ask mother or family, if they remember the name of medicine</string>
+    <string name="crf5a_q28_urdu">Maa ya ghar ma kisi aur afrad ko deewaiyoun ka naam yaad han</string>
+
+    <string name="crf5a_q29_english">Name of medicine if known</string>
+    <string name="crf5a_q29_urdu">Deewaiyoun k naam jo koi aur batay ga</string>
+
+    <string name="crf5a_q30_english">For how long were these medicine used?</string>
+    <string name="crf5a_q30_urdu">Kitnay din tak yeh deewaiyan istimaal ki gay han</string>
+
+    <string name="crf5a_q31_english">Are these medicines still being used</string>
+    <string name="crf5a_q31_urdu">Kya abhi tak yeh deewaioun istimaal k ja rahi han</string>
+
+    <string name="crf5a_q32_english">Consult with supervisor and discuss if any suspected medicine is Azithromycin</string>
+    <string name="crf5a_q32_urdu">Supervisor sa rabta karain and confirm karain k in ma sa koi bh deewai Azithromycin tu nahi ha</string>
+
+    <string name="crf5a_q32_opt_1_english">Consulted and confirmed by supervisor that no Azithromycin or any other antibiotic was given to the child</string>
+    <string name="crf5a_q32_opt_1_urdu">Supervisor k mashwaray k baad confirm kar liya k di gay deewaiyoun ma sa koi bh Azithromycin ya koi aur antibiotic nahi ha</string>
+
+    <string name="crf5a_q32_opt_2_english">Consulted and confirmed that Azthirthomycin was given in the past few days</string>
+    <string name="crf5a_q32_opt_2_urdu">Supervisor k mashwaray k baad confirm kar liya k di gay deewai Azithromycin hi th jo k pichaly khuch din ma bachay ko di gay ha</string>
+
+    <string name="crf5a_q33_english">Final decision of Supervisor for Azithromycin dose</string>
+    <string name="crf5a_q33_urdu">Supervisor na kya faisal kiya Azithromycin k hawalay sa</string>
+
+    <string name="crf5a_q33_opt_1_english">Decided to be administered the dose today (Skip to Q35)</string>
+    <string name="crf5a_q33_opt_1_urdu">Aj k tareekh ma bachay ko AZ ka dose day diya jay ga</string>
+
+    <string name="crf5a_q33_opt_2_english">Dose of Azithromycin in on hold for next seven</string>
+    <string name="crf5a_q33_opt_2_urdu">AZ ka dose 7 din baad diya jay ga bachay ko</string>
+
+    <string name="crf5a_q34_english">Date when a supervisor communicated to administer the dose to the child</string>
+    <string name="crf5a_q34_urdu">Wo tareekh likhain jis din supervisor na bola ha k bachay ko AZ daini ha</string>
+
+    <string name="crf5a_q35_english">Inform and counsel PW about Azithromycin</string>
+    <string name="crf5a_q35_urdu">Maa ko bata diya AZ k baray ma</string>
+
+    <string name="crf5a_q36_english">4 tablets of 500 mg administered</string>
+    <string name="crf5a_q36_urdu"></string>
+
+    <string name="crf5a_q37_english">Remaining Tablets  of Azithromycin archived with the Study ID </string>
+    <string name="crf5a_q37_urdu">Jo AZ k miqdar bottle ma bach gay us ko study ID k saath mehfooz kar liya gaya</string>
+
+    <string name="crf5a_q38_english">Is this day 141-144 or 197 to 200 days visit?</string>
+    <string name="crf5a_q38_urdu"></string>
+
+    <string name="crf5a_q39_english">Does woman experience any of these symptoms in last 24 hours?</string>
+    <string name="crf5a_q39_urdu"></string>
+    <string name="crf5a_q39_opt_1">Vomiting</string>
+    <string name="crf5a_q39_opt_2">Diarrhea</string>
+    <string name="crf5a_q39_opt_3">Rash</string>
+    <string name="crf5a_q39_opt_4">Abdominal pain</string>
+    <string name="crf5a_q39_opt_5">Other (Specify) ___________</string>
+
+    <string name="crf5a_q40_english">Referral required to center?</string>
+    <string name="crf5a_q40_urdu"></string>
+
+    <string name="crf5a_q41_english">How do you rate your current state of health?</string>
+    <string name="crf5a_q41_urdu"></string>
+    <string name="crf5a_q41_opt_1">Perfectly fine</string>
+    <string name="crf5a_q41_opt_2">Moderate</string>
+    <string name="crf5a_q41_opt_3">Unwell</string>
+
+    <string name="crf5a_q42_english">During this pregnancy, did you have excessive bleeding since the last visit? (from any part of the body)</string>
+    <string name="crf5a_q42_urdu"></string>
+
+    <string name="crf5a_q43_english">During this pregnancy, did you have vaginal bleeding since the last visit?</string>
+    <string name="crf5a_q43_urdu"></string>
+
+    <string name="crf5a_q44_english">Did the bleeding continue for more than one day?</string>
+    <string name="crf5a_q44_urdu"></string>
+
+    <string name="crf5a_q45_english">Did the bleeding wet your clothes, the bed or the floor?</string>
+    <string name="crf5a_q45_urdu"></string>
+
+    <string name="crf5a_q46_english">Was the blood fresh (light red) or dark red and thick?</string>
+    <string name="crf5a_q46_urdu"></string>
+
+    <string name="crf5a_q47_english">Did you faint because of the bleeding?</string>
+    <string name="crf5a_q47_urdu"></string>
+
+    <string name="crf5a_q48_english">During this pregnancy, has your blood pressure elevated since the last visit?</string>
+    <string name="crf5a_q48_urdu"></string>
+
+    <string name="crf5a_q49_english">Measure and note down the systolic blood pressure</string>
+    <string name="crf5a_q49_urdu"></string>
+
+    <string name="crf5a_q50_english">Measure and note down the diastolic blood pressure</string>
+    <string name="crf5a_q50_urdu"></string>
+
+    <string name="crf5a_q51_english">During this pregnancy, did you have headache since the last visit?</string>
+    <string name="crf5a_q51_urdu"></string>
+
+    <string name="crf5a_q52_english">How long did the headache last?</string>
+    <string name="crf5a_q52_urdu"></string>
+
+    <string name="crf5a_q53_english">Headache was severe?</string>
+    <string name="crf5a_q53_urdu"></string>
+
+    <string name="crf5a_q54_english">During this pregnancy, did you have swelling in any part of your body?</string>
+    <string name="crf5a_q54_urdu"></string>
+
+    <string name="crf5a_q55_english">For how many days did the swelling last?</string>
+    <string name="crf5a_q55_urdu"></string>
+
+    <string name="crf5a_q56_english">Was the swelling all over the body?</string>
+    <string name="crf5a_q56_urdu"></string>
+
+    <string name="crf5a_q57_english">Was there swelling of the joints?</string>
+    <string name="crf5a_q57_urdu"></string>
+
+    <string name="crf5a_q58_english">Was there swelling of the ankles?</string>
+    <string name="crf5a_q58_urdu"></string>
+
+    <string name="crf5a_q59_english">Was there swelling over the face?</string>
+    <string name="crf5a_q59_urdu"></string>
+
+    <string name="crf5a_q60_english">If there is swelling in any other part of the body then specify</string>
+    <string name="crf5a_q60_urdu"></string>
+
+    <string name="crf5a_q61_english">During this pregnancy, did you have blurred vision since the last visit?</string>
+    <string name="crf5a_q61_urdu"></string>
+
+    <string name="crf5a_q62_english">For how many days did the blurred vision last?</string>
+    <string name="crf5a_q62_urdu"></string>
+
+    <string name="crf5a_q63_english">During this pregnancy, did you have fits since the last visit?</string>
+    <string name="crf5a_q63_urdu"></string>
+
+    <string name="crf5a_q64_english">For how many days did the fits last?</string>
+    <string name="crf5a_q64_urdu"></string>
+
+    <string name="crf5a_q65_english">Did you faint because of the fits?</string>
+    <string name="crf5a_q65_urdu"></string>
+
+    <string name="crf5a_q66_english">Were you at some healthcare center when you noticed these symptoms?</string>
+    <string name="crf5a_q66_urdu"></string>
+
+    <string name="crf5a_q67_english">What kind of a health care center where you which when these symptoms appeared?</string>
+    <string name="crf5a_q67_urdu"></string>
+
+    <string name="crf5a_q68_english">When these symptoms appeared, did the Healthcare Center staff refer you to some other place for treatment?</string>
+    <string name="crf5a_q68_urdu"></string>
+
+    <string name="crf5a_q69_english">If yes, then what kind of Healthcare Center did they refer to?</string>
+    <string name="crf5a_q69_urdu"></string>
+
+    <string name="crf5a_q70_english">Did you go to the Healthcare Center where you were referred?</string>
+    <string name="crf5a_q70_urdu"></string>
+
+    <string name="crf5a_q71_english">If you were not at a Healthcare Center when these symptoms appeared, then did you seek healthcare facility from somewhere?</string>
+    <string name="crf5a_q71_urdu"></string>
+
+    <string name="crf5a_q72_english">If you were not at a Healthcare Center when these symptoms appeared then for which of these symptoms did you seek healthcare facility?</string>
+    <string name="crf5a_q72_urdu"></string>
+    <string name="crf5a_q72_opt_1">Bleeding</string>
+    <string name="crf5a_q72_opt_2">High Blood pressure</string>
+    <string name="crf5a_q72_opt_3">Headache</string>
+    <string name="crf5a_q72_opt_4">Swelling</string>
+    <string name="crf5a_q72_opt_5">Blurred Vision</string>
+    <string name="crf5a_q72_opt_6">Fits</string>
+    <string name="crf5a_q72_opt_7">Unconsciousness/ Fainting</string>
+
+    <string name="crf5a_q73_english">From which facility did you receive healthcare for the first time?</string>
+    <string name="crf5a_q73_urdu"></string>
+
+    <string name="crf5a_q74_english">Were you admitted because of these symptoms? (Stayed the night)</string>
+    <string name="crf5a_q74_urdu"></string>
+
+    <string name="crf5a_q75_english">For how many nights were you admitted?</string>
+    <string name="crf5a_q75_urdu"></string>
+
+    <string name="crf5a_q76_english">What treatment did you receive while you were admitted at the healthcare facility?</string>
+    <string name="crf5a_q76_urdu"></string>
+    <string name="crf5a_q76_opt_1">Removal of uterus</string>
+    <string name="crf5a_q76_opt_2">Any abdominal surgery</string>
+    <string name="crf5a_q76_opt_3">Blood transfusion</string>
+    <string name="crf5a_q76_opt_4">Respiratory support</string>
+    <string name="crf5a_q76_opt_5">Drip</string>
+    <string name="crf5a_q76_opt_6">Tablet/ Medication</string>
+    <string name="crf5a_q76_opt_7">Anyother:Specify</string>
+
+
+    <string name="crf5a_q77_english">Is PW registered at any facility for delivery</string>
+    <string name="crf5a_q77_urdu"></string>
+
+    <string name="crf5a_q78_english">Number of Antenatal visits</string>
+    <string name="crf5a_q78_urdu"></string>
+
+    <string name="crf5a_q79_english">Is woman registered at at VPT services for ANC</string>
+    <string name="crf5a_q79_urdu"></string>
+
+    <string name="crf5a_q80_english">Did the woman receive any iron injection drip to fulfill the low hemoglobin level?</string>
+    <string name="crf5a_q80_urdu"></string>
+
+    <string name="crf5a_q81_english">If yes, then how many times?</string>
+    <string name="crf5a_q81_urdu"></string>
+
+    <string name="crf5a_q82_english">Did woman receive any blood transfusion during this pregnancy for low hemoglobin level?</string>
+    <string name="crf5a_q82_urdu"></string>
+
+    <string name="crf5a_q83_english">If yes, then how many times?</string>
+    <string name="crf5a_q83_urdu"></string>
+
+    <string name="crf5a_q84_english">Did woman take any oral iron tablet?</string>
+    <string name="crf5a_q84_urdu"></string>
+
+    <string name="crf5a_q85_english"></string>
+    <string name="crf5a_q85_urdu"></string>
+
+    <string name="crf5a_q86_english">Key messages for household and woman</string>
+    <string name="crf5a_q86_urdu"></string>
+    <string name="crf5a_q86_opt_1">Advice for Tetanus immunization</string>
+    <string name="crf5a_q86_opt_2">Advice for balance diet during pregnancy  </string>
+    <string name="crf5a_q86_opt_3">Complete rest and less work during pregnancy  </string>
+    <string name="crf5a_q86_opt_4">Danger signs during pregnancy</string>
+    <string name="crf5a_q86_opt_5">Selection of right health care provider for delivery </string>
+    <string name="crf5a_q86_opt_6">Childbirth at clean and skilled facility</string>
+    <string name="crf5a_q86_opt_7">Use of clean delivery kit </string>
+    <string name="crf5a_q86_opt_8">Delay in newborn bathing</string>
+    <string name="crf5a_q86_opt_9">Neonatal care and danger signs</string>
+    <string name="crf5a_q86_opt_10">Exclusive breastfeeding</string>
+    <string name="crf5a_q86_opt_11">Childhood immunization </string>
+    <string name="crf5a_q86_opt_12">Location of vaccination center</string>
+    <string name="crf5a_q86_opt_13">Hygiene of mother and newborn</string>
+    <string name="crf5a_q86_opt_14">Timely and appropriate referral of child</string>
+    <string name="crf5a_q86_opt_15">Services at VITAL Pakistan center</string>
+    <string name="crf5a_q86_opt_16">Our incentives for pregnant woman</string>
+
+
+</resources>

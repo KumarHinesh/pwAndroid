@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/colorAccent"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:layout_weight="0.4"
+        android:background="@color/transparent"
+        android:textColor="@color/white"
+        android:text="back"
+        android:drawableLeft="@mipmap/back"
+        android:layout_width="0dp"
+        android:layout_height="50dp" />
+
+
+    <TextView
+        android:layout_marginTop="2dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_weight="1.2"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="Woman Imnformation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

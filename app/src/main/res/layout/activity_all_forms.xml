@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.allFormsActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="30dp"
+   >
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hematology Form"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:id="@+id/btnhematology"
+
+
+        />
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Urine Form"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:id="@+id/btnurine"
+
+
+
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dept of Serology Form"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:id="@+id/btnserology"
+
+
+
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dept of Bio Chemistry Form"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:id="@+id/btnbiochem"
+
+
+
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Antenatal Form"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:id="@+id/btnanatology"
+
+        android:layout_marginTop="30dp"
+
+
+
+        />
+
+
+</LinearLayout>
