@@ -6,7 +6,7 @@ public class FormCrf1DTO {
 
     List<UltrasoundExaminationDTO> ultrasoundExaminationDTOS;
     private PregnantWomanDTO pregnantWomanDTO;
-    private TeamDTO teamDTO;
+    private UserContract teamDTO;
     private Long id;
     private String q02;
     private String q03;
@@ -23,11 +23,11 @@ public class FormCrf1DTO {
         this.pregnantWomanDTO = pregnantWomanDTO;
     }
 
-    public TeamDTO getTeamDTO() {
+    public UserContract getTeamDTO() {
         return teamDTO;
     }
 
-    public void setTeamDTO(TeamDTO teamDTO) {
+    public void setTeamDTO(UserContract teamDTO) {
         this.teamDTO = teamDTO;
     }
 

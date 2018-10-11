@@ -19,7 +19,7 @@ import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.constants.ContantsValues;
 
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormCrf1DTO;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.TeamDTO;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UserContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UltrasoundExaminationDTO;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.fragments.crf1Fragments.PwInformation;
 
@@ -28,7 +28,7 @@ public class CRF1Activity extends AppCompatActivity {
     public static int babyNo = -1;
     public static FormCrf1DTO formCrf1DTO;
     public static FragmentManager fragmentManager;
-    TeamDTO teamDTO;
+    UserContract teamDTO;
     public static List<UltrasoundExaminationDTO> ultrasoundExaminationDTOList;
 
     @Override
@@ -36,7 +36,7 @@ public class CRF1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crf1);
 
-        teamDTO = new Gson().fromJson(getIntent().getStringExtra("team"), TeamDTO.class);
+        teamDTO = new Gson().fromJson(getIntent().getStringExtra("team"), UserContract.class);
 
         ultrasoundExaminationDTOList = new ArrayList<>();
         fragmentManager = getSupportFragmentManager();

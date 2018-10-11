@@ -17,7 +17,7 @@ import java.util.Calendar;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.constants.ContantsValues;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.LoginDTO;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.TeamDTO;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UserContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.retrofit.APIService;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.retrofit.ApiUtils;
 import retrofit2.Call;
@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     LoginDTO loginDTO;
-    TeamDTO teamDTO;
+    UserContract teamDTO;
 
     ProgressDialog progressDialog;
 
@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                     teamDTO.setTime(new SimpleDateFormat(ContantsValues.TIMEFORMAT).format(Calendar.getInstance().getTime()));
 
                     progressDialog.show();
-                    sendRequestForLogin(teamDTO);
+                    //sendRequestForLogin(teamDTO);
 
 
                 } else {
@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void initilalizeViews() {
-        teamDTO = new TeamDTO();
+        teamDTO = new UserContract();
 
         progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setTitle("Wait");
@@ -103,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
         btn_signin = (Button) findViewById(R.id.btnsignin);
     }
 
-    public void sendRequestForLogin(final TeamDTO teamDTO) {
+    /*public void sendRequestForLogin(final UserContract teamDTO) {
         APIService mAPIService = ApiUtils.getAPIService();
 
         mAPIService.userLogin(teamDTO).enqueue(new Callback<LoginDTO>() {
@@ -149,6 +149,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-    }
+    }*/
 
 }
