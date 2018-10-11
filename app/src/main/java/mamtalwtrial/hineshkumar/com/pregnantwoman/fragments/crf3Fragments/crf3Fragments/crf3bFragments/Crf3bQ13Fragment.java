@@ -45,7 +45,6 @@ public class Crf3bQ13Fragment extends Fragment {
         //initialiling EDIT TEXT
 
 
-
         //initialiling RELATIVE LAYOUT
 
 
