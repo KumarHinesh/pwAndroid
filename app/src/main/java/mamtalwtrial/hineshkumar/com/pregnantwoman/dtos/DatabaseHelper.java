@@ -1,66 +1,61 @@
 package mamtalwtrial.hineshkumar.com.pregnantwoman.dtos;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import  mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormsContract.FormsTable;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String SQL_CREATE_USERS = "CREATE TABLE " + UsersContract.UsersTable.TABLE_NAME + "("
-            + UsersTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + UsersTable.ROW_USERNAME + " TEXT,"
-            + UsersTable.ROW_PASSWORD + " TEXT,"
-            + UsersTable.FULL_NAME + " TEXT"
+    public static final String SQL_CREATE_USERS = "CREATE TABLE " + UserContract.UserTable.TABLE_NAME + "("
+            + UserContract.UserTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + UserContract.UserTable.COLUMN_SRANAME + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + UserContract.UserTable.COLUMN_USERNAME + " TEXT,"
+            + UserContract.UserTable.COLUMN_PASSWORD + " TEXT,"
+            + UserContract.UserTable.COLUMN_SITE + " TEXT,"
+            + UserContract.UserTable.COLUMN_STATUS + " TEXT,"
+            + UserContract.UserTable.COLUMN_DATE + " TEXT,"
+            + UserContract.UserTable.COLUMN_TIME + " TEXT"
             + " );";
 
-    public static final String DATABASE_NAME = "kmc.db";
+    public static final String DATABASE_NAME = "pwtrial.db";
     public static final String DB_NAME = DATABASE_NAME.replace(".", "_copy.");
-    public static final String PROJECT_NAME = "KMC-2018-2020";
+    public static final String PROJECT_NAME = "PWTRIAL";
     private static final int DATABASE_VERSION = 1;
+
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
-            + FormsTable.TABLE_NAME + "("
-            + FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            FormsTable.COLUMN_PROJECTNAME + " TEXT," +
-            FormsTable.COLUMN_SURVEYTYPE + " TEXT," +
-            FormsTable.COLUMN__UID + " TEXT," +
-            FormsTable.COLUMN_FORMDATE + " TEXT," +
-            FormsTable.COLUMN_USER + " TEXT," +
-            FormsTable.COLUMN_ISTATUS + " TEXT," +
-            FormsTable.COLUMN_ISTATUS88X + " TEXT," +
-            FormsTable.COLUMN_SINFO + " TEXT," +
-            FormsTable.COLUMN_SA1 + " TEXT," +
-            FormsTable.COLUMN_SB2 + " TEXT," +
-            FormsTable.COLUMN_SC1 + " TEXT," +
-            FormsTable.COLUMN_SC2 + " TEXT," +
-            FormsTable.COLUMN_SC3 + " TEXT," +
-            FormsTable.COLUMN_SC4 + " TEXT," +
-            FormsTable.COLUMN_SC5 + " TEXT," +
-            FormsTable.COLUMN_SC6 + " TEXT," +
-            FormsTable.COLUMN_SD1 + " TEXT," +
-            FormsTable.COLUMN_SD2 + " TEXT," +
-            FormsTable.COLUMN_SD3 + " TEXT," +
-            FormsTable.COLUMN_SE + " TEXT," +
-            FormsTable.COLUMN_SF + " TEXT," +
-            FormsTable.COLUMN_ENDINGDATETIME + " TEXT," +
-            FormsTable.COLUMN_GPSLAT + " TEXT," +
-            FormsTable.COLUMN_GPSLNG + " TEXT," +
-            FormsTable.COLUMN_GPSDT + " TEXT," +
-            FormsTable.COLUMN_GPSACC + " TEXT," +
-            FormsTable.COLUMN_GPSELEV + " TEXT," +
-            FormsTable.COLUMN_DEVICEID + " TEXT," +
-            FormsTable.COLUMN_DEVICETAGID + " TEXT," +
-            FormsTable.COLUMN_SYNCED + " TEXT," +
-            FormsTable.COLUMN_SYNCED_DATE + " TEXT," +
-            FormsTable.COLUMN_APPVERSION + " TEXT"
+            + FormsContract.FormsTable.TABLE_NAME + "("
+            + FormsContract.FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            FormsContract.FormsTable.COLUMN_PROJECTNAME + " TEXT," +
+            FormsContract.FormsTable.COLUMN_SURVEYTYPE + " TEXT," +
+            FormsContract.FormsTable.COLUMN__UID + " TEXT," +
+            FormsContract.FormsTable.COLUMN_FORMDATE + " TEXT," +
+            FormsContract.FormsTable.COLUMN_USER + " TEXT," +
+            FormsContract.FormsTable.COLUMN_ISTATUS + " TEXT," +
+            FormsContract.FormsTable.COLUMN_ISTATUS88X + " TEXT," +
+            FormsContract.FormsTable.COLUMN_SINFO + " TEXT," +
+            FormsContract.FormsTable.COLUMN_SA1 + " TEXT," +
+            FormsContract.FormsTable.COLUMN_ENDINGDATETIME + " TEXT," +
+            FormsContract.FormsTable.COLUMN_GPSLAT + " TEXT," +
+            FormsContract.FormsTable.COLUMN_GPSLNG + " TEXT," +
+            FormsContract.FormsTable.COLUMN_GPSDT + " TEXT," +
+            FormsContract.FormsTable.COLUMN_GPSACC + " TEXT," +
+            FormsContract.FormsTable.COLUMN_GPSELEV + " TEXT," +
+            FormsContract.FormsTable.COLUMN_DEVICEID + " TEXT," +
+            FormsContract.FormsTable.COLUMN_DEVICETAGID + " TEXT," +
+            FormsContract.FormsTable.COLUMN_SYNCED + " TEXT," +
+            FormsContract.FormsTable.COLUMN_SYNCED_DATE + " TEXT," +
+            FormsContract.FormsTable.COLUMN_APPVERSION + " TEXT"
             + " );";
 
     private static final String SQL_DELETE_USERS =
-            "DROP TABLE IF EXISTS " + UsersContract.UsersTable.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + UserContract.UserTable.TABLE_NAME;
     private static final String SQL_DELETE_FORMS =
-            "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + FormsContract.FormsTable.TABLE_NAME;
 
     private final String TAG = "DatabaseHelper";
 
@@ -74,25 +69,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_FORMS);
-
-        db.execSQL(SQL_CREATE_DISTRICT_TABLE);
-        db.execSQL(SQL_CREATE_UC);
-        db.execSQL(SQL_CREATE_PSU_TABLE);
-        db.execSQL(SQL_CREATE_MWRA);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_FORMS);
-
-        db.execSQL(SQL_DELETE_TALUKA);
-        db.execSQL(SQL_DELETE_UCS);
-        db.execSQL(SQL_DELETE_VILLAGE);
-        db.execSQL(SQL_DELETE_MWRA);
     }
 
     public Long addForm(FormsContract fc) {
