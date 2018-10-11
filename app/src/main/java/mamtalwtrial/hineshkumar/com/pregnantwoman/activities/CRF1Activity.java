@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -18,6 +19,7 @@ import java.util.List;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.constants.ContantsValues;
 
+import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.DatabaseHelper;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormCrf1DTO;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UserContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UltrasoundExaminationDTO;
@@ -64,6 +66,23 @@ public class CRF1Activity extends AppCompatActivity {
        /* getSupportFragmentManager().beginTransaction()
                 .replace(R.id.crf1_frame, fragment, fragment.getClass().getSimpleName()).addToBackStack(null).commit();
 */
+    }
+
+
+    private boolean UpdateDB() {
+
+        //Long rowId;
+        DatabaseHelper db = new DatabaseHelper(this);
+        int updcount = db.updateSB1();
+        if (updcount == 1) {
+            //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
     }
 
 

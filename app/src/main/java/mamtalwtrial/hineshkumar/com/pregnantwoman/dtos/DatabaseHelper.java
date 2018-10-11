@@ -14,7 +14,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String SQL_CREATE_USERS = "CREATE TABLE " + UserContract.UserTable.TABLE_NAME + "("
             + UserContract.UserTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + UserContract.UserTable.COLUMN_SRANAME + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + UserContract.UserTable.COLUMN_SRANAME + " TEXT,"
             + UserContract.UserTable.COLUMN_USERNAME + " TEXT,"
             + UserContract.UserTable.COLUMN_PASSWORD + " TEXT,"
             + UserContract.UserTable.COLUMN_SITE + " TEXT,"
@@ -109,4 +109,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values);
         return newRowId;
     }
+
+
+    // mwra - uPDATE
+    public int updateSB2() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormsTable.COLUMN_SB2, MainApp.fc.getsB2());
+
+// Which row to update, based on the ID
+        String selection = FormsTable._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(MainApp.fc.get_ID())};
+
+        int count = db.update(FormsTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
 }
