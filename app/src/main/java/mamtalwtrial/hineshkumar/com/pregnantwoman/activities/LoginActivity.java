@@ -17,7 +17,7 @@ import java.util.Calendar;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.constants.ContantsValues;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.LoginDTO;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.TeamDTO;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UserContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.retrofit.APIService;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.retrofit.ApiUtils;
 import retrofit2.Call;
@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     LoginDTO loginDTO;
-    TeamDTO teamDTO;
+    UserContract teamDTO;
 
     ProgressDialog progressDialog;
 
@@ -47,16 +47,16 @@ public class LoginActivity extends AppCompatActivity {
 
                 startActivity(new Intent(LoginActivity.this, CRF1Activity.class));
 
-                if (validation()){
+                if (validation()) {
 
                     teamDTO.setDate(new SimpleDateFormat(ContantsValues.DATEFORMAT).format(Calendar.getInstance().getTime()));
                     teamDTO.setTime(new SimpleDateFormat(ContantsValues.TIMEFORMAT).format(Calendar.getInstance().getTime()));
 
-                       progressDialog.show();
-                       sendRequestForLogin(teamDTO);
+                    progressDialog.show();
+                    //sendRequestForLogin(teamDTO);
 
 
-                }else {
+                } else {
 
 
                 }
@@ -68,21 +68,21 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    public boolean validation(){
+    public boolean validation() {
         boolean validation = true;
 
-        if (et_pass.getText().equals("")){
+        if (et_pass.getText().equals("")) {
             validation = false;
             et_pass.setError("Please entEr");
-        }else {
+        } else {
             teamDTO.setPassword(et_pass.getText().toString());
         }
 
-        if (et_user_id.getText().equals("")){
+        if (et_user_id.getText().equals("")) {
             validation = false;
             et_user_id.setError("Please entEr");
 
-        }else {
+        } else {
             teamDTO.setUserName(et_user_id.getText().toString());
 
         }
@@ -91,8 +91,8 @@ public class LoginActivity extends AppCompatActivity {
         return validation;
     }
 
-    public void initilalizeViews(){
-        teamDTO = new TeamDTO();
+    public void initilalizeViews() {
+        teamDTO = new UserContract();
 
         progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setTitle("Wait");
@@ -103,20 +103,20 @@ public class LoginActivity extends AppCompatActivity {
         btn_signin = (Button) findViewById(R.id.btnsignin);
     }
 
-    public void sendRequestForLogin(final TeamDTO teamDTO){
+    /*public void sendRequestForLogin(final UserContract teamDTO) {
         APIService mAPIService = ApiUtils.getAPIService();
 
         mAPIService.userLogin(teamDTO).enqueue(new Callback<LoginDTO>() {
             @Override
             public void onResponse(Call<LoginDTO> call, Response<LoginDTO> response) {
 
-                if (response.code() == 200){
+                if (response.code() == 200) {
 
                     loginDTO = response.body();
 
-                    if (loginDTO != null && loginDTO.getTeamDTO() != null){
+                    if (loginDTO != null && loginDTO.getTeamDTO() != null) {
 
-                        switch (loginDTO.getTeamDTO().getTeamTitle().getTitle()){
+                        switch (loginDTO.getTeamDTO().getTeamTitle().getTitle()) {
 
                             case ContantsValues.TEAM_1:
                                 progressDialog.dismiss();
@@ -125,7 +125,7 @@ public class LoginActivity extends AppCompatActivity {
                                 break;
                         }
 
-                    }else {
+                    } else {
 
                         Toast.makeText(LoginActivity.this, "Login faild DTO Return null", Toast.LENGTH_LONG).show();
                         progressDialog.dismiss();
@@ -133,7 +133,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
 
-                }else {
+                } else {
 
                     Toast.makeText(LoginActivity.this, "Login faild reponse code not 200", Toast.LENGTH_LONG).show();
                     progressDialog.dismiss();
@@ -149,6 +149,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-    }
+    }*/
 
 }

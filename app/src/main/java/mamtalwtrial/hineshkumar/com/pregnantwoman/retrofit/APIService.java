@@ -2,15 +2,15 @@ package mamtalwtrial.hineshkumar.com.pregnantwoman.retrofit;
 
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormCrf1DTO;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.LoginDTO;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.TeamDTO;
+//import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.TeamDTO;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 
 public interface APIService {
 
-      @POST("user/login")
-      Call<LoginDTO> userLogin(@Body TeamDTO body);
+      //@POST("user/login")
+      //Call<LoginDTO> userLogin(@Body TeamDTO body);
 
 
     @POST("/form/crf1/save")

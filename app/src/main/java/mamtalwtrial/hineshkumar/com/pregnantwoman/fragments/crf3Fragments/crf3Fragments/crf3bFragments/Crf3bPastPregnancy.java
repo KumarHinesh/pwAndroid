@@ -52,38 +52,37 @@ public class Crf3bPastPregnancy extends Fragment {
     }
 
 
-    public void initializeView(View view){
+    public void initializeView(View view) {
 
         // INTIALIZE TEXT VIEW
-          tv_heading = (TextView) view.findViewById(R.id.tv_heading);
-          tv_q1 = (TextView) view.findViewById(R.id.tv_q1);
-          tv_q2 = (TextView) view.findViewById(R.id.tv_q2);
-          tv_q3 = (TextView) view.findViewById(R.id.tv_q3);
-          tv_q4 = (TextView) view.findViewById(R.id.tv_q4);
-          tv_q5 = (TextView) view.findViewById(R.id.tv_q5);
-          tv_q6 = (TextView) view.findViewById(R.id.tv_q6);
-          tv_q7 = (TextView) view.findViewById(R.id.tv_q7);
-          tv_q8 = (TextView) view.findViewById(R.id.tv_q8);
+        tv_heading = (TextView) view.findViewById(R.id.tv_heading);
+        tv_q1 = (TextView) view.findViewById(R.id.tv_q1);
+        tv_q2 = (TextView) view.findViewById(R.id.tv_q2);
+        tv_q3 = (TextView) view.findViewById(R.id.tv_q3);
+        tv_q4 = (TextView) view.findViewById(R.id.tv_q4);
+        tv_q5 = (TextView) view.findViewById(R.id.tv_q5);
+        tv_q6 = (TextView) view.findViewById(R.id.tv_q6);
+        tv_q7 = (TextView) view.findViewById(R.id.tv_q7);
+        tv_q8 = (TextView) view.findViewById(R.id.tv_q8);
 
 
         // INTIALIZE EDIT TEXT
-           et_q8 = (EditText) view.findViewById(R.id.et_q8);
+        et_q8 = (EditText) view.findViewById(R.id.et_q8);
 
         // INTIALIZE RADIO GROUP
-           rg_q1 = (RadioGroup) view.findViewById(R.id.rg_q1);
-           rg_q2 = (RadioGroup) view.findViewById(R.id.rg_q2);
-           rg_q3 = (RadioGroup) view.findViewById(R.id.rg_q3);
-           rg_q4 = (RadioGroup) view.findViewById(R.id.rg_q4);
-           rg_q5 = (RadioGroup) view.findViewById(R.id.rg_q5);
-           rg_q6 = (RadioGroup) view.findViewById(R.id.rg_q6);
-           rg_q7 = (RadioGroup) view.findViewById(R.id.rg_q7);
-           rg_q8 = (RadioGroup) view.findViewById(R.id.rg_q8);
+        rg_q1 = (RadioGroup) view.findViewById(R.id.rg_q1);
+        rg_q2 = (RadioGroup) view.findViewById(R.id.rg_q2);
+        rg_q3 = (RadioGroup) view.findViewById(R.id.rg_q3);
+        rg_q4 = (RadioGroup) view.findViewById(R.id.rg_q4);
+        rg_q5 = (RadioGroup) view.findViewById(R.id.rg_q5);
+        rg_q6 = (RadioGroup) view.findViewById(R.id.rg_q6);
+        rg_q7 = (RadioGroup) view.findViewById(R.id.rg_q7);
+        rg_q8 = (RadioGroup) view.findViewById(R.id.rg_q8);
 
         // INTIALIZE BUTTON
-           btn_next = (Button) view.findViewById(R.id.btn_next);
+        btn_next = (Button) view.findViewById(R.id.btn_next);
 
     }
-
 
 
 }

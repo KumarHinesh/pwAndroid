@@ -21,7 +21,7 @@ public class Crf3bQ13Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-      View view = inflater.inflate(R.layout.fragment_crf3b_q13, container, false);
+        View view = inflater.inflate(R.layout.fragment_crf3b_q13, container, false);
         initializingViews(view, getContext());
 
         btn_next.setOnClickListener(new View.OnClickListener() {
@@ -34,13 +34,12 @@ public class Crf3bQ13Fragment extends Fragment {
         });
 
 
-
         // Inflate the layout for this fragment
         return view;
     }
 
 
-    public void initializingViews(View view, Context context){
+    public void initializingViews(View view, Context context) {
 
 
         //initialiling EDIT TEXT

@@ -17,8 +17,6 @@ public class Crf4Q22Fragments extends Fragment {
         View view = inflater.inflate(R.layout.fragment_crf4_q22_fragments, container, false);
 
 
-
-
         return view;
     }
 

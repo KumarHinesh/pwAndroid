@@ -1,29 +1,33 @@
 package mamtalwtrial.hineshkumar.com.pregnantwoman.dtos;
 
+import android.provider.BaseColumns;
 
 import java.util.List;
 
-public class TeamDTO {
+public class UserContract {
 
-    private Integer id;
+    private static final String TAG = "Users_CONTRACT";
+
+    private Long id;
     private String sraName;
     private String userName;
     private String password;
-    private TeamTitleDTO teamTitle;
+    //private TeamTitleDTO teamTitle;
     private SiteDTO site;
-    private List<FormCrf1DTO> formCrf1;
+    //private List<FormCrf1DTO> formCrf1;
     private Integer status;
     private String date;
     private String time;
 
-    public TeamDTO() {
+
+    public UserContract() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -43,13 +47,13 @@ public class TeamDTO {
         this.userName = userName;
     }
 
-    public TeamTitleDTO getTeamTitle() {
+    /*public TeamTitleDTO getTeamTitle() {
         return teamTitle;
     }
 
     public void setTeamTitle(TeamTitleDTO teamTitle) {
         this.teamTitle = teamTitle;
-    }
+    }*/
 
     public SiteDTO getSite() {
         return site;
@@ -59,13 +63,13 @@ public class TeamDTO {
         this.site = site;
     }
 
-    public List<FormCrf1DTO> getFormCrf1() {
+    /*public List<FormCrf1DTO> getFormCrf1() {
         return formCrf1;
-    }
+    }*/
 
-    public void setFormCrf1(List<FormCrf1DTO> formCrf1) {
+    /*public void setFormCrf1(List<FormCrf1DTO> formCrf1) {
         this.formCrf1 = formCrf1;
-    }
+    }*/
 
     public String getSraName() {
         return sraName;
@@ -97,5 +101,20 @@ public class TeamDTO {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+
+    public static abstract class UserTable implements BaseColumns {
+
+        public static final String TABLE_NAME = "login";
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String COLUMN__ID = "_id";
+        public static final String COLUMN_SRANAME = "sraName";
+        public static final String COLUMN_USERNAME = "userName";
+        public static final String COLUMN_PASSWORD = "password";
+        public static final String COLUMN_SITE = "site";
+        public static final String COLUMN_STATUS = "status";
+        public static final String COLUMN_DATE = "date";
+        public static final String COLUMN_TIME = "time";
     }
 }

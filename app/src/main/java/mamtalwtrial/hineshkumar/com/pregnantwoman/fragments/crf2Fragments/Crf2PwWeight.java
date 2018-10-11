@@ -29,25 +29,24 @@ public class Crf2PwWeight extends Fragment {
 
     TextView tv_headingText;
 
-    boolean isDataFiled=false;
+    boolean isDataFiled = false;
     //dialog
-    Button btnCancel,btnConform;
+    Button btnCancel, btnConform;
     Dialog dialog;
-    TextView  tv_RomanEngText, tv_engText;
+    TextView tv_RomanEngText, tv_engText;
 
     double avrageVal = -1;
 
 
     EditText et_r1_mauc1, et_r2_mauc1, et_r1_mauc2, et_r2_mauc2, et_r1_mauc3, et_r2_mauc3, et_r1_mauc4, et_r2_mauc4;
     Button btn_checkReading, btn_maucSubmit;
-    TextView tv_muac_difference1, tv_muac_difference2,tv_muac_difference3, tv_muac_difference4, tv_averageMAUC,tv_ass_id;
+    TextView tv_muac_difference1, tv_muac_difference2, tv_muac_difference3, tv_muac_difference4, tv_averageMAUC, tv_ass_id;
 
-    EditText et_readerId_1,et_readerId_2;
+    EditText et_readerId_1, et_readerId_2;
     int turn = 1;
 
     LinearLayout[] listOfLayout;
     LinearLayout ll_muac1, ll_muac2, ll_muac3, ll_muac4;
-
 
 
     @Override
@@ -98,7 +97,7 @@ public class Crf2PwWeight extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(checkFieldValidation()){
+                if (checkFieldValidation()) {
 
                     CRF2Activity.fragmentManager.beginTransaction().replace(R.id.crf2_frame, new Crf2PwHeightFragment(), null).addToBackStack(null).commit();
 
@@ -114,26 +113,23 @@ public class Crf2PwWeight extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(turn==1){
+                if (turn == 1) {
 
-                    checkReadingEditText(et_r1_mauc1, et_r2_mauc1,tv_muac_difference1);
+                    checkReadingEditText(et_r1_mauc1, et_r2_mauc1, tv_muac_difference1);
 
-                }
-                else if(turn==2){
+                } else if (turn == 2) {
 
-                    checkReadingEditText(et_r1_mauc2, et_r2_mauc2,tv_muac_difference2);
-                }
-                else if(turn==3){
+                    checkReadingEditText(et_r1_mauc2, et_r2_mauc2, tv_muac_difference2);
+                } else if (turn == 3) {
 
-                    checkReadingEditText(et_r1_mauc3, et_r2_mauc3,tv_muac_difference3);
-                }
-                else if(turn==4){
+                    checkReadingEditText(et_r1_mauc3, et_r2_mauc3, tv_muac_difference3);
+                } else if (turn == 4) {
 
-                    checkReadingEditText(et_r1_mauc4, et_r2_mauc4,tv_muac_difference4);
+                    checkReadingEditText(et_r1_mauc4, et_r2_mauc4, tv_muac_difference4);
                 }
 
 
-             //   CRF1Activity.turnId = turn;
+                //   CRF1Activity.turnId = turn;
             }
         });
 
@@ -176,7 +172,7 @@ public class Crf2PwWeight extends Fragment {
         return view;
     }
 
-    public boolean textVaildation(EditText et1, EditText et2){
+    public boolean textVaildation(EditText et1, EditText et2) {
 
         boolean b = true;
 
@@ -185,29 +181,28 @@ public class Crf2PwWeight extends Fragment {
         String tem2 = et2.getText().toString();
 
 
-
-        if(TextUtils.isEmpty(tem1)){
+        if (TextUtils.isEmpty(tem1)) {
             et1.setError("Required");
-            b= false;
+            b = false;
         }
-        if(!tem1.contains(".")){
+        if (!tem1.contains(".")) {
             et1.setError("Enter Decimal Value");
-            b= false;
+            b = false;
 
         }
 
 
-        if(TextUtils.isEmpty(tem2)){
+        if (TextUtils.isEmpty(tem2)) {
 
             et2.setError("Required");
 
             b = false;
         }
 
-        if(!tem2.contains(".")){
+        if (!tem2.contains(".")) {
 
             et2.setError("Enter Decimal Value");
-            b= false;
+            b = false;
 
         }
 
@@ -215,24 +210,24 @@ public class Crf2PwWeight extends Fragment {
         return b;
     }
 
-    public float convertIntoFloat(String value){
+    public float convertIntoFloat(String value) {
 
         float val = Float.parseFloat(value);
 
         return val;
     }
 
-    public void checkReadingEditText(EditText et_1, EditText et_2, TextView tv){
+    public void checkReadingEditText(EditText et_1, EditText et_2, TextView tv) {
 
 
-        if(textVaildation(et_1, et_2)) {
+        if (textVaildation(et_1, et_2)) {
 
             float f1 = convertIntoFloat(et_1.getText().toString());
             float f2 = convertIntoFloat(et_2.getText().toString());
 
             float diff = f1 - f2;
 
-            double difference =  Math.round(diff * 10000.0)/10000.0;
+            double difference = Math.round(diff * 10000.0) / 10000.0;
 
             if ((difference <= 0 && difference >= -0.5) || (difference >= 0 && difference <= 0.5)) {
 
@@ -240,7 +235,7 @@ public class Crf2PwWeight extends Fragment {
                 //  DecimalFormat decimalFormat = new DecimalFormat(10.0);
                 ;
 
-                tv.setText( difference+ "");
+                tv.setText(difference + "");
                 tv.setTextColor(Color.GREEN);
 
                 et_1.setEnabled(false);
@@ -250,7 +245,7 @@ public class Crf2PwWeight extends Fragment {
                 btn_checkReading.setBackgroundResource(R.drawable.button_shape_green);
 
                 float temp1 = (f1 + f2) / 2;
-                avrageVal = Double.parseDouble( new DecimalFormat("##.#").format(temp1));
+                avrageVal = Double.parseDouble(new DecimalFormat("##.#").format(temp1));
                 tv_averageMAUC.setText(avrageVal + "");
 
             } else {
@@ -269,7 +264,7 @@ public class Crf2PwWeight extends Fragment {
                 }
                 if (turn == 5) {
 
-                 //   myCustomeDialog(1);
+                    //   myCustomeDialog(1);
 
                 }
 
@@ -356,40 +351,40 @@ public class Crf2PwWeight extends Fragment {
     }*/
 
 
-    public boolean checkFieldValidation(  ){
+    public boolean checkFieldValidation() {
         boolean b = true;
-        String tem1 =  et_readerId_1.getText().toString();
+        String tem1 = et_readerId_1.getText().toString();
         String tem2 = et_readerId_2.getText().toString();
 
-        if(TextUtils.isEmpty(tem1)){
+        if (TextUtils.isEmpty(tem1)) {
             et_readerId_1.setError("Must Required");
             b = false;
-        }else if (tem1.length()<3){
+        } else if (tem1.length() < 3) {
 
             et_readerId_1.setError("Enter Min Three Digit code");
             b = false;
         }
 
-        if(TextUtils.isEmpty(tem2)){
+        if (TextUtils.isEmpty(tem2)) {
             et_readerId_2.setError("Must Required");
             b = false;
-        }else if (tem2.length()<3){
+        } else if (tem2.length() < 3) {
 
             et_readerId_2.setError("Enter Min Three Digit code");
             b = false;
         }
-        if(avrageVal==-1){
+        if (avrageVal == -1) {
 
             b = false;
         }
         String tem3 = et_r2_mauc1.getText().toString();
         String tem4 = et_r1_mauc1.getText().toString();
 
-        if(TextUtils.isEmpty(tem3)){
+        if (TextUtils.isEmpty(tem3)) {
             et_r2_mauc1.setError("Must Required");
             b = false;
         }
-        if(TextUtils.isEmpty(tem4)){
+        if (TextUtils.isEmpty(tem4)) {
             et_r2_mauc1.setError("Must Required");
             b = false;
         }
@@ -413,9 +408,9 @@ public class Crf2PwWeight extends Fragment {
     }*/
 
 
-    public float getTextFromField(EditText et){
+    public float getTextFromField(EditText et) {
 
-        return  Float.parseFloat(et.getText().toString());
+        return Float.parseFloat(et.getText().toString());
     }
 
     /*public WeightLwCrf3cDTO getWeightLwObject(int id ,EditText et_1, EditText et_2){
@@ -431,7 +426,6 @@ public class Crf2PwWeight extends Fragment {
 
         return weightLwCrf3cDTO;
     }*/
-
 
 
 }

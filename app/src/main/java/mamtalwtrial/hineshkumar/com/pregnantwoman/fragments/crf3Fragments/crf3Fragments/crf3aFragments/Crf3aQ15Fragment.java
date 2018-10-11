@@ -46,7 +46,7 @@ public class Crf3aQ15Fragment extends Fragment {
     }
 
 
-    public void initializingViews(View view, Context context){
+    public void initializingViews(View view, Context context) {
 
 
         //initialiling EDIT TEXT

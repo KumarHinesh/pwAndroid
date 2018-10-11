@@ -43,9 +43,9 @@ public class Crf2PwinfoFragment extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 rb_q17 = (RadioButton) view.findViewById(rg_q17.getCheckedRadioButtonId());
-                if (rb_q17.getTag().toString().equals("3")){
+                if (rb_q17.getTag().toString().equals("3")) {
                     rl_q17.setVisibility(View.VISIBLE);
-                }else {
+                } else {
                     rl_q17.setVisibility(View.GONE);
                 }
             }
@@ -55,17 +55,17 @@ public class Crf2PwinfoFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if (validation(view)){
+                if (validation(view)) {
 
 //                    int visitNo = Integer.parseInt(CRF2Activity.formCrf2DTO.getQ17());
 
-                    switch(1){
+                    switch (1) {
 
                         case 1:
 
                             CRF2Activity.fragmentManager.beginTransaction().replace(R.id.crf2_frame, new Crf2PwMuacAssessmentFragment(), null).addToBackStack(null).commit();
-                                    //      .replace(R.id.crf2_frame, fragment, ).addToBackStack(null).commit();
-                                 //   .replace(R.id.crf2_frame, fragment, fragment.getClass().getSimpleName()).addToBackStack(null).commit();
+                            //      .replace(R.id.crf2_frame, fragment, ).addToBackStack(null).commit();
+                            //   .replace(R.id.crf2_frame, fragment, fragment.getClass().getSimpleName()).addToBackStack(null).commit();
                             break;
 
                         case 2:
@@ -100,12 +100,11 @@ public class Crf2PwinfoFragment extends Fragment {
         });
 
 
-
         return view;
     }
 
 
-    public void initalizeViews(View view, Context context){
+    public void initalizeViews(View view, Context context) {
 
         //initialiling EDIT TEXT
         et_q17_reason = (EditText) view.findViewById(R.id.et_q17_reason);
@@ -116,19 +115,19 @@ public class Crf2PwinfoFragment extends Fragment {
         //initialiling BUTTON
         btn_next_pw_info = (Button) view.findViewById(R.id.btn_next_pw_info);
 
-       //initialiling  RADIO GROUPS
+        //initialiling  RADIO GROUPS
         rg_q17 = (RadioGroup) view.findViewById(R.id.rg_q17);
 
-       //initialiling TEXT VIEW
+        //initialiling TEXT VIEW
         tv_q17 = (TextView) view.findViewById(R.id.tv_q17);
 
-       //initialiling PROGRASS DIALOG
+        //initialiling PROGRASS DIALOG
         progressDialog = new ProgressDialog(context);
         progressDialog.setMessage("Wait");
     }
 
     // function for validation and inert Values in DTO
-    public boolean validation(View view){
+    public boolean validation(View view) {
         boolean validation = true;
 
         String tem = null;
@@ -160,35 +159,35 @@ public class Crf2PwinfoFragment extends Fragment {
     }
 
     // check radiogroup fields if check any child function return tag value otherWise return null
-    public String checkRadioGroupViews(View view, RadioGroup radioGroup, TextView textView){
+    public String checkRadioGroupViews(View view, RadioGroup radioGroup, TextView textView) {
         RadioButton radioButton;
-        if (radioGroup.getCheckedRadioButtonId() != -1){
+        if (radioGroup.getCheckedRadioButtonId() != -1) {
             radioButton = (RadioButton) view.findViewById(radioGroup.getCheckedRadioButtonId());
             return radioButton.getTag().toString();
-        }else {
+        } else {
             return null;
         }
     }
 
     // check RadioGroup value if text muxt given then get text otherwise set Error on edittexxt and return null
-    public String[] checkRgAndGetFieldData(View view, RadioGroup radioGroup, TextView textView, EditText editText, String val1, String val2, String val3, Object o){
+    public String[] checkRgAndGetFieldData(View view, RadioGroup radioGroup, TextView textView, EditText editText, String val1, String val2, String val3, Object o) {
         String data[] = new String[2];
         RadioButton radioButton;
-        if (radioGroup.getCheckedRadioButtonId() != -1){
+        if (radioGroup.getCheckedRadioButtonId() != -1) {
             radioButton = (RadioButton) view.findViewById(radioGroup.getCheckedRadioButtonId());
             String tempVal = radioButton.getTag().toString();
             data[0] = tempVal;
-            if (tempVal.equals(val1) || tempVal.equals(val2) || tempVal.equals(val3)){
+            if (tempVal.equals(val1) || tempVal.equals(val2) || tempVal.equals(val3)) {
                 String tVal = editText.getText().toString();
-                if (tVal.isEmpty() || tVal == null || tVal.equals("")){
+                if (tVal.isEmpty() || tVal == null || tVal.equals("")) {
                     editText.setError("Required");
                     data[1] = "";
-                }else{
+                } else {
                     data[1] = tVal;
                 }
             }
             return data;
-        }else {
+        } else {
             return null;
         }
 

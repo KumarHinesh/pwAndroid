@@ -2,6 +2,7 @@ package mamtalwtrial.hineshkumar.com.pregnantwoman.activities;
 
 
 import java.text.SimpleDateFormat;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -18,7 +19,7 @@ import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.constants.ContantsValues;
 
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormCrf1DTO;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.TeamDTO;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UserContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UltrasoundExaminationDTO;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.fragments.crf1Fragments.PwInformation;
 
@@ -27,7 +28,7 @@ public class CRF1Activity extends AppCompatActivity {
     public static int babyNo = -1;
     public static FormCrf1DTO formCrf1DTO;
     public static FragmentManager fragmentManager;
-    TeamDTO teamDTO;
+    UserContract teamDTO;
     public static List<UltrasoundExaminationDTO> ultrasoundExaminationDTOList;
 
     @Override
@@ -35,23 +36,21 @@ public class CRF1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crf1);
 
-        teamDTO = new Gson().fromJson(getIntent().getStringExtra("team"), TeamDTO.class);
+        teamDTO = new Gson().fromJson(getIntent().getStringExtra("team"), UserContract.class);
 
         ultrasoundExaminationDTOList = new ArrayList<>();
-        fragmentManager  = getSupportFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         Fragment fragment = new PwInformation();
         formCrf1DTO = new FormCrf1DTO();
 
         formCrf1DTO.setTeamDTO(teamDTO);
 
-        formCrf1DTO.setQ02(new SimpleDateFormat(ContantsValues.DATEFORMAT).format(Calendar.getInstance().getTime())+"");
-        formCrf1DTO.setQ03(new SimpleDateFormat(ContantsValues.TIMEFORMAT).format(Calendar.getInstance().getTime())+"");
+        formCrf1DTO.setQ02(new SimpleDateFormat(ContantsValues.DATEFORMAT).format(Calendar.getInstance().getTime()) + "");
+        formCrf1DTO.setQ03(new SimpleDateFormat(ContantsValues.TIMEFORMAT).format(Calendar.getInstance().getTime()) + "");
 
-        if (findViewById(R.id.crf1_frame) != null)
-        {
+        if (findViewById(R.id.crf1_frame) != null) {
 
-            if (savedInstanceState != null)
-            {
+            if (savedInstanceState != null) {
                 return;
             }
 
@@ -61,7 +60,7 @@ public class CRF1Activity extends AppCompatActivity {
         }
 
 
-    //   Fragment fragment = new Crf1Q20();
+        //   Fragment fragment = new Crf1Q20();
        /* getSupportFragmentManager().beginTransaction()
                 .replace(R.id.crf1_frame, fragment, fragment.getClass().getSimpleName()).addToBackStack(null).commit();
 */

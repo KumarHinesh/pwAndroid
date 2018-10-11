@@ -21,8 +21,6 @@ public class PastPregnancypage1 extends Fragment {
         View view = inflater.inflate(R.layout.fragment_past_pregnancypage1, container, false);
 
 
-
-
         // Inflate the layout for this fragment
         return view;
     }

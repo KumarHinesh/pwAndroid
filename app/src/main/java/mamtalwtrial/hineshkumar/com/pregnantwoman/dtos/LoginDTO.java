@@ -5,7 +5,8 @@ import java.util.List;
 
 public class LoginDTO {
 
-    private TeamDTO teamDTO;
+    //private TeamDTO teamDTO;
+
     /*private Integer teamId;
     private String teamType;
     private String date;
@@ -52,11 +53,11 @@ public class LoginDTO {
         this.site = site;
     }
 */
-    public TeamDTO getTeamDTO() {
+    /*public TeamDTO getTeamDTO() {
         return teamDTO;
     }
 
     public void setTeamDTO(TeamDTO teamDTO) {
         this.teamDTO = teamDTO;
-    }
+    }*/
 }
