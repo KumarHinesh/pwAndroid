@@ -22,7 +22,7 @@ public class Crf2Q42Fragment extends Fragment {
     EditText et_q45, et_q44;
     Button btn_next;
     RadioGroup rg_q42, rg_q43, rg_q44, rg_q45, rg_q46, rg_q47;
-    TextView  tv_q42, tv_q43, tv_q44, tv_q45, tv_q46, tv_q47;
+    TextView tv_q42, tv_q43, tv_q44, tv_q45, tv_q46, tv_q47;
     RadioButton rb_q42, rb_q43, rb_q44, rb_q45, rb_q46, rb_q47;
     ScrollView scrollView;
 
@@ -89,7 +89,7 @@ public class Crf2Q42Fragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if (validation()){
+                if (validation()) {
                     btn_next.setEnabled(false);
                     CRF2Activity.fragmentManager.beginTransaction().replace(R.id.crf2_frame, new Crf3aQ15Fragment(), null).addToBackStack(null).commit();
 
@@ -103,7 +103,7 @@ public class Crf2Q42Fragment extends Fragment {
         return view;
     }
 
-    public void initializeViews(View view){
+    public void initializeViews(View view) {
 
         btn_next = (Button) view.findViewById(R.id.btn_next);
 
@@ -128,45 +128,46 @@ public class Crf2Q42Fragment extends Fragment {
     }
 
 
-    public boolean validation(){
+    public boolean validation() {
 
         boolean validation = true;
 
         if (isRBCheckedThree(rg_q42, rb_q42, tv_q42).equals(""))
             validation = false;
-         else
-            //CRF1Activity.formCrf1DTO.setQ20(isRBCheckedThree(rg_q20, rb_q20, tv_q20));
-
-        if (isRBCheckedThree(rg_q43, rb_q43, tv_q43).equals(""))
-            validation = false;
-         else
-           //CRF1Activity.formCrf1DTO.setQ20(isRBCheckedThree(rg_q20, rb_q20, tv_q20));
-
-        if (getEditText(rg_q44, rb_q44, et_q44, tv_q44, "2", null, null, null).equals(""))
-            validation = false;
-         else
-            //CRF1Activity.formCrf1DTO.setQ20(isRBCheckedThree(rg_q20, rb_q20, tv_q20));
-
-        if (getEditText(rg_q45, rb_q45, et_q45, tv_q45, "2", null, null, null).equals(""))
-              validation = false;
-         else
-              //CRF1Activity.formCrf1DTO.setQ20(isRBCheckedThree(rg_q20, rb_q20, tv_q20));
-
-        if (isRBCheckedThree(rg_q46, rb_q46, tv_q46).equals(""))
-                validation = false;
-         else
-               //CRF1Activity.formCrf1DTO.setQ20(isRBCheckedThree(rg_q20, rb_q20, tv_q20));
-
-        if (isRBCheckedThree(rg_q47, rb_q47, tv_q47).equals(""))
-            validation = false;
         else
-            validation = true;//CRF1Activity.formCrf1DTO.setQ20(isRBCheckedThree(rg_q20, rb_q20, tv_q20));
+            //CRF1Activity.formCrf1DTO.setQ20(isRBCheckedThree(rg_q20, rb_q20, tv_q20));
+
+            if (isRBCheckedThree(rg_q43, rb_q43, tv_q43).equals(""))
+                validation = false;
+            else
+                //CRF1Activity.formCrf1DTO.setQ20(isRBCheckedThree(rg_q20, rb_q20, tv_q20));
+
+                if (getEditText(rg_q44, rb_q44, et_q44, tv_q44, "2", null, null, null).equals(""))
+                    validation = false;
+                else
+                    //CRF1Activity.formCrf1DTO.setQ20(isRBCheckedThree(rg_q20, rb_q20, tv_q20));
+
+                    if (getEditText(rg_q45, rb_q45, et_q45, tv_q45, "2", null, null, null).equals(""))
+                        validation = false;
+                    else
+                        //CRF1Activity.formCrf1DTO.setQ20(isRBCheckedThree(rg_q20, rb_q20, tv_q20));
+
+                        if (isRBCheckedThree(rg_q46, rb_q46, tv_q46).equals(""))
+                            validation = false;
+                        else
+                            //CRF1Activity.formCrf1DTO.setQ20(isRBCheckedThree(rg_q20, rb_q20, tv_q20));
+
+                            if (isRBCheckedThree(rg_q47, rb_q47, tv_q47).equals(""))
+                                validation = false;
+                            else
+                                validation = true;//CRF1Activity.formCrf1DTO.setQ20(isRBCheckedThree(rg_q20, rb_q20, tv_q20));
 
 
-            return validation;
+        return validation;
     }
 
     int x, y;
+
     public void setFocuseable(float x1, float y1) {
 
         x = (int) x1;
@@ -192,24 +193,24 @@ public class Crf2Q42Fragment extends Fragment {
         }
     }
 
-    public String getEditText(RadioGroup rg, RadioButton rb, EditText editText ,TextView tv, String id, String id2, String id3, String id4){
+    public String getEditText(RadioGroup rg, RadioButton rb, EditText editText, TextView tv, String id, String id2, String id3, String id4) {
 
-        if(rg.getCheckedRadioButtonId()==-1){
-            setFocuseable(tv.getX(),tv.getY());
+        if (rg.getCheckedRadioButtonId() == -1) {
+            setFocuseable(tv.getX(), tv.getY());
             tv.setError("Required");
             return "";
-        }else {
-            if(rb.getTag().toString().equals(id) || rb.getTag().toString().equals(id2) ||
-                    rb.getTag().toString().equals(id3) || rb.getTag().toString().equals(id4)){
+        } else {
+            if (rb.getTag().toString().equals(id) || rb.getTag().toString().equals(id2) ||
+                    rb.getTag().toString().equals(id3) || rb.getTag().toString().equals(id4)) {
 
-                if(editText.getText().toString().equals("") || editText.getText().toString().isEmpty()){
+                if (editText.getText().toString().equals("") || editText.getText().toString().isEmpty()) {
                     editText.setError("Enter Here");
-                    setFocuseable(editText.getX(),editText.getY());
+                    setFocuseable(editText.getX(), editText.getY());
                     return "";
-                }else {
+                } else {
                     return editText.getText().toString();
                 }
-            }else {
+            } else {
 
                 return rb.getTag().toString();
             }

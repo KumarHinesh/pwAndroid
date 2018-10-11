@@ -55,7 +55,7 @@ public class Crf1Q20 extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_crf1_q18, container, false);
         initializeViews(view, getContext());
 
-       /* rg_q18.check(rg_q18.getChildAt(4).getId());*/
+        /* rg_q18.check(rg_q18.getChildAt(4).getId());*/
 
 
         rg_q20.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -116,23 +116,23 @@ public class Crf1Q20 extends Fragment {
             @Override
             public void onClick(View view) {
 
-                if (validation()){
+                if (validation()) {
 
-                    if ((Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19()) == 2 || Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19()) == 3) && CRF1Activity.babyNo < Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19()) ){
+                    if ((Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19()) == 2 || Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19()) == 3) && CRF1Activity.babyNo < Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19())) {
                         CRF1Activity.babyNo++;
                         CRF1Activity.ultrasoundExaminationDTOList.add(ultrasoundExaminationDTO);
                         CRF1Activity.fragmentManager.beginTransaction().replace(R.id.crf1_frame, new Crf1Q20(), null).addToBackStack(null).commit();
 
-                    }else {
+                    } else {
                         CRF1Activity.formCrf1DTO.setUltrasoundExaminationDTOS(CRF1Activity.ultrasoundExaminationDTOList);
-                        CRF1Activity.formCrf1DTO.setQ38(new SimpleDateFormat(ContantsValues.TIMEFORMAT).format(Calendar.getInstance().getTime())+"");
+                        CRF1Activity.formCrf1DTO.setQ38(new SimpleDateFormat(ContantsValues.TIMEFORMAT).format(Calendar.getInstance().getTime()) + "");
                         sendDataToServer();
                     }
 
 
-                }else {
+                } else {
 
-                    Toast.makeText(getContext(),"Enter Complete Details",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Enter Complete Details", Toast.LENGTH_LONG).show();
 
 
                 }
@@ -345,6 +345,7 @@ public class Crf1Q20 extends Fragment {
 
 
     int x, y;
+
     public void setFocuseable(float x1, float y1) {
 
         x = (int) x1;
@@ -370,7 +371,7 @@ public class Crf1Q20 extends Fragment {
     }
 
 
-    public void sendDataToServer(){
+    public void sendDataToServer() {
 
         APIService mAPIService = ApiUtils.getAPIService();
         progressDialog.show();
@@ -378,13 +379,13 @@ public class Crf1Q20 extends Fragment {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
 
-                if (response.code() == 200){
+                if (response.code() == 200) {
                     progressDialog.dismiss();
-                   // Toast.makeText(getContext(), response.message(),Toast.LENGTH_LONG).show();
+                    // Toast.makeText(getContext(), response.message(),Toast.LENGTH_LONG).show();
                     startActivity(new Intent(getContext(), LoginActivity.class));
                     getActivity().finish();
 
-                }else {
+                } else {
                     //Toast.makeText(getContext(), response.message(),Toast.LENGTH_LONG).show();
                     progressDialog.dismiss();
                     startActivity(new Intent(getContext(), LoginActivity.class));

@@ -37,9 +37,8 @@ public class PwInformationAnc extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-       final View view = inflater.inflate(R.layout.fragment_pw_information, container, false);
-       initializeViews(view);
-
+        final View view = inflater.inflate(R.layout.fragment_pw_information, container, false);
+        initializeViews(view);
 
 
         rg17.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -52,17 +51,14 @@ public class PwInformationAnc extends Fragment {
         });
 
 
-
-
         btn_next_pw_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
+                if (validation()) {
 
-                if (validation()){
-
-                    switch(1){
+                    switch (1) {
 
                         case 1:
                             CRF1Activity.fragmentManager.beginTransaction().replace(R.id.crf1_frame, new CrfQ18(), null).addToBackStack(null).commit();
@@ -95,8 +91,7 @@ public class PwInformationAnc extends Fragment {
                     }
 
 
-
-                }else {
+                } else {
 
                     AlertDialog alertDialog = new AlertDialog.Builder(
                             getContext()).create();
@@ -121,7 +116,7 @@ public class PwInformationAnc extends Fragment {
                 }
 
 
-                    //...... Some other stuff then parse the JSON feed into a POJO
+                //...... Some other stuff then parse the JSON feed into a POJO
 
 
             }
@@ -131,7 +126,7 @@ public class PwInformationAnc extends Fragment {
     }
 
 
-    public boolean validation(){
+    public boolean validation() {
         boolean validation = true;
 
         if (!checkEditTextField(et_pw_name).equals(""))
@@ -177,19 +172,16 @@ public class PwInformationAnc extends Fragment {
         if (validation)
             CRF1Activity.formCrf1DTO.setPregnantWomanDTO(pregnantWomanDTO);
 
-        if (rg17.getCheckedRadioButtonId() == -1)
-        {
+        if (rg17.getCheckedRadioButtonId() == -1) {
             validation = false;
-        }
-        else
-        {
+        } else {
             CRF1Activity.formCrf1DTO.setQ17(rb_q17.getText().toString());
         }
 
         return validation;
     }
 
-    public String checkEditTextField(EditText editText){
+    public String checkEditTextField(EditText editText) {
         String data = "";
         if (!editText.getText().toString().equalsIgnoreCase(""))
             data = editText.getText().toString();
@@ -199,7 +191,7 @@ public class PwInformationAnc extends Fragment {
     }
 
 
-    public void initializeViews(View view){
+    public void initializeViews(View view) {
 
         btn_next_pw_info = (Button) view.findViewById(R.id.btn_next_pw_info);
 
@@ -215,14 +207,14 @@ public class PwInformationAnc extends Fragment {
         et_q17_reason = (EditText) view.findViewById(R.id.et_q17_reason);
 
         //initialiling  RADIO GROUPS
-        rg17=(RadioGroup) view.findViewById(R.id.rg_q17);
+        rg17 = (RadioGroup) view.findViewById(R.id.rg_q17);
 
 
         pregnantWomanDTO = new PregnantWomanDTO();
     }
 
 
-    public void sendDataToServer(){
+    public void sendDataToServer() {
 
     }
 
@@ -255,8 +247,6 @@ public class PwInformationAnc extends Fragment {
 
         dialog.show();
     }*/
-
-
 
 
 }

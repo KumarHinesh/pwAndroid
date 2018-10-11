@@ -20,10 +20,6 @@ public class Crf5aQ19Fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_crf5a_q19, container, false);
 
 
-
-
-
-
         return view;
     }
 

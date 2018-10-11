@@ -68,9 +68,9 @@ public class CrfQ18 extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(validation()){
+                if (validation()) {
                     CRF1Activity.fragmentManager.beginTransaction().replace(R.id.crf1_frame, new Crf1Q20(), null).addToBackStack(null).commit();
-                }else {
+                } else {
                     Toast.makeText(getContext(), "Please Enter All Fields", Toast.LENGTH_LONG).show();
                 }
 
@@ -78,13 +78,12 @@ public class CrfQ18 extends Fragment {
         });
 
 
-
         // Inflate the layout for this fragment
         return view;
     }
 
 
-    public void initializationViews(View view){
+    public void initializationViews(View view) {
 
         //RADIO GROUP INITIALIZATION
         rg_q18 = (RadioGroup) view.findViewById(R.id.rg_q18);
@@ -124,6 +123,7 @@ public class CrfQ18 extends Fragment {
     }
 
     int x, y;
+
     public void setFocuseable(float x1, float y1) {
 
         x = (int) x1;

@@ -38,7 +38,7 @@ public class Crf3bQ19Fragment extends Fragment {
         return view;
     }
 
-    public void initializingViews(View view, Context context){
+    public void initializingViews(View view, Context context) {
 
 
         //initialiling EDIT TEXT

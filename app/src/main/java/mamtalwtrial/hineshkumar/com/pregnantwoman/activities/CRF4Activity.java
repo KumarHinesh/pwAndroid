@@ -19,14 +19,12 @@ public class CRF4Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crf4);
 
-        fragmentManager  = getSupportFragmentManager();
+        fragmentManager = getSupportFragmentManager();
 
         Fragment fragment = new Crf4PwinfoFragment();
 
-        if (findViewById(R.id.crf4_frame) != null)
-        {
-            if (savedInstanceState != null)
-            {
+        if (findViewById(R.id.crf4_frame) != null) {
+            if (savedInstanceState != null) {
                 return;
             }
 

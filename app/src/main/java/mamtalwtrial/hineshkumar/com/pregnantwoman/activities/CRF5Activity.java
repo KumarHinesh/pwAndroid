@@ -12,19 +12,18 @@ import mamtalwtrial.hineshkumar.com.pregnantwoman.fragments.crf5Fragments.crf5aF
 public class CRF5Activity extends AppCompatActivity {
 
     public static FragmentManager fragmentManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crf5);
 
-        fragmentManager  = getSupportFragmentManager();
+        fragmentManager = getSupportFragmentManager();
 
         Fragment fragment = new Crf5PwinfoFragment();
 
-        if (findViewById(R.id.crf5_frame) != null)
-        {
-            if (savedInstanceState != null)
-            {
+        if (findViewById(R.id.crf5_frame) != null) {
+            if (savedInstanceState != null) {
                 return;
             }
 
@@ -33,8 +32,6 @@ public class CRF5Activity extends AppCompatActivity {
             fragmentTransaction.add(R.id.crf5_frame, fragment, null).addToBackStack(null);
             fragmentTransaction.commit();
         }
-
-
 
 
     }

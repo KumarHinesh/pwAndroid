@@ -17,9 +17,6 @@ public class Crf3cQ29Fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_crf3c_q29, container, false);
 
 
-
-
-
         // Inflate the layout for this fragment
         return view;
     }

@@ -2,6 +2,7 @@ package mamtalwtrial.hineshkumar.com.pregnantwoman.activities;
 
 
 import java.text.SimpleDateFormat;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -38,20 +39,18 @@ public class CRF1Activity extends AppCompatActivity {
         teamDTO = new Gson().fromJson(getIntent().getStringExtra("team"), TeamDTO.class);
 
         ultrasoundExaminationDTOList = new ArrayList<>();
-        fragmentManager  = getSupportFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         Fragment fragment = new PwInformation();
         formCrf1DTO = new FormCrf1DTO();
 
         formCrf1DTO.setTeamDTO(teamDTO);
 
-        formCrf1DTO.setQ02(new SimpleDateFormat(ContantsValues.DATEFORMAT).format(Calendar.getInstance().getTime())+"");
-        formCrf1DTO.setQ03(new SimpleDateFormat(ContantsValues.TIMEFORMAT).format(Calendar.getInstance().getTime())+"");
+        formCrf1DTO.setQ02(new SimpleDateFormat(ContantsValues.DATEFORMAT).format(Calendar.getInstance().getTime()) + "");
+        formCrf1DTO.setQ03(new SimpleDateFormat(ContantsValues.TIMEFORMAT).format(Calendar.getInstance().getTime()) + "");
 
-        if (findViewById(R.id.crf1_frame) != null)
-        {
+        if (findViewById(R.id.crf1_frame) != null) {
 
-            if (savedInstanceState != null)
-            {
+            if (savedInstanceState != null) {
                 return;
             }
 
@@ -61,7 +60,7 @@ public class CRF1Activity extends AppCompatActivity {
         }
 
 
-    //   Fragment fragment = new Crf1Q20();
+        //   Fragment fragment = new Crf1Q20();
        /* getSupportFragmentManager().beginTransaction()
                 .replace(R.id.crf1_frame, fragment, fragment.getClass().getSimpleName()).addToBackStack(null).commit();
 */

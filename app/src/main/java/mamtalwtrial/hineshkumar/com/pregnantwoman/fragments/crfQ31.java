@@ -27,26 +27,22 @@ public class crfQ31 extends Fragment {
 
     Button submitcrf1;
 
-    RadioGroup rg_q33,rg_q34;
+    RadioGroup rg_q33, rg_q34;
 
-    RadioButton rb_q33,rb_q34;
-
-
-
+    RadioButton rb_q33, rb_q34;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view= inflater.inflate(R.layout.fragment_crf_q31, container, false);
+        final View view = inflater.inflate(R.layout.fragment_crf_q31, container, false);
 
-        q31_et=(EditText) view.findViewById(R.id.et_q31);
-        q32_et=(EditText) view.findViewById(R.id.et_q32);
-        q36_et=(EditText) view.findViewById(R.id.et_q36);
-        q37_et=(EditText) view.findViewById(R.id.et_q37);
-        submitcrf1=(Button) view.findViewById(R.id.submitcrf1);
-
+        q31_et = (EditText) view.findViewById(R.id.et_q31);
+        q32_et = (EditText) view.findViewById(R.id.et_q32);
+        q36_et = (EditText) view.findViewById(R.id.et_q36);
+        q37_et = (EditText) view.findViewById(R.id.et_q37);
+        submitcrf1 = (Button) view.findViewById(R.id.submitcrf1);
 
 
         rg_q33.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -70,22 +66,14 @@ public class crfQ31 extends Fragment {
         });
 
 
-
-
-
-
-
-
-
-
         submitcrf1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (validation()){
+                if (validation()) {
 
                     validation();
 
-                   // sendDataToServer(CRF1Activity.formCrf1DTO);
+                    // sendDataToServer(CRF1Activity.formCrf1DTO);
 
 
                     AlertDialog alertDialog = new AlertDialog.Builder(
@@ -115,12 +103,7 @@ public class crfQ31 extends Fragment {
                     alertDialog.show();
 
 
-
-
-
-
-                }
-                else {
+                } else {
 
 
                     AlertDialog alertDialog = new AlertDialog.Builder(
@@ -150,19 +133,13 @@ public class crfQ31 extends Fragment {
         });
 
 
-
-
-
-
-
         return view;
 
 
     }
 
 
-
-///
+    ///
     public String checkEditTextField(EditText editText) {
         String data = "";
         if (!editText.getText().toString().equalsIgnoreCase(""))
@@ -171,9 +148,6 @@ public class crfQ31 extends Fragment {
             editText.setError("Please Enter");
         return data;
     }
-
-
-
 
 
     ///
@@ -200,38 +174,24 @@ public class crfQ31 extends Fragment {
             validation = false;
 */
 
-        if (rg_q33.getCheckedRadioButtonId() == -1)
-        {
+        if (rg_q33.getCheckedRadioButtonId() == -1) {
             validation = false;
-        }
-        else
-        {
+        } else {
 
             //CRF1Activity.formCrf1DTO.setQ33(rb_q33.getText().toString());
 
         }
 
-        if (rg_q34.getCheckedRadioButtonId() == -1)
-        {
+        if (rg_q34.getCheckedRadioButtonId() == -1) {
             validation = false;
-        }
-        else
-        {
+        } else {
 
-         //   CRF1Activity.formCrf1DTO.setQ34(rb_q34.getText().toString());
+            //   CRF1Activity.formCrf1DTO.setQ34(rb_q34.getText().toString());
 
         }
 
 
-
-
-
-
-
-
-      //  CRF1Activity.formCrf1DTO.setQ35("dummy35");
-
-
+        //  CRF1Activity.formCrf1DTO.setQ35("dummy35");
 
 
         return validation;
