@@ -21,7 +21,7 @@ import java.net.URL;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.activities.CRF1Activity;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FormsContract;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.databaseHelperClasses.DatabaseHelper;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.core.DatabaseHelper;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormCrf1DTO;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.PregnantWomanDTO;
 

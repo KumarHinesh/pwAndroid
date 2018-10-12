@@ -1,8 +1,11 @@
-package mamtalwtrial.hineshkumar.com.pregnantwoman.dtos;
+package mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses;
 
 import android.provider.BaseColumns;
 
-import java.util.List;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.SiteDTO;
 
 public class UserContract {
 
@@ -103,6 +106,13 @@ public class UserContract {
         this.time = time;
     }
 
+    public UserContract Sync(JSONObject jsonObject) throws JSONException {
+        this.ROW_USERNAME = jsonObject.getString(UsersTable.ROW_USERNAME);
+        this.ROW_PASSWORD = jsonObject.getString(UsersTable.ROW_PASSWORD);
+        this.FULL_NAME = jsonObject.getString(UsersTable.FULL_NAME);
+        return this;
+
+    }
 
     public static abstract class UserTable implements BaseColumns {
 
@@ -116,5 +126,7 @@ public class UserContract {
         public static final String COLUMN_STATUS = "status";
         public static final String COLUMN_DATE = "date";
         public static final String COLUMN_TIME = "time";
+
+        public static final String _URI = "users.php";
     }
 }

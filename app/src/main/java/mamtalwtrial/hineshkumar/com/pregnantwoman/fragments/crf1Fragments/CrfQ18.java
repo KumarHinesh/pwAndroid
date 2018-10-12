@@ -18,7 +18,7 @@ import com.google.gson.Gson;
 
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.activities.CRF1Activity;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.databaseHelperClasses.DatabaseHelper;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.core.DatabaseHelper;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormCrf1DTO;
 
 public class CrfQ18 extends Fragment {

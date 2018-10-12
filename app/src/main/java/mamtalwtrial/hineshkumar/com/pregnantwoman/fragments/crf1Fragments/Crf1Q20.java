@@ -23,7 +23,7 @@ import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.activities.CRF1Activity;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.activities.LoginActivity;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FoetusesContract;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.databaseHelperClasses.DatabaseHelper;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.core.DatabaseHelper;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FoetusesDTO;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UltrasoundExaminationDTO;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.retrofit.APIService;

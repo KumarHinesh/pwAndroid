@@ -1,10 +1,16 @@
-package mamtalwtrial.hineshkumar.com.pregnantwoman.databaseHelperClasses;
+package mamtalwtrial.hineshkumar.com.pregnantwoman.core;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.MatrixCursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -13,16 +19,13 @@ import java.util.Date;
 
 import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FoetusesContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FormsContract;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UserContract;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.UserContract;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.UserContract.UserTable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String SQL_CREATE_USERS = "CREATE TABLE " + UserContract.UserTable.TABLE_NAME + "("
-//<<<<<<< HEAD
             + UserContract.UserTable.COLUMN__ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            /*=======*/
-            + UserContract.UserTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-//>>>>>>> origin/PWTrial
             + UserContract.UserTable.COLUMN_SRANAME + " TEXT,"
             + UserContract.UserTable.COLUMN_USERNAME + " TEXT,"
             + UserContract.UserTable.COLUMN_PASSWORD + " TEXT,"
@@ -102,6 +105,98 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_FOETUSES);
     }
 
+    // ANDROID DATABASE MANAGER
+    public ArrayList<Cursor> getData(String Query) {
+        //get writable database
+        SQLiteDatabase sqlDB = this.getWritableDatabase();
+        String[] columns = new String[]{"message"};
+        //an array list of cursor to save two cursors one has results from the query
+        //other cursor stores error message if any errors are triggered
+        ArrayList<Cursor> alc = new ArrayList<Cursor>(2);
+        MatrixCursor Cursor2 = new MatrixCursor(columns);
+        alc.add(null);
+        alc.add(null);
+
+        try {
+            String maxQuery = Query;
+            //execute the query results will be save in Cursor c
+            Cursor c = sqlDB.rawQuery(maxQuery, null);
+
+            //add value to cursor2
+            Cursor2.addRow(new Object[]{"Success"});
+
+            alc.set(1, Cursor2);
+            if (null != c && c.getCount() > 0) {
+
+                alc.set(0, c);
+                c.moveToFirst();
+
+                return alc;
+            }
+            return alc;
+        } catch (SQLException sqlEx) {
+            Log.d("printing exception", sqlEx.getMessage());
+            //if any exceptions are triggered save the error message to cursor an return the arraylist
+            Cursor2.addRow(new Object[]{"" + sqlEx.getMessage()});
+            alc.set(1, Cursor2);
+            return alc;
+        } catch (Exception ex) {
+
+            Log.d("printing exception", ex.getMessage());
+
+            //if any exceptions are triggered save the error message to cursor an return the arraylist
+            Cursor2.addRow(new Object[]{"" + ex.getMessage()});
+            alc.set(1, Cursor2);
+            return alc;
+        }
+    }
+
+    public void syncUser(JSONArray userlist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(UserTable.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = userlist;
+            for (int i = 0; i < jsonArray.length(); i++) {
+
+                JSONObject jsonObjectUser = jsonArray.getJSONObject(i);
+
+                UserContract user = new UserContract();
+                user.Sync(jsonObjectUser);
+                ContentValues values = new ContentValues();
+
+                values.put(UsersContract.UsersTable.ROW_USERNAME, user.getUserName());
+                values.put(UsersTable.ROW_PASSWORD, user.getPassword());
+                values.put(UsersTable.FULL_NAME, user.getFULL_NAME());
+                db.insert(UserTable.TABLE_NAME, null, values);
+            }
+
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncUser(e): " + e);
+        } finally {
+            db.close();
+        }
+    }
+
+
+    public void updateSyncedForms(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormsContract.FormsTable.COLUMN_SYNCED, true);
+        values.put(FormsContract.FormsTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = FormsContract.FormsTable._ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                FormsContract.FormsTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
 
     public Long addfoetuses(FoetusesContract fc) {
 
@@ -211,7 +306,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-
     // mwra - uPDATE
     public int updateSB2() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -233,7 +327,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
         return count;
     }
-
 
     public String getDataFromTable() {
 
@@ -276,8 +369,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return str;
     }
-    ///////////////////
-
 
     public FormsContract getUnsyncedChildForms() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -325,8 +416,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
-    ////Collection 
-
+    ////Collection
     public Collection<FormsContract> getAllData() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;

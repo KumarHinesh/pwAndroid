@@ -2,27 +2,19 @@ package mamtalwtrial.hineshkumar.com.pregnantwoman.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import com.google.gson.Gson;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.constants.ContantsValues;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.UserContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.LoginDTO;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UserContract;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.retrofit.APIService;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.retrofit.ApiUtils;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -46,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity(new Intent(LoginActivity.this, CRF1Activity.class));
+//                startActivity(new Intent(LoginActivity.this, AndroidDatabaseManager.class));
 
                 if (validation()) {
 
@@ -98,9 +91,9 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setTitle("Wait");
         progressDialog.setMessage("Loging In..");
 
-        et_user_id = (EditText) findViewById(R.id.et_user_id);
-        et_pass = (EditText) findViewById(R.id.et_pass);
-        btn_signin = (Button) findViewById(R.id.btnsignin);
+        et_user_id = findViewById(R.id.et_user_id);
+        et_pass = findViewById(R.id.et_pass);
+        btn_signin = findViewById(R.id.btnsignin);
     }
 
     /*public void sendRequestForLogin(final UserContract teamDTO) {
@@ -151,4 +144,19 @@ public class LoginActivity extends AppCompatActivity {
 
     }*/
 
+
 }
+
+//TODO:Check sync arguments
+/*
+new SyncAllData(
+                    this,
+                    "Forms",
+                    "updateSyncedForms",
+                    FormsContract.class,
+                    MainApp._HOST_URL + FormsContract.FormsTable._URL,
+                    db.getUnsyncedForms()
+            ).execute();
+
+            FormsTable.COLUMN_SYNCED + " is null OR " + FormsTable.COLUMN_SYNCED + " = '' "
+*/

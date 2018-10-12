@@ -1,15 +1,12 @@
 package mamtalwtrial.hineshkumar.com.pregnantwoman.activities;
 
 
-import android.Manifest;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
+import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.telephony.TelephonyManager;
 
 import com.google.gson.Gson;
 
@@ -20,9 +17,9 @@ import java.util.List;
 
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.constants.ContantsValues;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.UserContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormCrf1DTO;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UltrasoundExaminationDTO;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UserContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.fragments.crf1Fragments.PwInformation;
 
 public class CRF1Activity extends AppCompatActivity {
@@ -43,24 +40,7 @@ public class CRF1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_crf1);
 
         teamDTO = new Gson().fromJson(getIntent().getStringExtra("team"), UserContract.class);
-
-
-        TelephonyManager telephonyManager;
-        telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-
-        if (ActivityCompat.checkSelfPermission(CRF1Activity.this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-
-        DEVICE_ID = telephonyManager.getDeviceId();
-
+        DEVICE_ID = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
 
         ultrasoundExaminationDTOList = new ArrayList<>();
         fragmentManager = getSupportFragmentManager();

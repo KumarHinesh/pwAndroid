@@ -2,6 +2,8 @@ package mamtalwtrial.hineshkumar.com.pregnantwoman.dtos;
 
 import java.util.List;
 
+import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.UserContract;
+
 public class FormCrf1DTO {
 
     List<UltrasoundExaminationDTO> ultrasoundExaminationDTOS;
