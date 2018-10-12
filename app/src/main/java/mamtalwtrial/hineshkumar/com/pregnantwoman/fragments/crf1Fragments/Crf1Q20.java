@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +17,14 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.activities.CRF1Activity;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.activities.LoginActivity;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FoetusesContract;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.databaseHelperClasses.DatabaseHelper;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FoetusesDTO;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UltrasoundExaminationDTO;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.retrofit.APIService;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.retrofit.ApiUtils;
@@ -39,7 +45,7 @@ public class Crf1Q20 extends Fragment {
 
     RadioGroup rg_q18, rg_q19, rg_q20, rg_q21, rg_q22, rg_q23, rg_q33, rg_q34;
 
-    TextView tv_q18, tv_q19, tv_q20, tv_q21, tv_q22, tv_q23;
+    TextView tv_q18, tv_q19, tv_q20, tv_q21, tv_q22, tv_q23, tv_q33, tv_q34;
 
     ProgressDialog progressDialog;
     UltrasoundExaminationDTO ultrasoundExaminationDTO;
@@ -74,36 +80,28 @@ public class Crf1Q20 extends Fragment {
         rg_q22.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-
                 rb_q22 = view.findViewById(rg_q22.getCheckedRadioButtonId());
-
             }
         });
 
         rg_q23.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-
                 rb_q23 = view.findViewById(rg_q23.getCheckedRadioButtonId());
-
             }
         });
 
         rg_q33.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-
                 rb_q33 = view.findViewById(rg_q33.getCheckedRadioButtonId());
-
             }
         });
 
         rg_q34.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-
                 rb_q34 = view.findViewById(rg_q34.getCheckedRadioButtonId());
-
             }
         });
 
@@ -113,27 +111,42 @@ public class Crf1Q20 extends Fragment {
 
                 if (validation()) {
 
-
-
-                   /* if ((Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19()) == 2 || Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19()) == 3) && CRF1Activity.babyNo < Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19())) {
+                    if (CRF1Activity.babyNo < Integer.parseInt(CRF1Activity.formCrf1DTO.getQ19())) {
                         CRF1Activity.babyNo++;
-                        CRF1Activity.ultrasoundExaminationDTOList.add(ultrasoundExaminationDTO);
+
+                        DatabaseHelper db = new DatabaseHelper(getContext());
+                        FoetusesContract foetusesContract = new FoetusesContract();
+                        foetusesContract.setForm_id(CRF1Activity.FORM_ID + "");
+                        foetusesContract.set_UID(CRF1Activity.DEVICE_ID + ":" + CRF1Activity.FORM_ID);
+                        String str = dataInJson();
+                        foetusesContract.setsA1(str);
+                        long id = db.addfoetuses(foetusesContract);
+                        Log.d("Add record succes", id + "");
+
                         CRF1Activity.fragmentManager.beginTransaction().replace(R.id.crf1_frame, new Crf1Q20(), null).addToBackStack(null).commit();
 
                     } else {
-                        CRF1Activity.formCrf1DTO.setUltrasoundExaminationDTOS(CRF1Activity.ultrasoundExaminationDTOList);
+
+                        DatabaseHelper db = new DatabaseHelper(getContext());
+                        /*FoetusesContract foetusesContract = new FoetusesContract();
+                        foetusesContract.setForm_id(CRF1Activity.FORM_ID+"");
+                        foetusesContract.setsA1(dataInJson());
+                        foetusesContract.set_UID(CRF1Activity.DEVICE_ID+":"+CRF1Activity.FORM_ID);
+                        long id = db.addfoetuses(foetusesContract);
+                        Log.d("Add record succes", id+"");*/
+
+                        Log.d("data", db.getDataFoetusesTable());
+                        /*CRF1Activity.formCrf1DTO.setUltrasoundExaminationDTOS(CRF1Activity.ultrasoundExaminationDTOList);
                         CRF1Activity.formCrf1DTO.setQ38(new SimpleDateFormat(ContantsValues.TIMEFORMAT).format(Calendar.getInstance().getTime()) + "");
                         sendDataToServer();
-                    }
 */
+                    }
 
                 } else {
 
                     Toast.makeText(getContext(), "Enter Complete Details", Toast.LENGTH_LONG).show();
 
-
                 }
-
             }
         });
 
@@ -183,47 +196,46 @@ public class Crf1Q20 extends Fragment {
             return false;
         }
 
-        if (!checkEditTextField(et_q24).equals(""))
+        if (checkEditTextField(et_q24).equals(""))
             return false;
 
 
-        if (!checkEditTextField(et_q25).equals(""))
+        if (checkEditTextField(et_q25).equals(""))
             return false;
 
 
-        if (!checkEditTextField(et_q26).equals(""))
+        if (checkEditTextField(et_q26).equals(""))
             return false;
 
 
-        if (!checkEditTextField(et_q27).equals(""))
+        if (checkEditTextField(et_q27).equals(""))
             return false;
 
 
-        if (!checkEditTextField(et_q28).equals(""))
+        if (checkEditTextField(et_q28).equals(""))
             return false;
 
 
-        if (!checkEditTextField(et_q29).equals(""))
+        if (checkEditTextField(et_q29).equals(""))
             return false;
 
-        if (!checkEditTextField(et_q30).equals(""))
+        if (checkEditTextField(et_q30).equals(""))
             return false;
 
-        if (!checkEditTextField(et_q31).equals(""))
+        if (checkEditTextField(et_q31).equals(""))
             return false;
 
-        if (!checkEditTextField(et_q32).equals(""))
+        if (checkEditTextField(et_q32).equals(""))
             return false;
 
-        if (!checkEditTextField(et_q36).equals(""))
+        if (checkEditTextField(et_q36).equals(""))
             return false;
 
-        if (!checkEditTextField(et_q37).equals(""))
+        if (checkEditTextField(et_q37).equals(""))
             return false;
 
         if (rg_q33.getCheckedRadioButtonId() == -1)
             return false;
-
 
         return rg_q34.getCheckedRadioButtonId() != -1;
     }
@@ -249,6 +261,8 @@ public class Crf1Q20 extends Fragment {
         tv_q21 = view.findViewById(R.id.tv_q21);
         tv_q22 = view.findViewById(R.id.tv_q22);
         tv_q23 = view.findViewById(R.id.tv_q23);
+        tv_q33 = view.findViewById(R.id.tv_q33);
+        tv_q34 = view.findViewById(R.id.tv_q34);
 
         //initialiling EDIT TEXT
         et_q18 = view.findViewById(R.id.et_q18);
@@ -372,5 +386,34 @@ public class Crf1Q20 extends Fragment {
 
     }
 
+    public String dataInJson() {
+
+        String str = "";
+
+        FoetusesDTO foetusesDTO = new FoetusesDTO();
+        foetusesDTO.setForm_id(CRF1Activity.FORM_ID + "");
+        foetusesDTO.setQ20(isRBCheckedThree(rg_q20, rb_q20, tv_q20));
+        foetusesDTO.setQ21(isRBCheckedThree(rg_q21, rb_q21, tv_q21));
+        foetusesDTO.setQ22(isRBCheckedThree(rg_q22, rb_q22, tv_q22));
+        foetusesDTO.setQ23(isRBCheckedThree(rg_q23, rb_q23, tv_q23));
+        foetusesDTO.setQ24(checkEditTextField(et_q24));
+        foetusesDTO.setQ25(checkEditTextField(et_q25));
+        foetusesDTO.setQ26(checkEditTextField(et_q26));
+        foetusesDTO.setQ27(checkEditTextField(et_q27));
+        foetusesDTO.setQ28(checkEditTextField(et_q28));
+        foetusesDTO.setQ29(checkEditTextField(et_q29));
+        foetusesDTO.setQ30(checkEditTextField(et_q30));
+        foetusesDTO.setQ31(checkEditTextField(et_q31));
+        foetusesDTO.setQ32(checkEditTextField(et_q32));
+        foetusesDTO.setQ33(isRBCheckedThree(rg_q33, rb_q33, tv_q33));
+        foetusesDTO.setQ34(isRBCheckedThree(rg_q34, rb_q34, tv_q34));
+        foetusesDTO.setQ35("tt");
+        foetusesDTO.setQ36(checkEditTextField(et_q36));
+        foetusesDTO.setQ37(checkEditTextField(et_q37));
+
+        str = new Gson().toJson(foetusesDTO, FoetusesDTO.class);
+
+        return str;
+    }
 
 }

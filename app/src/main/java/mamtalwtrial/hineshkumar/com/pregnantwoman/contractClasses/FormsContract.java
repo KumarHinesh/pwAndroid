@@ -1,14 +1,16 @@
-package mamtalwtrial.hineshkumar.com.pregnantwoman.dtos;
+package mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses;
 
 import android.database.Cursor;
-import android.provider.BaseColumns;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import mamtalwtrial.hineshkumar.com.pregnantwoman.constants.ContantsValues;
+
 public class FormsContract {
 
-    private final String projectName = "PWTRIAL";
+
+    private final String projectName = ContantsValues.PROJECT_NAME;
     //private final String surveyType = "SN";
     private String _ID = "";
     private String _UID = "";
@@ -213,6 +215,7 @@ public class FormsContract {
     }
 
     public FormsContract Sync(JSONObject jsonObject) throws JSONException {
+
         this._ID = jsonObject.getString(FormsTable._ID);
         this._UID = jsonObject.getString(FormsTable.COLUMN_UID);
 
@@ -327,7 +330,7 @@ public class FormsContract {
     }
 
 
-    public static abstract class FormsTable implements BaseColumns {
+    public static abstract class FormsTable /*implements BaseColumns */ {
 
         public static final String TABLE_NAME = "forms";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
@@ -360,5 +363,6 @@ public class FormsContract {
 
         public static String _URL = "forms.php";
     }
+
 
 }

@@ -216,12 +216,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-                <RadioButton
-                    android:tag="4"
-                    android:textColor="@color/black"
-                    android:text="@string/crf1_q19_opt4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
 
 
             </RadioGroup>

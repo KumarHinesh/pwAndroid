@@ -1,10 +1,10 @@
 package mamtalwtrial.hineshkumar.com.pregnantwoman.activities;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.fragments.crf2Fragments.Crf2PwinfoFragment;
@@ -17,6 +17,7 @@ public class CRF2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crf2);
+
 
         fragmentManager = getSupportFragmentManager();
 

@@ -2,6 +2,7 @@ package mamtalwtrial.hineshkumar.com.pregnantwoman.fragments.crf1Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,12 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.activities.CRF1Activity;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.databaseHelperClasses.DatabaseHelper;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormCrf1DTO;
 
 public class CrfQ18 extends Fragment {
 
@@ -66,7 +71,11 @@ public class CrfQ18 extends Fragment {
             public void onClick(View v) {
 
                 if (validation()) {
+
+                    DatabaseHelper db = new DatabaseHelper(getContext());
+                    long id = db.updateQuestion(CRF1Activity.FORM_ID, new Gson().toJson(CRF1Activity.formCrf1DTO, FormCrf1DTO.class));
                     CRF1Activity.fragmentManager.beginTransaction().replace(R.id.crf1_frame, new Crf1Q20(), null).addToBackStack(null).commit();
+                    Log.d("update question id n0 ", id + "");
                 } else {
                     Toast.makeText(getContext(), "Please Enter All Fields", Toast.LENGTH_LONG).show();
                 }
@@ -106,13 +115,14 @@ public class CrfQ18 extends Fragment {
         if (getEditText(rg_q18, rb_q18, et_q18, tv_q18, "10", "", "", "").equals("")) {
             return false;
         } else {
+            CRF1Activity.formCrf1DTO.setQ18(getEditText(rg_q18, rb_q18, et_q18, tv_q18, "10", "", "", ""));
             et_q18.setError(null);
         }
 
         if (isRBCheckedThree(rg_q19, rb_q19, tv_q19).equals("")) {
             return false;
         } else {
-            et_q18.setError(null);
+            CRF1Activity.formCrf1DTO.setQ19(isRBCheckedThree(rg_q19, rb_q19, tv_q19));
         }
 
         return true;

@@ -2,6 +2,7 @@ package mamtalwtrial.hineshkumar.com.pregnantwoman.constants;
 
 public interface ContantsValues {
 
+    String PROJECT_NAME = "PWTRIAL";
     String DATEFORMAT = "dd-MM-yyyy";
     String TIMEFORMAT = "HH:mm:ss";
     String DATE_AND_TIME = "dd-MM-yyyy HH:mm:ss";
@@ -11,5 +12,6 @@ public interface ContantsValues {
 
 
     String TEAM_1 = "SCREENING";
+
 
 }

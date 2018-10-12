@@ -1,37 +1,41 @@
 package mamtalwtrial.hineshkumar.com.pregnantwoman.activities;
 
 
-import java.text.SimpleDateFormat;
-
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.Toast;
+import android.telephony.TelephonyManager;
 
 import com.google.gson.Gson;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.constants.ContantsValues;
-
-import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.DatabaseHelper;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormCrf1DTO;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UserContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UltrasoundExaminationDTO;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UserContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.fragments.crf1Fragments.PwInformation;
 
 public class CRF1Activity extends AppCompatActivity {
 
-    public static int babyNo = -1;
+
+    public static long FORM_ID = -1;
+    public static int babyNo = 0;
     public static FormCrf1DTO formCrf1DTO;
     public static FragmentManager fragmentManager;
     UserContract teamDTO;
     public static List<UltrasoundExaminationDTO> ultrasoundExaminationDTOList;
+    public static String DEVICE_ID = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,24 @@ public class CRF1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_crf1);
 
         teamDTO = new Gson().fromJson(getIntent().getStringExtra("team"), UserContract.class);
+
+
+        TelephonyManager telephonyManager;
+        telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+
+        if (ActivityCompat.checkSelfPermission(CRF1Activity.this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+
+        DEVICE_ID = telephonyManager.getDeviceId();
+
 
         ultrasoundExaminationDTOList = new ArrayList<>();
         fragmentManager = getSupportFragmentManager();
@@ -62,14 +84,11 @@ public class CRF1Activity extends AppCompatActivity {
         }
 
 
-        //   Fragment fragment = new Crf1Q20();
-       /* getSupportFragmentManager().beginTransaction()
-                .replace(R.id.crf1_frame, fragment, fragment.getClass().getSimpleName()).addToBackStack(null).commit();
-*/
+
     }
 
 
-    private boolean UpdateDB() {
+    /*private boolean UpdateDB() {
 
         //Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
@@ -84,6 +103,6 @@ public class CRF1Activity extends AppCompatActivity {
 
         return true;
     }
-
+*/
 
 }

@@ -19,8 +19,10 @@ import com.google.gson.Gson;
 import java.net.URL;
 
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.DatabaseHelper;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormsContract;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.activities.CRF1Activity;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FormsContract;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.databaseHelperClasses.DatabaseHelper;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormCrf1DTO;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.PregnantWomanDTO;
 
 
@@ -39,7 +41,7 @@ public class PwInformation extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             final Bundle savedInstanceState) {
        final View view = inflater.inflate(R.layout.fragment_pw_information, container, false);
        initializeViews(view);
 
@@ -61,27 +63,56 @@ public class PwInformation extends Fragment {
             @Override
             public void onClick(View v) {
 
-
-
                 if (validation()){
 
-
                     DatabaseHelper db = new DatabaseHelper(getContext());
-
                     FormsContract formsContract = new FormsContract();
 
-                    String data = saveData();
+                    long id = -1;
 
-                    formsContract.setsA1(data);
+                    if (CRF1Activity.FORM_ID == -1) {
 
-                    long id = db.addForm(formsContract);
+                        String data = saveData();
 
+                        formsContract.setsA1(data);
+                        id = db.addForm(formsContract);
+                        CRF1Activity.FORM_ID = id;
+                        Log.d("saved succesfully", db.getDataFromTable());
+                        String UID = CRF1Activity.DEVICE_ID + ":" + id;
+                        id = db.updateUID(UID, id);
+                        Log.d("update Succesfully ", db.getDataFromTable());
 
-                    if (id != -1) {
+                       /* Log.d("saved succesfully", db.getDataFromTable());
+                        String UID = CRF1Activity.DEVICE_ID+":"+id;
+                        id =  db.updateUID(UID, id);
+                        Log.d("update Succesfully ", db.getDataFromTable());*/
+                        CRF1Activity.fragmentManager.beginTransaction().replace(R.id.crf1_frame, new CrfQ18(), null).addToBackStack(null).commit();
+
+                    } else {
+
+                        db.updateQuestion(CRF1Activity.FORM_ID, saveData());
+                        Log.d("update Questions", id + "");
+                        CRF1Activity.fragmentManager.beginTransaction().replace(R.id.crf1_frame, new CrfQ18(), null).addToBackStack(null).commit();
+                    }
+
+                    /*if (id != -1) {
                         Log.d("saved succesfully", id + "");
                     } else {
                         Log.d("not saved ", id + "");
-                    }
+                    }*/
+
+                    /*Collection<FormsContract> forms = db.getAllData();
+
+                    for (FormsContract formsContract1: forms){
+
+                        int no = 1;
+
+                       Log.d("from no "+no, formsContract.toString());
+
+                    }*/
+
+
+
 
 
 
@@ -275,18 +306,19 @@ public class PwInformation extends Fragment {
 
     public String saveData() {
         String str = "";
-        PregnantWomanDTO pregnantWomanDTO = new PregnantWomanDTO();
 
-        pregnantWomanDTO.setBlock(et_block.getText().toString());
-        pregnantWomanDTO.setName(et_pw_name.getText().toString());
-        pregnantWomanDTO.setHouseholdOrFamily(et_household.getText().toString());
-        pregnantWomanDTO.setHusbandName(et_husband_name.getText().toString());
-        pregnantWomanDTO.setSite(et_site.getText().toString());
-        pregnantWomanDTO.setPara(et_para.getText().toString());
-        pregnantWomanDTO.setWomanNumber(Integer.parseInt(et_woman_no.getText().toString()));
-        pregnantWomanDTO.setStructure(et_structure.getText().toString());
 
-        str = new Gson().toJson(pregnantWomanDTO, PregnantWomanDTO.class);
+        CRF1Activity.formCrf1DTO.setBlock(et_block.getText().toString());
+        CRF1Activity.formCrf1DTO.setName(et_pw_name.getText().toString());
+        CRF1Activity.formCrf1DTO.setHouseholdOrFamily(et_household.getText().toString());
+        CRF1Activity.formCrf1DTO.setHusbandName(et_husband_name.getText().toString());
+        CRF1Activity.formCrf1DTO.setSite(et_site.getText().toString());
+        CRF1Activity.formCrf1DTO.setPara(et_para.getText().toString());
+        CRF1Activity.formCrf1DTO.setWomanNumber(Integer.parseInt(et_woman_no.getText().toString()));
+        CRF1Activity.formCrf1DTO.setStructure(et_structure.getText().toString());
+        CRF1Activity.formCrf1DTO.setQ17(rb_q17.getTag().toString());
+
+        str = new Gson().toJson(CRF1Activity.formCrf1DTO, FormCrf1DTO.class);
 
         return str;
     }
