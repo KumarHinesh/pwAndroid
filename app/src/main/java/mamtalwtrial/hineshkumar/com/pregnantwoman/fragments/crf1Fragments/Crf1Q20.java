@@ -32,7 +32,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
 public class Crf1Q20 extends Fragment {
 
     RadioButton rb_q18, rb_q19, rb_q20, rb_q21, rb_q22, rb_q23, rb_q33, rb_q34;
@@ -62,18 +61,14 @@ public class Crf1Q20 extends Fragment {
         rg_q20.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-
                 rb_q20 = view.findViewById(rg_q20.getCheckedRadioButtonId());
-
             }
         });
 
         rg_q21.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-
                 rb_q21 = view.findViewById(rg_q21.getCheckedRadioButtonId());
-
             }
         });
 
