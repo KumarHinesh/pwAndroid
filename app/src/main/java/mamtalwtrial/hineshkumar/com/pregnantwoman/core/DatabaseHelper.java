@@ -164,9 +164,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 user.Sync(jsonObjectUser);
                 ContentValues values = new ContentValues();
 
-                values.put(UsersContract.UsersTable.ROW_USERNAME, user.getUserName());
-                values.put(UsersTable.ROW_PASSWORD, user.getPassword());
-                values.put(UsersTable.FULL_NAME, user.getFULL_NAME());
+                values.put(UserTable.COLUMN_USERNAME, user.getUserName());
+                values.put(UserTable.COLUMN_PASSWORD, user.getPassword());
+                values.put(UserTable.COLUMN_SRANAME, user.getSraName());
                 db.insert(UserTable.TABLE_NAME, null, values);
             }
 
@@ -463,5 +463,71 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allFC;
     }
+
+    //
+    public Collection<FormsContract> getUnsyncedCrf1() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormsContract.FormsTable._ID,
+                FormsContract.FormsTable.COLUMN_UID,
+
+                FormsContract.FormsTable.COLUMN_NAME_NULLABLE,
+                FormsContract.FormsTable.COLUMN_PROJECTNAME,
+                FormsContract.FormsTable.COLUMN_FORMDATE,
+                FormsContract.FormsTable.COLUMN_USER,
+                FormsContract.FormsTable.COLUMN_UID,
+                FormsContract.FormsTable.COLUMN_SA1,
+                FormsContract.FormsTable.COLUMN_COUNT,
+                FormsContract.FormsTable.COLUMN_HUSBANDNME,
+                FormsContract.FormsTable.COLUMN_ISTATUS,
+                FormsContract.FormsTable.COLUMN_ISTATUS88x,
+                FormsContract.FormsTable.COLUMN_DEVICEID,
+                FormsContract.FormsTable.COLUMN_DEVICETAGID,
+                FormsContract.FormsTable.COLUMN_ASSESSID,
+                FormsContract.FormsTable.COLUMN_FORMDATE,
+                FormsContract.FormsTable.COLUMN_GPSELEV,
+                FormsContract.FormsTable.COLUMN_DEVICETAGID,
+                FormsContract.FormsTable.COLUMN_SYNCED,
+                FormsContract.FormsTable.COLUMN_APP_VERSION,
+
+                FormsContract.FormsTable.COLUMN_WOMANNME,
+
+        };
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                FormsContract.FormsTable._ID + " ASC";
+
+        Collection<FormsContract> allFC = new ArrayList<FormsContract>();
+        try {
+            c = db.query(
+                    FormsContract.FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                FormsContract fc = new FormsContract();
+                allFC.add(fc.Hydrate(c));
+                //allFC.add(fc.Hydrate(c, 0));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
 
 }

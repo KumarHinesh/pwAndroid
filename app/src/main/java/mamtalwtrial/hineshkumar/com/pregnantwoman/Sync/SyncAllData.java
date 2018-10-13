@@ -48,7 +48,7 @@ public class SyncAllData extends AsyncTask<Void, Void, String> {
         this.contractClass = contractClass;
         this.url = url;
         this.dbData = dbData;
-        //this.syncStatus = (TextView) syncStatus;
+        this.syncStatus = syncStatus;
         TAG = "Get" + syncClass;
     }
 

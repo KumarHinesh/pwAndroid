@@ -131,6 +131,9 @@ public class Crf1Q20 extends Fragment {
                         Log.d("Add record succes", id+"");*/
 
                         Log.d("data", db.getDataFoetusesTable());
+
+                        //new SyncAllData(getContext(), "", "", ).execute()
+
                         /*CRF1Activity.formCrf1DTO.setUltrasoundExaminationDTOS(CRF1Activity.ultrasoundExaminationDTOList);
                         CRF1Activity.formCrf1DTO.setQ38(new SimpleDateFormat(ContantsValues.TIMEFORMAT).format(Calendar.getInstance().getTime()) + "");
                         sendDataToServer();
