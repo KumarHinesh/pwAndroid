@@ -107,9 +107,9 @@ public class UserContract {
     }
 
     public UserContract Sync(JSONObject jsonObject) throws JSONException {
-        this.ROW_USERNAME = jsonObject.getString(UsersTable.ROW_USERNAME);
-        this.ROW_PASSWORD = jsonObject.getString(UsersTable.ROW_PASSWORD);
-        this.FULL_NAME = jsonObject.getString(UsersTable.FULL_NAME);
+        this.userName = jsonObject.getString(UserTable.COLUMN_USERNAME);
+        this.password = jsonObject.getString(UserTable.COLUMN_PASSWORD);
+        this.sraName = jsonObject.getString(UserTable.COLUMN_SRANAME);
         return this;
 
     }

@@ -18,7 +18,6 @@ public class CRF2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crf2);
 
-
         fragmentManager = getSupportFragmentManager();
 
 

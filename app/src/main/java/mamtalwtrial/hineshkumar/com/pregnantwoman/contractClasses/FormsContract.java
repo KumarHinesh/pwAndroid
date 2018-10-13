@@ -230,7 +230,7 @@ public class FormsContract {
         this.gpsElev = jsonObject.getString(FormsTable.COLUMN_GPSELEV);
         this.sA1 = jsonObject.getString(FormsTable.COLUMN_SA1);
 
-        this.count = jsonObject.getString(FormsTable.COLUMN_COUNT);
+        //this.count = jsonObject.getString(FormsTable.COLUMN_COUNT);
         this.gpsLat = jsonObject.getString(FormsTable.COLUMN_GPSLAT);
         this.gpsLng = jsonObject.getString(FormsTable.COLUMN_GPSLNG);
         this.gpsDT = jsonObject.getString(FormsTable.COLUMN_GPSDATE);
@@ -260,7 +260,7 @@ public class FormsContract {
         this.gpsElev = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSELEV));
         this.sA1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA1));
 
-        this.count = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_COUNT));
+        //this.count = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_COUNT));
         this.gpsLat = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSLAT));
         this.gpsLng = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSLNG));
         this.gpsDT = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSDATE));
@@ -301,10 +301,10 @@ public class FormsContract {
         }
 
 
-        if (!this.count.equals("")) {
+        /*if (!this.count.equals("")) {
 
             json.put(FormsTable.COLUMN_COUNT, this.count.equals("") ? JSONObject.NULL : new JSONObject(this.count));
-        }
+        }*/
 
 
         /*if (!this.sA4.equals("")) {
@@ -361,7 +361,7 @@ public class FormsContract {
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APP_VERSION = "appversion";
 
-        public static String _URL = "forms.php";
+        public static String _URL = "crf1.php";
     }
 
 

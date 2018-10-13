@@ -7,7 +7,7 @@ import org.json.JSONObject;
 
 import mamtalwtrial.hineshkumar.com.pregnantwoman.constants.ContantsValues;
 
-public class FoetusesContract {
+public class FetusesContract {
 
 
     private final String projectName = ContantsValues.PROJECT_NAME;
@@ -41,7 +41,7 @@ public class FoetusesContract {
     private String synced_date = "";
     private String appversion;
 
-    public FoetusesContract() {
+    public FetusesContract() {
     }
 
     public String getProjectName() {
@@ -136,7 +136,7 @@ public class FoetusesContract {
         this.form_id = form_id;
     }
 
-    public FoetusesContract Sync(JSONObject jsonObject) throws JSONException {
+    public FetusesContract Sync(JSONObject jsonObject) throws JSONException {
 
         this._ID = jsonObject.getString(FormsTable._ID);
         this._UID = jsonObject.getString(FormsTable.COLUMN_UID);
@@ -167,7 +167,7 @@ public class FoetusesContract {
 
     }
 
-    public FoetusesContract Hydrate(Cursor cursor) {
+    public FetusesContract Hydrate(Cursor cursor) {
         this._ID = cursor.getString(cursor.getColumnIndex(FormsTable._ID));
         this._UID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_UID));
         this.formDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_FORMDATE));
@@ -285,7 +285,7 @@ public class FoetusesContract {
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APP_VERSION = "appversion";
 
-        public static String _URL = "forms.php";
+        public static String _URL = "fetuses.php";
     }
 
 }

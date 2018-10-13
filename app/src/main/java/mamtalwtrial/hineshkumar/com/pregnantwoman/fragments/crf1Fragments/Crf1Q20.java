@@ -20,9 +20,12 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.Sync.SyncAllData;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.activities.CRF1Activity;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.activities.LoginActivity;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FoetusesContract;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.constants.ContantsValues;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FetusesContract;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FormsContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.core.DatabaseHelper;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FoetusesDTO;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.UltrasoundExaminationDTO;
@@ -110,7 +113,7 @@ public class Crf1Q20 extends Fragment {
                         CRF1Activity.babyNo++;
 
                         DatabaseHelper db = new DatabaseHelper(getContext());
-                        FoetusesContract foetusesContract = new FoetusesContract();
+                        FetusesContract foetusesContract = new FetusesContract();
                         foetusesContract.setForm_id(CRF1Activity.FORM_ID + "");
                         foetusesContract.set_UID(CRF1Activity.DEVICE_ID + ":" + CRF1Activity.FORM_ID);
                         String str = dataInJson();
@@ -123,7 +126,7 @@ public class Crf1Q20 extends Fragment {
                     } else {
 
                         DatabaseHelper db = new DatabaseHelper(getContext());
-                        /*FoetusesContract foetusesContract = new FoetusesContract();
+                        /*FetusesContract foetusesContract = new FetusesContract();
                         foetusesContract.setForm_id(CRF1Activity.FORM_ID+"");
                         foetusesContract.setsA1(dataInJson());
                         foetusesContract.set_UID(CRF1Activity.DEVICE_ID+":"+CRF1Activity.FORM_ID);
@@ -132,7 +135,24 @@ public class Crf1Q20 extends Fragment {
 
                         Log.d("data", db.getDataFoetusesTable());
 
-                        //new SyncAllData(getContext(), "", "", ).execute()
+                        new SyncAllData(
+                                getContext(),
+                                "CRF1",
+                                "updateSyncedForms",
+                                FormsContract.class,
+                                ContantsValues.HOST_URL + FormsContract.FormsTable._URL,
+                                db.getUnsyncedCrf1()
+                        ).execute();
+
+
+                        new SyncAllData(
+                                getContext(),
+                                "FETUSES",
+                                "updateSyncedForms",
+                                FetusesContract.class,
+                                ContantsValues.HOST_URL + FetusesContract.FormsTable._URL,
+                                db.getUnsyncedCrf1()
+                        ).execute();
 
                         /*CRF1Activity.formCrf1DTO.setUltrasoundExaminationDTOS(CRF1Activity.ultrasoundExaminationDTOList);
                         CRF1Activity.formCrf1DTO.setQ38(new SimpleDateFormat(ContantsValues.TIMEFORMAT).format(Calendar.getInstance().getTime()) + "");

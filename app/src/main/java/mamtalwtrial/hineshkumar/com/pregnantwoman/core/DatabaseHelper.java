@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
-import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FoetusesContract;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FetusesContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FormsContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.UserContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.UserContract.UserTable;
@@ -40,18 +40,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     private static final String SQL_CREATE_FOETUSES = "CREATE TABLE "
-            + FoetusesContract.FormsTable.TABLE_NAME + "("
-            + FoetusesContract.FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            FoetusesContract.FormsTable.COLUMN_PROJECTNAME + " TEXT," +
-            FoetusesContract.FormsTable.COLUMN_UID + " TEXT," +
-            FoetusesContract.FormsTable.COLUMN_FORMDATE + " TEXT," +
-            FoetusesContract.FormsTable.COLUMN_USER + " TEXT," +
-            FoetusesContract.FormsTable.COLUMN_ISTATUS + " TEXT," +
-            FoetusesContract.FormsTable.COLUM_CRF1_ID + " TEXT," +
-            FoetusesContract.FormsTable.COLUMN_SA1 + " TEXT," +
-            FoetusesContract.FormsTable.COLUMN_SYNCED + " TEXT," +
-            FoetusesContract.FormsTable.COLUMN_SYNCED_DATE + " TEXT," +
-            FoetusesContract.FormsTable.COLUMN_APP_VERSION + " TEXT"
+            + FetusesContract.FormsTable.TABLE_NAME + "("
+            + FetusesContract.FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            FetusesContract.FormsTable.COLUMN_PROJECTNAME + " TEXT," +
+            FetusesContract.FormsTable.COLUMN_UID + " TEXT," +
+            FetusesContract.FormsTable.COLUMN_FORMDATE + " TEXT," +
+            FetusesContract.FormsTable.COLUMN_USER + " TEXT," +
+            FetusesContract.FormsTable.COLUMN_ISTATUS + " TEXT," +
+            FetusesContract.FormsTable.COLUM_CRF1_ID + " TEXT," +
+            FetusesContract.FormsTable.COLUMN_SA1 + " TEXT," +
+            FetusesContract.FormsTable.COLUMN_SYNCED + " TEXT," +
+            FetusesContract.FormsTable.COLUMN_SYNCED_DATE + " TEXT," +
+            FetusesContract.FormsTable.COLUMN_APP_VERSION + " TEXT"
             + " );";
 
 
@@ -198,7 +198,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public Long addfoetuses(FoetusesContract fc) {
+    public Long addfoetuses(FetusesContract fc) {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
@@ -206,20 +206,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
 
-        values.put(FoetusesContract.FormsTable.COLUMN_PROJECTNAME, fc.getProjectName());
-        values.put(FoetusesContract.FormsTable.COLUMN_UID, fc.get_UID());
-        values.put(FoetusesContract.FormsTable.COLUMN_FORMDATE, fc.getFormDate());
-        values.put(FoetusesContract.FormsTable.COLUM_CRF1_ID, fc.getForm_id());
-        values.put(FoetusesContract.FormsTable.COLUMN_ISTATUS, fc.getIstatus());
-        values.put(FoetusesContract.FormsTable.COLUMN_SA1, fc.getsA1());
-        values.put(FoetusesContract.FormsTable.COLUMN_SYNCED, fc.getSynced());
-        values.put(FoetusesContract.FormsTable.COLUMN_SYNCED_DATE, fc.getSynced_date());
-        values.put(FoetusesContract.FormsTable.COLUMN_APP_VERSION, fc.getAppversion());
+        values.put(FetusesContract.FormsTable.COLUMN_PROJECTNAME, fc.getProjectName());
+        values.put(FetusesContract.FormsTable.COLUMN_UID, fc.get_UID());
+        values.put(FetusesContract.FormsTable.COLUMN_FORMDATE, fc.getFormDate());
+        values.put(FetusesContract.FormsTable.COLUM_CRF1_ID, fc.getForm_id());
+        values.put(FetusesContract.FormsTable.COLUMN_ISTATUS, fc.getIstatus());
+        values.put(FetusesContract.FormsTable.COLUMN_SA1, fc.getsA1());
+        values.put(FetusesContract.FormsTable.COLUMN_SYNCED, fc.getSynced());
+        values.put(FetusesContract.FormsTable.COLUMN_SYNCED_DATE, fc.getSynced_date());
+        values.put(FetusesContract.FormsTable.COLUMN_APP_VERSION, fc.getAppversion());
 
         long newRowId;
         newRowId = db.insert(
-                FoetusesContract.FormsTable.TABLE_NAME,
-                FoetusesContract.FormsTable.COLUMN_NAME_NULLABLE,
+                FetusesContract.FormsTable.TABLE_NAME,
+                FetusesContract.FormsTable.COLUMN_NAME_NULLABLE,
                 values);
 
         return newRowId;
@@ -353,7 +353,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String str = null;
         SQLiteDatabase db = this.getReadableDatabase();
-        String selectQuery = "SELECT * FROM " + FoetusesContract.FormsTable.TABLE_NAME;
+        String selectQuery = "SELECT * FROM " + FetusesContract.FormsTable.TABLE_NAME;
 
         Cursor cursor = db.rawQuery(selectQuery, null);
 
@@ -363,24 +363,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 str = str + " new record :" + cursor.getString(2) + cursor.getString(4)
                         + cursor.getString(0) + cursor.getString(6) + cursor.getString(7) + cursor.getString(1);
 
-
             } while (cursor.moveToNext());
         }
 
         return str;
     }
 
-    public FormsContract getUnsyncedChildForms() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = null;
-        String[] columns = {
-                FormsContract.FormsTable._ID,
-                /*FormsTable.COLUMN_UID,
+    /*  public FormsContract getUnsyncedChildForms() {
+          SQLiteDatabase db = this.getReadableDatabase();
+          Cursor c = null;
+          String[] columns = {
+                  FormsContract.FormsTable._ID,
+                  *//*FormsTable.COLUMN_UID,
                 FormsTable.COLUMN_APP_VERSION,
                 FormsTable.COLUMN_WOMANNME,
                 FormsTable.COLUMN_ASSESSID,
                 FormsTable.COLUMN_FORMDATE,
-                FormsTable.COLUMN_USER,*/
+                FormsTable.COLUMN_USER,*//*
                 FormsContract.FormsTable.COLUMN_SA1,
         };
         String whereClause = null;
@@ -415,15 +414,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allFC;
     }
-
+*/
     ////Collection
     public Collection<FormsContract> getAllData() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
                 FormsContract.FormsTable._ID,
-                /*FormsTable.COLUMN_UID,
-                FormsTable.COLUMN_APP_VERSION,
+                FormsContract.FormsTable.COLUMN_UID,
+                /*FormsTable.COLUMN_APP_VERSION,
                 FormsTable.COLUMN_WOMANNME,
                 FormsTable.COLUMN_ASSESSID,
                 FormsTable.COLUMN_FORMDATE,
@@ -471,14 +470,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 FormsContract.FormsTable._ID,
                 FormsContract.FormsTable.COLUMN_UID,
-
-                FormsContract.FormsTable.COLUMN_NAME_NULLABLE,
                 FormsContract.FormsTable.COLUMN_PROJECTNAME,
                 FormsContract.FormsTable.COLUMN_FORMDATE,
                 FormsContract.FormsTable.COLUMN_USER,
                 FormsContract.FormsTable.COLUMN_UID,
                 FormsContract.FormsTable.COLUMN_SA1,
-                FormsContract.FormsTable.COLUMN_COUNT,
                 FormsContract.FormsTable.COLUMN_HUSBANDNME,
                 FormsContract.FormsTable.COLUMN_ISTATUS,
                 FormsContract.FormsTable.COLUMN_ISTATUS88x,
