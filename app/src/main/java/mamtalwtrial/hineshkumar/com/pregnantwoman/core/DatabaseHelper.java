@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
-import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FetusesContract;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FoetusesContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FormsContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.UserContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.UserContract.UserTable;
@@ -26,13 +26,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String SQL_CREATE_USERS = "CREATE TABLE " + UserContract.UserTable.TABLE_NAME + "("
             + UserContract.UserTable.COLUMN__ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + UserContract.UserTable.COLUMN_SRANAME + " TEXT,"
             + UserContract.UserTable.COLUMN_USERNAME + " TEXT,"
-            + UserContract.UserTable.COLUMN_PASSWORD + " TEXT,"
-            + UserContract.UserTable.COLUMN_SITE + " TEXT,"
-            + UserContract.UserTable.COLUMN_STATUS + " TEXT,"
-            + UserContract.UserTable.COLUMN_DATE + " TEXT,"
-            + UserContract.UserTable.COLUMN_TIME + " TEXT"
+            + UserContract.UserTable.COLUMN_PASSWORD + " TEXT"
             + " );";
 
     public static final String DATABASE_NAME = "pwtrial.db";
@@ -40,18 +35,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     private static final String SQL_CREATE_FOETUSES = "CREATE TABLE "
-            + FetusesContract.FormsTable.TABLE_NAME + "("
-            + FetusesContract.FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            FetusesContract.FormsTable.COLUMN_PROJECTNAME + " TEXT," +
-            FetusesContract.FormsTable.COLUMN_UID + " TEXT," +
-            FetusesContract.FormsTable.COLUMN_FORMDATE + " TEXT," +
-            FetusesContract.FormsTable.COLUMN_USER + " TEXT," +
-            FetusesContract.FormsTable.COLUMN_ISTATUS + " TEXT," +
-            FetusesContract.FormsTable.COLUM_CRF1_ID + " TEXT," +
-            FetusesContract.FormsTable.COLUMN_SA1 + " TEXT," +
-            FetusesContract.FormsTable.COLUMN_SYNCED + " TEXT," +
-            FetusesContract.FormsTable.COLUMN_SYNCED_DATE + " TEXT," +
-            FetusesContract.FormsTable.COLUMN_APP_VERSION + " TEXT"
+            + FoetusesContract.FormsTable.TABLE_NAME + "("
+            + FoetusesContract.FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            FoetusesContract.FormsTable.COLUMN_PROJECTNAME + " TEXT," +
+            FoetusesContract.FormsTable.COLUMN_UID + " TEXT," +
+            FoetusesContract.FormsTable.COLUMN_UUID + " TEXT," +
+            FoetusesContract.FormsTable.COLUMN_FORMDATE + " TEXT," +
+            FoetusesContract.FormsTable.COLUMN_USER + " TEXT," +
+            FoetusesContract.FormsTable.COLUMN_ISTATUS + " TEXT," +
+            FoetusesContract.FormsTable.COLUMN_CRF1_ID + " TEXT," +
+            FoetusesContract.FormsTable.COLUMN_SA1 + " TEXT," +
+            FoetusesContract.FormsTable.COLUMN_SYNCED + " TEXT," +
+            FoetusesContract.FormsTable.COLUMN_SYNCED_DATE + " TEXT," +
+            FoetusesContract.FormsTable.COLUMN_APP_VERSION + " TEXT"
             + " );";
 
 
@@ -61,7 +57,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsContract.FormsTable.COLUMN_PROJECTNAME + " TEXT," +
             FormsContract.FormsTable.COLUMN_UID + " TEXT," +
             FormsContract.FormsTable.COLUMN_FORMDATE + " TEXT," +
+            FormsContract.FormsTable.COLUMN_HUSBANDNME + " TEXT," +
             FormsContract.FormsTable.COLUMN_USER + " TEXT," +
+            FormsContract.FormsTable.COLUMN_ASSESSID + " TEXT," +
+            FormsContract.FormsTable.COLUMN_WOMANNME + " TEXT," +
             FormsContract.FormsTable.COLUMN_ISTATUS + " TEXT," +
             FormsContract.FormsTable.COLUMN_SA1 + " TEXT," +
             FormsContract.FormsTable.COLUMN_GPSLAT + " TEXT," +
@@ -93,7 +92,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-//        db.execSQL(SQL_CREATE_USERS);
+        db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_FORMS);
         db.execSQL(SQL_CREATE_FOETUSES);
     }
@@ -167,7 +166,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(UserTable.COLUMN_USERNAME, user.getUserName());
                 values.put(UserTable.COLUMN_PASSWORD, user.getPassword());
                 values.put(UserTable.COLUMN_SRANAME, user.getSraName());
-                db.insert(UserTable.TABLE_NAME, null, values);
+                Long id = db.insert(UserTable.TABLE_NAME, null, values);
+                Log.d("000088", id + "");
             }
 
 
@@ -198,7 +198,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public Long addfoetuses(FetusesContract fc) {
+    public void updateSyncedFoetuses(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FoetusesContract.FormsTable.COLUMN_SYNCED, true);
+        values.put(FoetusesContract.FormsTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = FormsContract.FormsTable._ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                FoetusesContract.FormsTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public Long addfoetuses(FoetusesContract fc) {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
@@ -206,20 +225,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
 
-        values.put(FetusesContract.FormsTable.COLUMN_PROJECTNAME, fc.getProjectName());
-        values.put(FetusesContract.FormsTable.COLUMN_UID, fc.get_UID());
-        values.put(FetusesContract.FormsTable.COLUMN_FORMDATE, fc.getFormDate());
-        values.put(FetusesContract.FormsTable.COLUM_CRF1_ID, fc.getForm_id());
-        values.put(FetusesContract.FormsTable.COLUMN_ISTATUS, fc.getIstatus());
-        values.put(FetusesContract.FormsTable.COLUMN_SA1, fc.getsA1());
-        values.put(FetusesContract.FormsTable.COLUMN_SYNCED, fc.getSynced());
-        values.put(FetusesContract.FormsTable.COLUMN_SYNCED_DATE, fc.getSynced_date());
-        values.put(FetusesContract.FormsTable.COLUMN_APP_VERSION, fc.getAppversion());
+        values.put(FoetusesContract.FormsTable.COLUMN_PROJECTNAME, fc.getProjectName());
+        values.put(FoetusesContract.FormsTable.COLUMN_UID, fc.getUID());
+        values.put(FoetusesContract.FormsTable.COLUMN_UUID, fc.getUUID());
+        values.put(FoetusesContract.FormsTable.COLUMN_FORMDATE, fc.getFormDate());
+        values.put(FoetusesContract.FormsTable.COLUMN_CRF1_ID, fc.getCrf1());
+        values.put(FoetusesContract.FormsTable.COLUMN_ISTATUS, fc.getIstatus());
+        values.put(FoetusesContract.FormsTable.COLUMN_SA1, fc.getsA1());
+        values.put(FoetusesContract.FormsTable.COLUMN_SYNCED, fc.getSynced());
+        values.put(FoetusesContract.FormsTable.COLUMN_SYNCED_DATE, fc.getSynced_date());
+        values.put(FoetusesContract.FormsTable.COLUMN_APP_VERSION, fc.getAppversion());
 
         long newRowId;
         newRowId = db.insert(
-                FetusesContract.FormsTable.TABLE_NAME,
-                FetusesContract.FormsTable.COLUMN_NAME_NULLABLE,
+                FoetusesContract.FormsTable.TABLE_NAME,
+                FoetusesContract.FormsTable.COLUMN_NAME_NULLABLE,
                 values);
 
         return newRowId;
@@ -279,6 +299,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(id)};
 
         long count = db.update(FormsContract.FormsTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+    public long updateFoetusesUID(String uid, Long id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        /*db.rawQuery("UPDATE "+ FormsTable.TABLE_NAME +" SET () ",)*/
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FoetusesContract.FormsTable.COLUMN_UID, uid);
+
+
+// Which row to update, based on the ID
+        String selection = FoetusesContract.FormsTable._ID + " = ?";
+        //String[] selectionArgs = {String.valueOf(MainApp.fc.get_ID())};
+        String[] selectionArgs = {String.valueOf(id)};
+
+        long count = db.update(FoetusesContract.FormsTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -353,7 +394,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String str = null;
         SQLiteDatabase db = this.getReadableDatabase();
-        String selectQuery = "SELECT * FROM " + FetusesContract.FormsTable.TABLE_NAME;
+        String selectQuery = "SELECT * FROM " + FoetusesContract.FormsTable.TABLE_NAME;
 
         Cursor cursor = db.rawQuery(selectQuery, null);
 
@@ -473,22 +514,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsContract.FormsTable.COLUMN_PROJECTNAME,
                 FormsContract.FormsTable.COLUMN_FORMDATE,
                 FormsContract.FormsTable.COLUMN_USER,
-                FormsContract.FormsTable.COLUMN_UID,
                 FormsContract.FormsTable.COLUMN_SA1,
                 FormsContract.FormsTable.COLUMN_HUSBANDNME,
                 FormsContract.FormsTable.COLUMN_ISTATUS,
-                FormsContract.FormsTable.COLUMN_ISTATUS88x,
                 FormsContract.FormsTable.COLUMN_DEVICEID,
                 FormsContract.FormsTable.COLUMN_DEVICETAGID,
                 FormsContract.FormsTable.COLUMN_ASSESSID,
                 FormsContract.FormsTable.COLUMN_FORMDATE,
-                FormsContract.FormsTable.COLUMN_GPSELEV,
                 FormsContract.FormsTable.COLUMN_DEVICETAGID,
                 FormsContract.FormsTable.COLUMN_SYNCED,
+                FormsContract.FormsTable.COLUMN_SYNCED_DATE,
                 FormsContract.FormsTable.COLUMN_APP_VERSION,
 
                 FormsContract.FormsTable.COLUMN_WOMANNME,
 
+                FormsContract.FormsTable.COLUMN_GPSACC,
+                FormsContract.FormsTable.COLUMN_GPSDATE,
+                FormsContract.FormsTable.COLUMN_GPSELEV,
+                FormsContract.FormsTable.COLUMN_GPSLAT,
+                FormsContract.FormsTable.COLUMN_GPSLNG
         };
         String whereClause = null;
         String[] whereArgs = null;
@@ -525,5 +569,57 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
+    public Collection<FoetusesContract> getUnsyncedFoetuses() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FoetusesContract.FormsTable._ID,
+                FoetusesContract.FormsTable.COLUMN_UID,
+                FoetusesContract.FormsTable.COLUMN_UUID,
+                FoetusesContract.FormsTable.COLUMN_PROJECTNAME,
+                FoetusesContract.FormsTable.COLUMN_FORMDATE,
+                FoetusesContract.FormsTable.COLUMN_USER,
+                FoetusesContract.FormsTable.COLUMN_SA1,
+                /*FoetusesContract.FormsTable.COLUMN_CRF1_ID,*/
+                FoetusesContract.FormsTable.COLUMN_ISTATUS,
+                FoetusesContract.FormsTable.COLUMN_SYNCED,
+                FoetusesContract.FormsTable.COLUMN_SYNCED_DATE,
+                FoetusesContract.FormsTable.COLUMN_APP_VERSION
+
+        };
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                FormsContract.FormsTable._ID + " ASC";
+
+        Collection<FoetusesContract> allFC = new ArrayList<FoetusesContract>();
+        try {
+            c = db.query(
+                    FormsContract.FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                FoetusesContract fc = new FoetusesContract();
+                allFC.add(fc.Hydrate(c));
+                //allFC.add(fc.Hydrate(c, 0));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
 
 }

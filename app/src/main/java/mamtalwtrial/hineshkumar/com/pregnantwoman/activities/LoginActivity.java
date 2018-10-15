@@ -7,12 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
-import mamtalwtrial.hineshkumar.com.pregnantwoman.constants.ContantsValues;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.Sync.GetAllData;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.UserContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.LoginDTO;
 
@@ -22,10 +21,12 @@ public class LoginActivity extends AppCompatActivity {
     LoginDTO loginDTO;
     UserContract teamDTO;
 
+    TextView tv_headingText;
+
     ProgressDialog progressDialog;
 
     EditText et_user_id, et_pass;
-    Button btn_signin;
+    Button btn_signin, btn_syncData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,33 +34,36 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         initilalizeViews();
 
-        btn_signin.setOnClickListener(new View.OnClickListener() {
+        tv_headingText.setText("Login Activity");
+
+        btn_syncData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(LoginActivity.this, CRF1Activity.class));
-//                startActivity(new Intent(LoginActivity.this, AndroidDatabaseManager.class));
-
-                if (validation()) {
-
-                    teamDTO.setDate(new SimpleDateFormat(ContantsValues.DATEFORMAT).format(Calendar.getInstance().getTime()));
-                    teamDTO.setTime(new SimpleDateFormat(ContantsValues.TIMEFORMAT).format(Calendar.getInstance().getTime()));
-
-                    progressDialog.show();
-                    //sendRequestForLogin(teamDTO);
-
-
-                } else {
-
-
-                }
+                new GetAllData(LoginActivity.this, "User").execute();
 
             }
         });
 
 
-    }
+        btn_signin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                if (validation()) {
+
+                    startActivity(new Intent(LoginActivity.this, CRF1DashboardActivity.class));
+                    finish();
+
+                    progressDialog.show();
+
+                } else {
+                    Toast.makeText(LoginActivity.this, "Please Enter All fields", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+    }
 
     public boolean validation() {
         boolean validation = true;
@@ -91,9 +95,14 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setTitle("Wait");
         progressDialog.setMessage("Loging In..");
 
+        tv_headingText = findViewById(R.id.tv_headingText);
+
         et_user_id = findViewById(R.id.et_user_id);
         et_pass = findViewById(R.id.et_pass);
         btn_signin = findViewById(R.id.btnsignin);
+
+
+        btn_syncData = findViewById(R.id.btn_syncData);
     }
 
     /*public void sendRequestForLogin(final UserContract teamDTO) {

@@ -4,6 +4,7 @@ package mamtalwtrial.hineshkumar.com.pregnantwoman.dtos;
 public class FoetusesDTO {
 
     private String Form_id;
+    //private String UID;
     private String q20; //pw_crf_1_20
     private String q21; //pw_crf_1_21
     private String q22; //pw_crf_1_22
@@ -19,7 +20,17 @@ public class FoetusesDTO {
     private String q32;//pw_crf_1_32
     private String q33;//pw_crf_1_33
     private String q34;//pw_crf_1_34
-    private String q35;//pw_crf_1_35
+    private String q35a;//pw_crf_1_35a
+    private String q35b;//pw_crf_1_35b
+    private String q35c;//pw_crf_1_35c
+    private String q35d;//pw_crf_1_35d
+    private String q35e;//pw_crf_1_35e
+    private String q35f;//pw_crf_1_35f
+    private String q35g;//pw_crf_1_35g
+    private String q35h;//pw_crf_1_35h
+    private String q35i;//pw_crf_1_35i
+    private String q35j;//pw_crf_1_35j
+    private String q35k;//pw_crf_1_35k
     private String q36;//pw_crf_1_36
     private String q37;//pw_crf_1_37
 
@@ -151,14 +162,6 @@ public class FoetusesDTO {
         this.q34 = q34;
     }
 
-    public String getQ35() {
-        return q35;
-    }
-
-    public void setQ35(String q35) {
-        this.q35 = q35;
-    }
-
     public String getQ36() {
         return q36;
     }
@@ -175,4 +178,91 @@ public class FoetusesDTO {
         this.q37 = q37;
     }
 
+    public String getQ35a() {
+        return q35a;
+    }
+
+    public void setQ35a(String q35a) {
+        this.q35a = q35a;
+    }
+
+    public String getQ35b() {
+        return q35b;
+    }
+
+    public void setQ35b(String q35b) {
+        this.q35b = q35b;
+    }
+
+    public String getQ35c() {
+        return q35c;
+    }
+
+    public void setQ35c(String q35c) {
+        this.q35c = q35c;
+    }
+
+    public String getQ35d() {
+        return q35d;
+    }
+
+    public void setQ35d(String q35d) {
+        this.q35d = q35d;
+    }
+
+    public String getQ35e() {
+        return q35e;
+    }
+
+    public void setQ35e(String q35e) {
+        this.q35e = q35e;
+    }
+
+    public String getQ35f() {
+        return q35f;
+    }
+
+    public void setQ35f(String q35f) {
+        this.q35f = q35f;
+    }
+
+    public String getQ35g() {
+        return q35g;
+    }
+
+    public void setQ35g(String q35g) {
+        this.q35g = q35g;
+    }
+
+    public String getQ35h() {
+        return q35h;
+    }
+
+    public void setQ35h(String q35h) {
+        this.q35h = q35h;
+    }
+
+    public String getQ35i() {
+        return q35i;
+    }
+
+    public void setQ35i(String q35i) {
+        this.q35i = q35i;
+    }
+
+    public String getQ35j() {
+        return q35j;
+    }
+
+    public void setQ35j(String q35j) {
+        this.q35j = q35j;
+    }
+
+    public String getQ35k() {
+        return q35k;
+    }
+
+    public void setQ35k(String q35k) {
+        this.q35k = q35k;
+    }
 }

@@ -74,8 +74,14 @@ public class CrfQ18 extends Fragment {
 
                     DatabaseHelper db = new DatabaseHelper(getContext());
                     long id = db.updateQuestion(CRF1Activity.FORM_ID, new Gson().toJson(CRF1Activity.formCrf1DTO, FormCrf1DTO.class));
-                    CRF1Activity.fragmentManager.beginTransaction().replace(R.id.crf1_frame, new Crf1Q20(), null).addToBackStack(null).commit();
-                    Log.d("update question id n0 ", id + "");
+
+                    if (id != -1) {
+                        CRF1Activity.fragmentManager.beginTransaction().replace(R.id.crf1_frame, new Crf1Q20(), null).addToBackStack(null).commit();
+                        Log.d("update question id n0 ", id + "");
+                    } else {
+                        Log.d("not update the form q17", id + "q17 and 18");
+                    }
+
                 } else {
                     Toast.makeText(getContext(), "Please Enter All Fields", Toast.LENGTH_LONG).show();
                 }

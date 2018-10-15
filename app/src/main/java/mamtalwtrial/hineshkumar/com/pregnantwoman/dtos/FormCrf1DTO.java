@@ -6,6 +6,7 @@ import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.UserContract;
 
 public class FormCrf1DTO {
 
+    /*private String UID;*/
     List<UltrasoundExaminationDTO> ultrasoundExaminationDTOS;
     private PregnantWomanDTO pregnantWomanDTO;
     private UserContract teamDTO;
@@ -16,6 +17,9 @@ public class FormCrf1DTO {
     private String q18;
     private String q19;
     private String q38;
+
+    private String refusedReason;
+
 
     private String name; //lw_crf_1_09
     private String husbandName; //lw_crf_1_10
@@ -190,6 +194,22 @@ public class FormCrf1DTO {
     public void setCrf1(String crf1) {
         this.crf1 = crf1;
     }
+
+    public String getRefusedReason() {
+        return refusedReason;
+    }
+
+    public void setRefusedReason(String refusedReason) {
+        this.refusedReason = refusedReason;
+    }
+
+    /*public String getUID() {
+        return UID;
+    }
+
+    public void setUID(String UID) {
+        this.UID = UID;
+    }*/
 
     /*public List<UltrasoundExaminationDTO> getUltrasoundExaminationDTOS() {
         return ultrasoundExaminationDTOS;

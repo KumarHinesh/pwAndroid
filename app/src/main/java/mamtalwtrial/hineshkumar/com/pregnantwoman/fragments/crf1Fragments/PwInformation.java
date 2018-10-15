@@ -1,7 +1,6 @@
 package mamtalwtrial.hineshkumar.com.pregnantwoman.fragments.crf1Fragments;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -12,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -20,6 +20,7 @@ import java.net.URL;
 
 import mamtalwtrial.hineshkumar.com.pregnantwoman.R;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.activities.CRF1Activity;
+import mamtalwtrial.hineshkumar.com.pregnantwoman.activities.CRF1DashboardActivity;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.FormsContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.core.DatabaseHelper;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.dtos.FormCrf1DTO;
@@ -39,6 +40,8 @@ public class PwInformation extends Fragment {
 
     PregnantWomanDTO pregnantWomanDTO;
 
+    RelativeLayout rl_q17;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              final Bundle savedInstanceState) {
@@ -53,6 +56,10 @@ public class PwInformation extends Fragment {
 
                 rb_q17 = view.findViewById(rg17.getCheckedRadioButtonId());
 
+                if (rb_q17.getTag().toString().equals("3"))
+                    rl_q17.setVisibility(View.VISIBLE);
+                else
+                    rl_q17.setVisibility(View.GONE);
             }
         });
 
@@ -66,93 +73,55 @@ public class PwInformation extends Fragment {
                 if (validation()){
 
                     DatabaseHelper db = new DatabaseHelper(getContext());
-                    FormsContract formsContract = new FormsContract();
 
+                    FormsContract formsContract = new FormsContract();
                     long id = -1;
 
-                    if (CRF1Activity.FORM_ID == -1) {
 
-                        String data = saveData();
+                    String data = saveData();
 
-                        formsContract.setsA1(data);
-                        id = db.addForm(formsContract);
+                    formsContract.setWomannme(et_pw_name.getText().toString());
+                    formsContract.setHusbandnme(et_husband_name.getText().toString());
+
+                    formsContract.setFormDate(CRF1Activity.formCrf1DTO.getQ02());
+
+                    formsContract.setsA1(data);
+
+                    id = db.addForm(formsContract);
+
+                    if (id != -1) {
+
                         CRF1Activity.FORM_ID = id;
+
                         Log.d("saved succesfully", db.getDataFromTable());
-                        String UID = CRF1Activity.DEVICE_ID + ":" + id;
+
+                        String UID = CRF1Activity.DEVICE_ID + "_" + id;
+                        CRF1Activity.FORM_UID = UID;
+
                         id = db.updateUID(UID, id);
+
                         Log.d("update Succesfully ", db.getDataFromTable());
 
-                       /* Log.d("saved succesfully", db.getDataFromTable());
-                        String UID = CRF1Activity.DEVICE_ID+":"+id;
-                        id =  db.updateUID(UID, id);
-                        Log.d("update Succesfully ", db.getDataFromTable());*/
-                        CRF1Activity.fragmentManager.beginTransaction().replace(R.id.crf1_frame, new CrfQ18(), null).addToBackStack(null).commit();
-
-                    } else {
-
-                        db.updateQuestion(CRF1Activity.FORM_ID, saveData());
-                        Log.d("update Questions", id + "");
-                        CRF1Activity.fragmentManager.beginTransaction().replace(R.id.crf1_frame, new CrfQ18(), null).addToBackStack(null).commit();
-                    }
-
-                    /*if (id != -1) {
-                        Log.d("saved succesfully", id + "");
-                    } else {
-                        Log.d("not saved ", id + "");
-                    }*/
-
-                    /*Collection<FormsContract> forms = db.getAllData();
-
-                    for (FormsContract formsContract1: forms){
-
-                        int no = 1;
-
-                       Log.d("from no "+no, formsContract.toString());
-
-                    }*/
-
-
-
-
-
-
-/*
-                    switch(1){
-
-                        case 1:
+                        if (rb_q17.getTag().toString().equals("1")) {
                             CRF1Activity.fragmentManager.beginTransaction().replace(R.id.crf1_frame, new CrfQ18(), null).addToBackStack(null).commit();
-                            break;
+                        } else {
+                            startActivity(new Intent(getContext(), CRF1DashboardActivity.class));
+                            getActivity().finish();
+                        }
 
-                        case 2:
+                    } else {
 
-                            break;
 
-                        case 3:
-
-                            break;
-
-                        case 4:
-
-                            break;
-
-                        case 5:
-
-                            break;
-
-                        case 6:
-
-                            break;
-
-                        case 7:
-
-                            break;
-
+                        Toast.makeText(getContext(), "problem occur form not save in database", Toast.LENGTH_LONG).show();
                     }
-*/
 
 
 
                 }else {
+
+
+                    Toast.makeText(getContext(), "Please fill All fields", Toast.LENGTH_LONG).show();
+                    /*
 
                     AlertDialog alertDialog = new AlertDialog.Builder(
                             getContext()).create();
@@ -173,6 +142,7 @@ public class PwInformation extends Fragment {
 
 
                     alertDialog.show();
+*/
 
                 }
 
@@ -230,6 +200,17 @@ public class PwInformation extends Fragment {
         else
             et_woman_no.setError(null);
 
+        if (rg17.getCheckedRadioButtonId() != -1) {
+
+            if (rb_q17.getTag().toString().equals("3")) {
+                if (et_q17_reason.getText().toString().equals("")) {
+                    et_q17_reason.setError("Required");
+                    return false;
+                }
+            }
+        } else
+            return false;
+
         /*if (validation)
             CRF1Activity.formCrf1DTO.setPregnantWomanDTO(pregnantWomanDTO);
 */
@@ -264,6 +245,8 @@ public class PwInformation extends Fragment {
         //initialiling  RADIO GROUPS
         rg17 = view.findViewById(R.id.rg_q17);
 
+
+        rl_q17 = view.findViewById(R.id.rl_q17);
 
         pregnantWomanDTO = new PregnantWomanDTO();
     }
@@ -317,6 +300,10 @@ public class PwInformation extends Fragment {
         CRF1Activity.formCrf1DTO.setWomanNumber(Integer.parseInt(et_woman_no.getText().toString()));
         CRF1Activity.formCrf1DTO.setStructure(et_structure.getText().toString());
         CRF1Activity.formCrf1DTO.setQ17(rb_q17.getTag().toString());
+
+        if (rb_q17.getTag().toString().equals("3")) {
+            CRF1Activity.formCrf1DTO.setRefusedReason(et_q17_reason.getText().toString());
+        }
 
         str = new Gson().toJson(CRF1Activity.formCrf1DTO, FormCrf1DTO.class);
 

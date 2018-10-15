@@ -13,7 +13,7 @@ public interface ContantsValues {
 
     String TEAM_1 = "SCREENING";
 
-    String HOST_URL = "http://f46916:8080/maamta/";
+    String HOST_URL = "http://vitalpakistan.org/api/";
     //String HOST_URL = "http://f46916:8080/maamta/";  javed pc URL
 
 }

@@ -25,8 +25,9 @@ import mamtalwtrial.hineshkumar.com.pregnantwoman.fragments.crf1Fragments.PwInfo
 public class CRF1Activity extends AppCompatActivity {
 
 
+    public static String FORM_UID = "";
     public static long FORM_ID = -1;
-    public static int babyNo = 0;
+    public static int babyNo = 1;
     public static FormCrf1DTO formCrf1DTO;
     public static FragmentManager fragmentManager;
     UserContract teamDTO;
@@ -62,8 +63,6 @@ public class CRF1Activity extends AppCompatActivity {
             fragmentTransaction.add(R.id.crf1_frame, fragment, null).addToBackStack(null);
             fragmentTransaction.commit();
         }
-
-
 
     }
 

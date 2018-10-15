@@ -15,10 +15,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import mamtalwtrial.hineshkumar.com.pregnantwoman.constants.ContantsValues;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.UserContract;
 import mamtalwtrial.hineshkumar.com.pregnantwoman.core.DatabaseHelper;
-
-import static mamtalwtrial.hineshkumar.com.pregnantwoman.retrofit.ApiUtils.BASE_URL;
 
 /**
  * Created by ali.azaz on 7/14/2017.
@@ -60,7 +59,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
         try {
             switch (syncClass) {
                 case "User":
-                    url = new URL(BASE_URL + UserContract.UserTable._URI);
+                    url = new URL(ContantsValues.HOST_URL + UserContract.UserTable._URI);
                     break;
             }
 

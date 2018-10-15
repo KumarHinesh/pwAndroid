@@ -116,16 +116,13 @@ public class UserContract {
 
     public static abstract class UserTable implements BaseColumns {
 
-        public static final String TABLE_NAME = "login";
+
+        public static final String TABLE_NAME = "Users";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN__ID = "_id";
-        public static final String COLUMN_SRANAME = "sraName";
-        public static final String COLUMN_USERNAME = "userName";
+        public static final String COLUMN_SRANAME = "sra_name";
+        public static final String COLUMN_USERNAME = "user_name";
         public static final String COLUMN_PASSWORD = "password";
-        public static final String COLUMN_SITE = "site";
-        public static final String COLUMN_STATUS = "status";
-        public static final String COLUMN_DATE = "date";
-        public static final String COLUMN_TIME = "time";
 
         public static final String _URI = "users.php";
     }

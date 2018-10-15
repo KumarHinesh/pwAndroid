@@ -23,6 +23,7 @@ public class FormsContract {
     private String istatus = ""; // Interview Status
     private String istatus88x = ""; // Interview Status
 
+
     private String sA1 = "";     // Info Section
 
     private String count = "";
@@ -254,13 +255,14 @@ public class FormsContract {
         this.assessid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ASSESSID));
         this.womannme = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_WOMANNME));
         this.husbandnme = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_HUSBANDNME));
-
         this.istatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
+/*
         this.istatus88x = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
         this.gpsElev = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSELEV));
+*/
         this.sA1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA1));
 
-        //this.count = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_COUNT));
+        /*        this.count = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_COUNT));*/
         this.gpsLat = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSLAT));
         this.gpsLng = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSLNG));
         this.gpsDT = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSDATE));
