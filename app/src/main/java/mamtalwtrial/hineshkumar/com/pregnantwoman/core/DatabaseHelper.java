@@ -24,10 +24,11 @@ import mamtalwtrial.hineshkumar.com.pregnantwoman.contractClasses.UserContract.U
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String SQL_CREATE_USERS = "CREATE TABLE " + UserContract.UserTable.TABLE_NAME + "("
-            + UserContract.UserTable.COLUMN__ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + UserContract.UserTable.COLUMN_USERNAME + " TEXT,"
-            + UserContract.UserTable.COLUMN_PASSWORD + " TEXT"
+    public static final String SQL_CREATE_USERS = "CREATE TABLE " + UserTable.TABLE_NAME + "("
+            + UserTable.COLUMN__ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + UserTable.COLUMN_USERNAME + " TEXT,"
+            + UserTable.COLUMN_PASSWORD + " TEXT,"
+            + UserTable.COLUMN_SRANAME + " TEXT"
             + " );";
 
     public static final String DATABASE_NAME = "pwtrial.db";
@@ -76,7 +77,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + " );";
 
     private static final String SQL_DELETE_USERS =
-            "DROP TABLE IF EXISTS " + UserContract.UserTable.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + UserTable.TABLE_NAME;
     private static final String SQL_DELETE_FORMS =
             "DROP TABLE IF EXISTS " + FormsContract.FormsTable.TABLE_NAME;
 
@@ -166,7 +167,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(UserTable.COLUMN_USERNAME, user.getUserName());
                 values.put(UserTable.COLUMN_PASSWORD, user.getPassword());
                 values.put(UserTable.COLUMN_SRANAME, user.getSraName());
-                Long id = db.insert(UserTable.TABLE_NAME, null, values);
+                Long id = db.insert(UserTable.TABLE_NAME, UserTable.COLUMN_NAME_NULLABLE, values);
                 Log.d("000088", id + "");
             }
 
