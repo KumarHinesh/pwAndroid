@@ -18,7 +18,6 @@
         <activity
             android:name=".activities.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity android:name=".activities.allFormsActivity" />
         <activity android:name=".activities.CRF2Activity" />
         <activity
@@ -32,10 +31,12 @@
         </activity>
         <activity android:name=".activities.CRF4Activity" />
         <activity android:name=".activities.CRF5Activity" />
-        <activity android:name=".activities.CRF1DashboardActivity"></activity>
-        <activity android:name=".core.AndroidDatabaseManager"></activity>
-
-
+        <activity android:name=".activities.CRF1DashboardActivity" />
+        <activity android:name=".core.AndroidDatabaseManager" />
+        <activity
+            android:name=".activities.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
